@@ -1,9 +1,14 @@
+import User from "@/components/user/User";
+
 export default function Home() {
   return (
     <>
       <main className="flex flex-1 flex-col items-center justify-between p-24 bg-bgBase">
         <div>
           <h1 className={"text-content text-4xl"}> @Amt</h1>
+        </div>
+        <div>
+          <User />
         </div>
         <div>
           <button
