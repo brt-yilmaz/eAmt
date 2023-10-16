@@ -4,26 +4,34 @@
 
 @layer base {
   :root {
-    --color-bgBase: 210deg 40% 98%;
-    --color-content: 217deg 32.6% 17.5%;
+    --color-bgBase: 39deg 85% 95%;
+    --color-content: 0deg 0% 20%;
+    --color-butContent: 222deg 47% 11%;
     --color-accent: 288deg 95.8% 90.6%;
     --color-bgComp: 168deg 83.8% 78.2%;
-    --color-bgBut: 168deg 83.8% 78.2%;
+    --color-bgBut: 243deg 75% 59%;
+    --color-bgButHov: 243deg 75% 53%;
+    --color-footer: 120deg 100% 20%;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --color-bgBase: 210deg 40% 98%;
-      --color-content: 217deg 32.6% 17.5%;
+      --color-bgBase: 240deg 27% 18%;
+      --color-content: 210deg 14% 53%;
+      --color-butContent: 217deg 30% 92%;
       --color-accent: 288deg 95.8% 90.6%;
       --color-bgComp: 168deg 83.8% 78.2%;
-      --color-bgBut: 168deg 83.8% 78.2%;
+      --color-bgBut: 243deg 75% 59%;
+      --color-bgButHov: 243deg 75% 63%;
+      --color-footer: 120deg 100% 20%;
     }
   }
   :root[data-theme="dark"] {
-    --color-bgBase: 210deg 40% 98%;
-    --color-content: 217deg 32.6% 17.5%;
+    --color-bgBase: 240deg 27% 18%;
+    --color-content: 210deg 14% 53%;
     --color-accent: 288deg 95.8% 90.6%;
     --color-bgComp: 168deg 83.8% 78.2%;
-    --color-bgBut: 168deg 83.8% 78.2%;
+    --color-bgBut: 210deg 100% 56%;
+    --color-bgButHov: 219deg 79% 66%;
+    --color-footer: 181deg 100% 41%;
   }
 }

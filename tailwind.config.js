@@ -8,7 +8,10 @@ module.exports = {
         bgBase: "hsl(var(--color-bgBase) / <alpha-value>)",
         bgComp: "hsl(var(--color-bgComp) / <alpha-value>)",
         bgBut: "hsl(var(--color-bgBut) / <alpha-value>)",
+        butContent: "hsl(var(--color-butContent) / <alpha-value>)",
+        bgButHov: "hsl(var(--color-bgButHov) / <alpha-value>)",
         content: "hsl(var(--color-content) / <alpha-value>)",
+        footer: "hsl(var(--color-footer) / <alpha-value>)",
       },
       animation: {
         "spin-slower": "spin 35s ease infinite",
