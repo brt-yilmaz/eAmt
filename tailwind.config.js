@@ -1,18 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        accent: "hsl(var(--color-accent) / <alpha-value>)",
+        bgBase: "hsl(var(--color-bgBase) / <alpha-value>)",
+        bgComp: "hsl(var(--color-bgComp) / <alpha-value>)",
+        bgBut: "hsl(var(--color-bgBut) / <alpha-value>)",
+        content: "hsl(var(--color-content) / <alpha-value>)",
+      },
+      animation: {
+        "spin-slower": "spin 35s ease infinite",
+        "spin-slow": "spin 25s ease-in-out infinite reverse",
       },
     },
   },
   plugins: [],
-}
+};
