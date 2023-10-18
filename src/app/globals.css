@@ -34,4 +34,14 @@
     --color-bgButHov: 219deg 79% 66%;
     --color-footer: 181deg 100% 41%;
   }
+  :root[data-theme="light"] {
+    --color-bgBase: 39deg 85% 95%;
+    --color-content: 0deg 0% 20%;
+    --color-butContent: 222deg 47% 11%;
+    --color-accent: 288deg 95.8% 90.6%;
+    --color-bgComp: 168deg 83.8% 78.2%;
+    --color-bgBut: 243deg 75% 59%;
+    --color-bgButHov: 243deg 75% 53%;
+    --color-footer: 120deg 100% 20%;
+  }
 }
