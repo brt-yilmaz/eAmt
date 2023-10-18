@@ -1,3 +1,4 @@
+import ModeSwitcher from "@/components/navbar/ModeSwitcher";
 import User from "@/components/user/User";
 import { useTranslations } from "next-intl";
 
@@ -12,6 +13,9 @@ export default function Home() {
         <div>
           <p className={"text-content"}>{t("title")}</p>
           <User />
+        </div>
+        <div>
+          <ModeSwitcher />
         </div>
         <div>
           <button
