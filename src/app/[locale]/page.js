@@ -1,12 +1,15 @@
 import ModeSwitcher from "@/components/navbar/ModeSwitcher";
+import LanguageSwitcher from "@/components/navbar/LanguageSwitcher";
 import User from "@/components/user/User";
 import { useTranslations } from "next-intl";
+
 
 export default function Home() {
   const t = useTranslations("Index");
   return (
     <>
       <main className="flex flex-1 flex-col items-center justify-between p-24 bg-bgBase">
+    <LanguageSwitcher />
         <div>
           <h1 className={"text-content text-4xl"}> @Amt</h1>
         </div>
