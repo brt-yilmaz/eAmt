@@ -51,7 +51,7 @@ function ModeSwitcher() {
             onClick={setLightMode}
           />
         </div>
-      ) : theme === "sysLogtem" ? (
+      ) : theme === "system" ? (
         <GrSystem
           className={"text-3xl cursor-pointer "}
           onClick={() => setShowIcons(true)}
