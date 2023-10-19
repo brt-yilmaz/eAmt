@@ -2,6 +2,8 @@ import ModeSwitcher from "@/components/navbar/ModeSwitcher";
 import LanguageSwitcher from "@/components/navbar/LanguageSwitcher";
 import User from "@/components/user/User";
 import { useTranslations } from "next-intl";
+import Avatar from "@/components/navbar/Avatar";
+
 
 
 export default function Home() {
@@ -9,6 +11,7 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-1 flex-col items-center justify-between p-24 bg-bgBase">
+     
     <LanguageSwitcher />
         <div>
           <h1 className={"text-content text-4xl"}> @Amt</h1>
@@ -16,6 +19,7 @@ export default function Home() {
         <div>
           <p className={"text-content"}>{t("title")}</p>
           <User />
+          <Avatar />
         </div>
         <div>
           <ModeSwitcher />
