@@ -2,6 +2,7 @@ import ModeSwitcher from "@/components/navbar/ModeSwitcher";
 import LanguageSwitcher from "@/components/navbar/LanguageSwitcher";
 import User from "@/components/user/User";
 import { useTranslations } from "next-intl";
+import Avatar from "@/components/navbar/Avatar";
 import Logo from "@/components/navbar/Logo";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <div>
           <p className={"text-content"}>{t("title")}</p>
           <User />
+          <Avatar />
         </div>
         <div>
           <ModeSwitcher />
