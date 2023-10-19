@@ -1,5 +1,11 @@
 {
   "Index": {
     "title": "Hello"
+  },
+  "NavBar": {
+    "home": "Home",
+    "about": "About",
+    "signIn": "Sign In"
   }
+  
 }

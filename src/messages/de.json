@@ -1,6 +1,11 @@
 {
   "Index": {
     "title": "Hallo"
+  },
+  "NavBar": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "signIn": "Anmelden"
   }
   
 }

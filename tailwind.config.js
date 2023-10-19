@@ -12,6 +12,7 @@ module.exports = {
         bgButHov: "hsl(var(--color-bgButHov) / <alpha-value>)",
         content: "hsl(var(--color-content) / <alpha-value>)",
         footer: "hsl(var(--color-footer) / <alpha-value>)",
+        bgSideBar: "hsl(var(--color-bgSideBar) / 0.1)",
       },
       animation: {
         "spin-slower": "spin 35s ease infinite",
