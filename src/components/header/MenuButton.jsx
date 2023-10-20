@@ -16,7 +16,7 @@ function MenuButton({ showMenu, handleClick }) {
       aria-controls={"navbar"}
       aria-expanded={expanded}
       onClick={toggleMenu}
-      className={"sm:hidden absolute top-7 right-14 z-[9999]"}
+      className={"sm:hidden absolute top-7 right-10 z-[9999]"}
     >
       <span className="sr-only">Menu</span>
       {showMenu ? (

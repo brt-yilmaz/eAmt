@@ -8,7 +8,7 @@ function Header() {
   return (
     <header
       className={
-        "flex items-center justify-between px-14  py-[min(3vh,2rem)] sm:px-[min(3vh,2rem)]"
+        "flex items-center justify-between px-10  py-[min(3vh,2rem)] sm:px-[min(3vh,2rem)]"
       }
     >
       <Logo />
