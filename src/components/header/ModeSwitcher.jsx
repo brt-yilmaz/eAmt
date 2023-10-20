@@ -1,7 +1,7 @@
 "use client";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
-import { GrSystem } from "react-icons/gr";
+import { RiComputerLine } from "react-icons/ri";
 import { useEffect, useState } from "react";
 
 function ModeSwitcher() {
@@ -35,10 +35,10 @@ function ModeSwitcher() {
   }, [showIcons]);
 
   return (
-    <div>
+    <div className={"text-content"}>
       {showIcons ? (
-        <div className="flex flex-row items-center justify-center gap-2">
-          <GrSystem
+        <div className="flex flex-row items-center justify-center gap-2 text-content">
+          <RiComputerLine
             className="text-3xl cursor-pointer"
             onClick={setSystemMode}
           />
@@ -52,7 +52,7 @@ function ModeSwitcher() {
           />
         </div>
       ) : theme === "system" ? (
-        <GrSystem
+        <RiComputerLine
           className={"text-3xl cursor-pointer "}
           onClick={() => setShowIcons(true)}
         />
