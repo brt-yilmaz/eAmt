@@ -5,7 +5,26 @@
   "NavBar": {
     "home": "Startseite",
     "about": "Über uns",
-    "signIn": "Anmelden"
+    "signIn": "Anmelden",
+    "menu": "Menü"
+  },
+ 
+  "About": {
+    "title": "Über Unsere Dienstleistung",
+    "content": {
+        "welcome": {
+            "title": "Willkommen",
+            "content": "Herzlich willkommen auf unserer Online-Plattform, die entwickelt wurde, um den Bewohnern Deutschlands einen bequemen und effizienten Zugang zu offiziellen Dokumenten, das Hochladen notwendiger Dateien und das Vereinbaren von Terminen zu bieten."
+        },
+        "whoWeAre": {
+            "title": "Wer Wir Sind",
+            "content": "Wir sind ein Team, das sich der Vereinfachung von Verwaltungsprozessen und der Verbesserung des Lebens der deutschen Bürger verschrieben hat. Unsere Plattform ist hier, um Regierungsdienste zugänglicher und benutzerfreundlicher zu gestalten."
+        },
+        "whatWeOffer": {
+            "title": "Was Wir Anbieten",
+            "content": "Dokumentenarchiv: Finden, zugreifen und offizielle Dokumente einfach herunterladen. Egal, ob Sie eine persönliche Identifikation, Zertifikate oder Genehmigungen benötigen, wir haben Sie abgedeckt."
+        }
+    }
   }
   
 }

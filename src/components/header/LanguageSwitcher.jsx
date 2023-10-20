@@ -6,12 +6,12 @@ import EN from "../../../public/united-kingdom_flag.png";
 
 const LanguageSwitcher = () => {
   return (
-    <div className="flex justify-end gap-2 ">
+    <div className="flex justify-end gap-2 shrink-0">
       <Link href="/de" locale="de">
         <Image
           src={DE}
           alt="DE Flag"
-          width={36}
+          width={30}
           className="rounded-full aspect-square"
         />
       </Link>
@@ -20,7 +20,7 @@ const LanguageSwitcher = () => {
         <Image
           src={EN}
           alt="EN Flag"
-          width={35}
+          width={30}
           className={"rounded-full aspect-square"}
         />
       </Link>

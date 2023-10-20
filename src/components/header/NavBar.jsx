@@ -1,29 +1,28 @@
-import { useTranslations } from "next-intl";
-import Link from "next/link";
+"use client";
 import ButtonGroupNavBar from "./ButtonGroupNavBar";
+import HomeTitle from "./HomeTitle";
+import AboutTitle from "./AboutTitle";
+import { useState } from "react";
+import MenuButton from "./MenuButton";
 
-function NavBar() {
-  const t = useTranslations("NavBar");
+function NavBar({ children }) {
+  const [showMenu, setShowMenu] = useState(false);
   return (
-    <nav
-      className={
-        "fixed grow inset-0 left-1/3 sm:static sm:bg-[inherit] p-[min(30vh,10rem)] sm:p-0 bg-bgSideBar backdrop-blur-lg"
-      }
-    >
-      <ul
-        className={
-          "flex flex-col-reverse sm:flex-row items-center gap-10 sm:gap-6 text-content "
-        }
+    <>
+      <MenuButton showMenu={showMenu} handleClick={setShowMenu} />
+      <nav
+        className={`fixed grow inset-0 left-1/3 sm:static sm:bg-[inherit] py-[min(30vh,10rem)] sm:p-0 bg-bgSideBar backdrop-blur-sm ${
+          showMenu ? "block" : "hidden"
+        } sm:flex justify-end`}
       >
-        <li className={"sm:ml-auto min-w-[120px] text-center"}>
-          <Link href="/">{t("home")}</Link>
-        </li>
-        <li className={"sm:mr-auto min-w-[120px] text-center"}>
-          <Link href="/about">{t("about")}</Link>
-        </li>
-        <ButtonGroupNavBar />
-      </ul>
-    </nav>
+        <ul
+          id={"navbar"}
+          className={`flex flex-col-reverse sm:flex-row items-center gap-10 sm:gap-6 text-content `}
+        >
+          {children}
+        </ul>
+      </nav>
+    </>
   );
 }
 

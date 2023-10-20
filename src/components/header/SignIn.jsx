@@ -5,7 +5,7 @@ function SignIn() {
   return (
     <div>
       <button
-        className={"py-2 px-4 min-w-[120px] bg-bgBut text-butContent rounded"}
+        className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}
       >
         {t("signIn")}
       </button>

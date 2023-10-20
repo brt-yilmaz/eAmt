@@ -3,8 +3,8 @@ import logo from "../../../public/logo.png";
 
 function Logo() {
   return (
-    <div>
-      <Image src={logo} alt="logo" width={60} className={"rounded-md"} />
+    <div className={"w-14 shrink-0"}>
+      <Image src={logo} alt="logo" width={50} className={"rounded-md"} />
     </div>
   );
 }
