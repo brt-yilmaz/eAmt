@@ -1,7 +1,4 @@
 "use client";
-import ButtonGroupNavBar from "./ButtonGroupNavBar";
-import HomeTitle from "./HomeTitle";
-import AboutTitle from "./AboutTitle";
 import { useState } from "react";
 import MenuButton from "./MenuButton";
 
