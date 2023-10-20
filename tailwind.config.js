@@ -13,6 +13,7 @@ module.exports = {
         content: "hsl(var(--color-content) / <alpha-value>)",
         footer: "hsl(var(--color-footer) / <alpha-value>)",
         bgSideBar: "hsl(var(--color-bgSideBar) / 0.1)",
+        btSearch: "hsl(var(--color-btSearch) / <alpha-value>)",
       },
       animation: {
         "spin-slower": "spin 35s ease infinite",
