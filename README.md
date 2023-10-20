@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### About the Project
 
-## Getting Started
+[Visit the Website](https://e-amt.vercel.app/)
 
-First, run the development server:
+E-AMT is an online platform designed to facilitate official procedures in Germany. It offers a convenient way for users to complete various official tasks over the internet, making government interactions more accessible and efficient.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+E-AMT is built using **Next.js**, and this choice offers several advantages, including:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Server-Side Rendering (SSR):** Next.js provides built-in support for SSR, improving performance and SEO by rendering pages on the server before sending them to the client.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+2. **Automatic Code Splitting:** Next.js automatically splits your JavaScript bundles, reducing initial load times and optimizing resource delivery.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Client-Side Navigation:** It simplifies client-side routing, making navigation smoother and faster without full-page reloads.
 
-## Learn More
+4. **Hot Module Replacement:** Developers can enjoy a faster development experience with HMR, which automatically updates the page during development without a full refresh.
 
-To learn more about Next.js, take a look at the following resources:
+5. **Static Site Generation (SSG):** You can generate static HTML files for better performance, security, and scalability.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+6. **Efficient Build Process:** Next.js optimizes the build process with features like incremental static generation and fast refresh, enabling quick development and deployment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+By using Next.js, E-AMT benefits from a performant and efficient framework, ensuring a smooth user experience while simplifying development and maintenance.
 
-## Deploy on Vercel
+##### E-AMT is building using the following technologies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Redux Toolkit**: Redux Toolkit is used for state management, making it easier to manage and maintain application state.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **i18n**: The project employs i18n for internationalization, enabling users to access content in multiple languages.
+
+- **Tailwind CSS**: Tailwind CSS is used for styling and UI development, providing a utility-first approach to design.
+
+##### Project Team
+
+E-AMT is a collaborative effort, and a team of five dedicated individuals is working together to bring this project to life. Meet our team:
+
+- [Berat Yilmaz](https://github.com/brt-yilmaz)
+- [Team Member 2](link-to-profile)
+- [Team Member 3](link-to-profile)
+- [Team Member 4](link-to-profile)
+- [Team Member 5](link-to-profile)
