@@ -3,25 +3,47 @@ import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import { RiComputerLine } from "react-icons/ri";
 import { useEffect, useState } from "react";
+import cookie from "js-cookie";
 
 function ModeSwitcher() {
+  useEffect(() => {
+    const cookieTheme = cookie.get("theme") || "system";
+
+    setTheme(cookieTheme);
+
+    if (cookieTheme === "dark") {
+      document.querySelector("html").setAttribute("data-theme", "dark");
+    }
+
+    if (cookieTheme === "light") {
+      document.querySelector("html").setAttribute("data-theme", "light");
+    }
+
+    if (cookieTheme === "system") {
+      document.querySelector("html").removeAttribute("data-theme");
+    }
+  }, []);
+
   const [theme, setTheme] = useState("system");
   const [showIcons, setShowIcons] = useState(false);
 
   const setDarkMode = () => {
     document.querySelector("html").setAttribute("data-theme", "dark");
+    cookie.set("theme", "dark");
     setTheme("dark");
     setShowIcons(false);
   };
 
   const setLightMode = () => {
     document.querySelector("html").setAttribute("data-theme", "light");
+    cookie.set("theme", "light");
     setTheme("light");
     setShowIcons(false);
   };
 
   const setSystemMode = () => {
     document.querySelector("html").removeAttribute("data-theme");
+    cookie.set("theme", "system");
     setTheme("system");
     setShowIcons(false);
   };

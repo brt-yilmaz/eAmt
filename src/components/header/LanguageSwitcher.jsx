@@ -7,7 +7,7 @@ import EN from "../../../public/united-kingdom_flag.png";
 const LanguageSwitcher = () => {
   return (
     <div className="flex justify-end gap-2 shrink-0">
-      <Link href="/de" locale="de">
+      <Link href={`/de`}>
         <Image
           src={DE}
           alt="DE Flag"
@@ -16,7 +16,7 @@ const LanguageSwitcher = () => {
         />
       </Link>
 
-      <Link href="/en" locale="en">
+      <Link href="/en">
         <Image
           src={EN}
           alt="EN Flag"

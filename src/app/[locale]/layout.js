@@ -14,7 +14,8 @@ export const metadata = {
 
 const locales = ["de", "en"];
 
-export default async function LocaleLayout({ children, params: { locale } }) {
+export default async function LocaleLayout({ children }) {
+  const locale = useLocale();
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
 
