@@ -10,7 +10,7 @@ function NavBar({ children }) {
       <nav
         className={`fixed grow inset-0 left-1/3 sm:static sm:bg-[inherit] py-[min(30vh,10rem)] sm:p-0 bg-bgSideBar backdrop-blur-sm ${
           showMenu ? "block" : "hidden"
-        } sm:flex justify-end`}
+        } sm:flex justify-end z-50 `}
       >
         <ul
           id={"navbar"}
