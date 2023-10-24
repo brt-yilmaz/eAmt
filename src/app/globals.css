@@ -14,6 +14,7 @@
     --color-footer: 120deg 100% 20%;
     --color-bgSideBar: 0deg 0% 0%;
     --color-btSearch: 85deg 0% 90%;
+    --color-bgFooter: 178deg 16% 87%;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -27,6 +28,7 @@
       --color-footer: 120deg 100% 20%;
       --color-bgSideBar: 0deg 0% 100%;
       --color-btSearch: 210deg 14% 53%;
+      --color-bgFooter: 148deg 16% 87%;
     }
   }
   :root[data-theme="dark"] {
@@ -39,6 +41,7 @@
     --color-footer: 181deg 100% 41%;
     --color-bgSideBar: 0deg 0% 100%;
     --color-btSearch: 210deg 14% 53%;
+    --color-bgFooter: 148deg 16% 87%;
   }
   :root[data-theme="light"] {
     --color-bgBase: 39deg 85% 95%;
@@ -51,5 +54,6 @@
     --color-footer: 120deg 100% 20%;
     --color-bgSideBar: 0deg 0% 0%;
     --color-btSearch: 39deg 85% 90%;
+    --color-bgFooter: 178deg 16% 87%;
   }
 }

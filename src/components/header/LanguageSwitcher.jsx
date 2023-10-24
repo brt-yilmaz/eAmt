@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import React from "react";
 import DE from "../../../public/german_flag.png";
 import EN from "../../../public/united-kingdom_flag.png";
+
 
 const LanguageSwitcher = () => {
   return (

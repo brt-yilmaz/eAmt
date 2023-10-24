@@ -14,6 +14,7 @@ module.exports = {
         footer: "hsl(var(--color-footer) / <alpha-value>)",
         bgSideBar: "hsl(var(--color-bgSideBar) / 0.1)",
         btSearch: "hsl(var(--color-btSearch) / <alpha-value>)",
+        bgFooter: "hsl(var(--color-bgFooter) / <alpha-value>)",
       },
       animation: {
         "spin-slower": "spin 35s ease infinite",
