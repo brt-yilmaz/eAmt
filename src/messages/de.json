@@ -25,6 +25,41 @@
             "content": "Dokumentenarchiv: Finden, zugreifen und offizielle Dokumente einfach herunterladen. Egal, ob Sie eine persönliche Identifikation, Zertifikate oder Genehmigungen benötigen, wir haben Sie abgedeckt."
         }
     }
+  },
+
+  
+    "Footer": {
+      "socialMedia": {
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "youtube": "YouTube",
+        "telegram": "Telegram"
+      },
+      "products": {
+        "title": "Produkte", 
+        "stocks": "Aktien",
+        "futuresOptions": "Zukunft & Optionen",
+        "investmentFunds": "Investmentfonds",
+        "realEstate": "Grundstücke, Bau, Immobilien"
+      },
+      "company": {
+        "title": "Unternehmen",
+        "about": "Über",
+        "services": "Dienstleistungen",
+        "office": "Zum Büro",
+        "register": "Registrieren",
+        "faq": "Fragen und Antworten"
+      },
+      "support": {
+        "title": "Unterstützung",
+        "contact": "Kontakt",
+        "supportPortal": "Unterstützung Portal",
+        "downloadsResources": "Downloads und Ressourcen",
+        "videos": "Videos",
+        "feeList": "Gebührenliste"
+      }
+    }
   }
   
-}
+  

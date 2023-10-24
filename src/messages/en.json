@@ -24,6 +24,39 @@
             "content": "Document Repository: Find, access, and download official documents easily. Whether you need personal identification, certificates, or permits, we've got you covered."
         }
     }
+  },
 
+  "Footer": {
+    "socialMedia": {
+      "title": "Amt",
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "telegram": "Telegram"
+    },
+    "products": {
+      "title": "Products", 
+      "stocks": "Stocks",
+      "futuresOptions": "Futures & Options",
+      "investmentFunds": "Investment Funds",
+      "realEstate": "Real Estate, Construction, Properties"
+    },
+    "company": {
+      "title": "Company", 
+      "about": "About",
+      "services": "Services",
+      "office": "Office",
+      "register": "Register",
+      "faq": "Frequently Asked Questions"
+    },
+    "support": {
+      "title": "Support", 
+      "contact": "Contact",
+      "supportPortal": "Support Portal",
+      "downloadsResources": "Downloads and Resources",
+      "videos": "Videos",
+      "feeList": "Fee List"
+    }
   }
 }
