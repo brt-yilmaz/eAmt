@@ -1,5 +1,6 @@
 import createIntlMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
+import { locales, pathnames } from "./navigation";
 
 export default async function middleware(request) {
   // Three steps to compose with other middlewares
@@ -8,8 +9,9 @@ export default async function middleware(request) {
 
   // Step 2: Create and call the next-intl middleware
   const handleI18nRouting = createIntlMiddleware({
-    locales: ["en", "de"],
-    defaultLocale,
+    locales,
+    defaultLocale: "de",
+    pathnames,
   });
   const response = handleI18nRouting(request);
 
