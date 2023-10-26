@@ -7,7 +7,7 @@ function AboutTitle() {
   const t = useTranslations("NavBar");
   return (
     <li className={"sm:mr-auto min-w-[90px] text-center"}>
-      <Link href={`/${locale}/about`}>{t("about")}</Link>
+      <Link href={`/${locale}/dashboard/about`}>{t("about")}</Link>
     </li>
   );
 }
