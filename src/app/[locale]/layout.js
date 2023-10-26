@@ -22,6 +22,8 @@ export default async function LocaleLayout({ children }) {
   await store.dispatch(login({ id: 1, name: "Dirk or Rick" }));
   const user = await store.getState().user;
 
+
+
   return (
     <html lang={locale}>
       <body
@@ -40,3 +42,5 @@ export default async function LocaleLayout({ children }) {
     </html>
   );
 }
+
+
