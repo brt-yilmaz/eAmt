@@ -33,7 +33,6 @@ export async function POST(req) {
     });
 
     const savedUser = await newUser.save();
-    console.log(savedUser);
 
     return NextResponse.json({
       message: "User created successfully",
