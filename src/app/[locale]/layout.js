@@ -34,9 +34,7 @@ export default async function LocaleLayout({ children }) {
             user,
           }}
         >
-          <Header />
           {children}
-          <Footer />
         </StoreProvider>
       </body>
     </html>
