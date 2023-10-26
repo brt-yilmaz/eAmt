@@ -38,6 +38,7 @@ export default async function LocaleLayout({ children }) {
           {children}
           <Footer />
         </StoreProvider>
+
       </body>
     </html>
   );
