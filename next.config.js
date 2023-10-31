@@ -4,5 +4,12 @@ const withNextIntl = require("next-intl/plugin")(
 );
 
 module.exports = withNextIntl({
-  // Other Next.js configuration ...
+  async rewrites() {
+    return [
+      {
+        source: "/dashboard/über-uns",
+        destination: "/dashboard/about",
+      },
+    ];
+  },
 });
