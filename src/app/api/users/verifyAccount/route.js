@@ -1,8 +1,7 @@
 import { connectDB } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
-import bcryptjs from "bcryptjs";
-import { sendEmail } from "@/helpers/mailer";
+import { cookies } from "next/headers";
 
 connectDB();
 
@@ -12,10 +11,9 @@ export async function POST(req) {
     const { amtCode, email } = reqBody;
 
     // Check if user already exists
-    const userExists = await User.findOne({ email });
-    const userAmtCode = userExists?.amtCode;
+    const currentUser = await User.findOne({ email });
 
-    if (!userExists || userAmtCode !== amtCode) {
+    if (!currentUser || currentUser.amtCode !== amtCode) {
       return NextResponse.json(
         {
           error: "Email or Code does not exist",
@@ -24,26 +22,32 @@ export async function POST(req) {
       );
     }
 
-    // Hash password
-    const salt = await bcryptjs.genSalt(10);
-    const hashedPassword = await bcryptjs.hash(password, salt);
+    if (currentUser.isVerified) {
+      return NextResponse.json(
+        {
+          error: `${email} is already verified. Please login`,
+        },
+        { status: 400 }
+      );
+    }
 
-    // Create user
-    const newUser = await User.create({
-      name,
-      email,
-      password: hashedPassword,
-    });
+    if (currentUser.verifyTokenExpiry < Date.now()) {
+      return NextResponse.json(
+        {
+          error: "Token expired, please signup again",
+        },
+        { status: 400 }
+      );
+    }
 
-    const savedUser = await newUser.save();
-
-    // send verification email
-    await sendEmail(email, "VERIFY", savedUser._id);
+    currentUser.isVerified = true;
+    currentUser.verifyToken = undefined;
+    currentUser.verifyTokenExpiry = undefined;
+    const savedUser = await currentUser.save();
 
     return NextResponse.json({
-      message: "User created successfully",
+      message: "User verified successfully",
       success: true,
-      savedUser,
     });
   } catch (error) {
     return NextResponse.json(

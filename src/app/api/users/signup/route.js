@@ -15,17 +15,43 @@ export async function POST(req) {
     const reqBody = await req.json();
     const { name, email, taxId, zipCode } = reqBody;
 
-    console.log(locale);
-
     // Check if user already exists
-    const userExists = await User.findOne({ email });
-    if (userExists) {
-      return NextResponse.json(
-        {
-          error: "User already exists",
-        },
-        { status: 400 }
-      );
+    const currentUser = await User.findOne({ email });
+
+    if (currentUser) {
+      if (currentUser.verifyTokenExpiry < Date.now()) {
+        //check if verify token is correct
+        const hashedToken = await bcryptjs.hash(process.env.JWT_SECRET, 10);
+        const validToken = bcryptjs.compare(
+          currentUser.verifyToken,
+          hashedToken
+        );
+        if (!validToken) {
+          return NextResponse.json(
+            {
+              error:
+                "Provided information is incorrect, Please send us an email",
+            },
+            { status: 400 }
+          );
+        }
+        await User.findByIdAndUpdate(currentUser._id, {
+          verifyToken: hashedToken,
+          verifyTokenExpiry: Date.now() + 3600000,
+        });
+
+        return NextResponse.json({
+          message: "verify your account",
+          success: true,
+        });
+      } else {
+        return NextResponse.json(
+          {
+            error: "User already exists",
+          },
+          { status: 400 }
+        );
+      }
     }
 
     // Create user
@@ -58,7 +84,6 @@ export async function POST(req) {
     return NextResponse.json({
       message: "verify your account",
       success: true,
-      savedUser,
     });
   } catch (error) {
     return NextResponse.json(
