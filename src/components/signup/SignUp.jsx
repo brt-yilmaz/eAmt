@@ -1,23 +1,26 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
+import plz from "@/data/plz";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { OpenEyeIcon, ClosedEyeIcon } from "./EyeIcons.js";
 
-export default function SignupPage() {
-  const router = useRouter();
+
+export default function () {
+  //const router = useRouter();
   const [user, setUser] = useState({
-    email: "",
-    password: "",
     name: "",
+    email: "",
+    identificationNumber: "",
+    plzNumber: "",
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  const [identificationNumberError, setIdentificationNumberError] = useState("");
+  const [plzNumberError, setPlzNumberError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -25,16 +28,21 @@ export default function SignupPage() {
     setFormSubmitted(true);
     try {
       setLoading(true);
-      const isEmailExists = await checkEmailExists(user.email);
+      // Add your email check logic here
+      console.log(user);
   
-      if (isEmailExists) {
-        setEmailError("This email is already registered, use another email");
+      if (user.identificationNumber.trim().length !== 11 || !/^\d+$/.test(user.identificationNumber)) {
+        setIdentificationNumberError("Identification Number should contain exactly 11 digits.");
         setLoading(false);
         return;
       }
   
-      console.log(user);
-      setLoading(true);
+      if (user.plzNumber.trim().length !== 5 || !/^\d+$/.test(user.plzNumber)) {
+        setPlzNumberError("PLZ-Number should contain exactly 5 digits.");
+        setLoading(false);
+        return;
+      }
+  
       const response = await axios.post("/api/users/signup", user);
       console.log("Signup success", response.data);
       router.push("/login");
@@ -50,8 +58,6 @@ export default function SignupPage() {
     if (formSubmitted) {
       if (user.name.trim() === "") {
         setNameError("Name is required");
-      } else if (!/^[A-Za-z\s]+$/.test(user.name)) {
-        setNameError("Name should be written in Latin characters.");
       } else {
         setNameError("");
       }
@@ -64,28 +70,22 @@ export default function SignupPage() {
         setEmailError("");
       }
 
-      if (user.password.trim() === "") {
-        setPasswordError("Password is required");
-      } else if (!isStrongPassword(user.password)) {
-        setPasswordError("Password should be at least 6 characters long and contain a mix of upper and lower case letters, numbers, and special characters.");
+      if (user.identificationNumber.trim() === "") {
+        setIdentificationNumberError("Identification Number is required");
       } else {
-        setPasswordError("");
+        setIdentificationNumberError("");
+      }
+
+      if (user.plzNumber.trim() === "") {
+        setPlzNumberError("PLZ-Number is required");
+      } else {
+        setPlzNumberError("");
       }
     }
   }, [user, formSubmitted]);
-  
 
   function isValidEmail(email) {
     return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email);
-  }
-
-  function isStrongPassword(password) {
-    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-    return passwordPattern.test(password);
-  }
-
-  async function checkEmailExists(email) {
-    return false;
   }
 
   function togglePasswordVisibility() {
@@ -125,26 +125,31 @@ export default function SignupPage() {
           />
           {emailError && <p className="text-red-500">{emailError}</p>}
 
-          <label htmlFor="password" className="text-white text-lg mb-2">
-            Password
+          <label htmlFor="identificationNumber" className="text-white text-lg mb-2">
+            Identification Number
           </label>
-          <div className="relative">
-            <input
-              className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-blue-400 text-black"
-              id="password"
-              type={showPassword ? "text" : "password"}
-              value={user.password}
-              onChange={(e) => setUser({ ...user, password: e.target.value })}
-              placeholder="Password"
-            />
-           <button
-                className="absolute top-2 right-5 focus:outline-none"
-                onClick={togglePasswordVisibility}
-                >
-                {showPassword ? ClosedEyeIcon : OpenEyeIcon}
-            </button>
-          </div>
-          {passwordError && <p className="text-red-500">{passwordError}</p>}
+          <input
+            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-blue-400 text-black"
+            id="identificationNumber"
+            type="text"
+            value={user.identificationNumber}
+            onChange={(e) => setUser({ ...user, identificationNumber: e.target.value })}
+            placeholder="Identification Number"
+          />
+          {identificationNumberError && <p className="text-red-500">{identificationNumberError}</p>}
+
+          <label htmlFor="plzNumber" className="text-white text-lg mb-2">
+            ZIP-Number
+          </label>
+          <input
+            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-blue-400 text-black"
+            id="plzNumber"
+            type="text"
+            value={user.plzNumber}
+            onChange={(e) => setUser({ ...user, plzNumber: e.target.value })}
+            placeholder="PLZ-Number"
+          />
+          {plzNumberError && <p className="text-red-500">{plzNumberError}</p>}
 
           <button
             onClick={onSignup}
