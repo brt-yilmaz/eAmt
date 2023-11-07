@@ -48,6 +48,7 @@ export async function POST(req) {
     return NextResponse.json({
       message: "User verified successfully",
       success: true,
+      userEmail: savedUser.email,
     });
   } catch (error) {
     return NextResponse.json(
