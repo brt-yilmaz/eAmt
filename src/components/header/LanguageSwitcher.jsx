@@ -1,22 +1,27 @@
 "use client";
 import Image from "next/image";
-import { Link } from "@/navigation";
+import Link from "next/link";
 import { useLocale } from "next-intl";
 import React from "react";
 import DE from "../../../public/german_flag.png";
 import EN from "../../../public/united-kingdom_flag.png";
-
-import { useParams } from "next/navigation";
-import { usePathname, useRouter } from "@/navigation";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 const LanguageSwitcher = () => {
   const pathname = usePathname();
   const router = useRouter();
-  const params = useParams();
+  const locale = useLocale();
+  function handleRoute() {
+    if (locale === "en") {
+      router.push(`/de${pathname.slice(3)}`);
+    }
+    if (locale === "de") {
+      router.push(`/en${pathname}`);
+    }
+  }
   return (
     <div className="flex justify-end gap-2 shrink-0">
-      <button
-        onClick={() => router.replace({ pathname, params }, { locale: "de" })}
-      >
+      <button onClick={() => handleRoute()}>
         <Image
           src={DE}
           alt="DE Flag"
@@ -24,10 +29,7 @@ const LanguageSwitcher = () => {
           className="rounded-full aspect-square"
         />
       </button>
-
-      <button
-        onClick={() => router.replace({ pathname, params }, { locale: "en" })}
-      >
+      <button onClick={() => handleRoute()}>
         <Image
           src={EN}
           alt="EN Flag"
@@ -38,5 +40,4 @@ const LanguageSwitcher = () => {
     </div>
   );
 };
-
 export default LanguageSwitcher;
