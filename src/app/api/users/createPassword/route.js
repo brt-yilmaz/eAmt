@@ -2,61 +2,46 @@ import { connectDB } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
-import { sendEmail } from "@/helpers/email/mailer";
-import { amtCodeMaker } from "@/helpers/amtCodeMaker";
-import { cookies } from "next/headers";
+import { sendEmail } from "@/helpers/mailer";
 
 connectDB();
 
 export async function POST(req) {
-  const cookieStore = cookies();
-  const locale = cookieStore.get("NEXT_LOCALE").value;
   try {
     const reqBody = await req.json();
-    const { name, email, taxId, zipCode } = reqBody;
-
-    console.log(locale);
+    const { password, confirmPassword } = reqBody;
 
     // Check if user already exists
     const userExists = await User.findOne({ email });
-    if (userExists) {
+    const userAmtCode = userExists?.amtCode;
+
+    if (!userExists || userAmtCode !== amtCode) {
       return NextResponse.json(
         {
-          error: "User already exists",
+          error: "Email or Code does not exist",
         },
         { status: 400 }
       );
     }
 
+    // Hash password
+    const salt = await bcryptjs.genSalt(10);
+    const hashedPassword = await bcryptjs.hash(password, salt);
+
     // Create user
     const newUser = await User.create({
       name,
       email,
-      taxId,
-      zipCode,
-      amtCode: amtCodeMaker(),
+      password: hashedPassword,
     });
 
     const savedUser = await newUser.save();
 
     // send verification email
-    await sendEmail({
-      email,
-      emailType: "VERIFY",
-      userId: savedUser._id,
-      locale,
-    });
-    await sendEmail({
-      email,
-      emailType: "AMTCODE",
-      amtCode: savedUser.amtCode,
-      taxId: savedUser.taxId,
-      name: savedUser.name,
-      locale,
-    });
+    await sendEmail(email, "VERIFY", savedUser._id);
 
     return NextResponse.json({
-      message: "verify your account",
+      message: "User created successfully",
       success: true,
       savedUser,
     });
