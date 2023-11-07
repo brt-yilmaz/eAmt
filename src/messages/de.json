@@ -59,6 +59,12 @@
         "videos": "Videos",
         "feeList": "Gebührenliste"
       }
+    },
+
+    "Email": {
+      "title": "E-Mail",
+      "verify": "Bitte besuchen Sie Ihre E-Mail, um Ihr Konto zu bestätigen"
+
     }
   }
   

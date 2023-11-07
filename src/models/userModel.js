@@ -21,6 +21,18 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  amtCode: {
+    type: String,
+    default: "",
+  },
+  taxId: {
+    type: String,
+    default: "",
+  },
+  zipCode: {
+    type: String,
+    default: "",
+  },
   role: {
     type: String,
     default: "user",

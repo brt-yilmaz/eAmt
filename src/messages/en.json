@@ -58,5 +58,11 @@
       "videos": "Videos",
       "feeList": "Fee List"
     }
+  },
+
+  "Email" : {
+    "title": "Email",
+    "verify":"Please visit your email to verify your account"
   }
+
 }
