@@ -3,6 +3,7 @@ import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 
 connectDB();
 
@@ -16,7 +17,7 @@ export async function POST(req) {
     if (!user) {
       return NextResponse.json(
         {
-          error: "User not found",
+          error: "User or password incorrect",
         },
         {
           status: 400,
@@ -26,10 +27,11 @@ export async function POST(req) {
 
     // check if password is correct
     const validPassword = await bcryptjs.compare(password, user.password);
+
     if (!validPassword) {
       return NextResponse.json(
         {
-          error: "Incorrect password",
+          error: "User or password incorrect",
         },
         {
           status: 400,
@@ -45,8 +47,17 @@ export async function POST(req) {
     };
 
     // create token
-    const token = jwt.sign(tokenData, process.env.JWT_SECRET, {
-      expiresIn: "1d",
+    const passwordToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
+      expiresIn: "7d",
+    });
+
+    // set token to cookie
+    cookies().set({
+      name: "passwordToken",
+      value: passwordToken,
+      httpOnly: true,
+      expires: new Date(Date.now() + 3600000 * 24 * 7),
+      secure: true,
     });
 
     const res = NextResponse.json({
