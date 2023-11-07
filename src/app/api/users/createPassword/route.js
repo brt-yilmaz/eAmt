@@ -80,15 +80,16 @@ export async function POST(req) {
 
     // update User
     currentUser.password = hashedPassword;
-    currentUser.passwordToken = jwt.sign(
-      {
-        id: currentUser._id,
-      },
-      process.env.JWT_SECRET,
-      {
-        expiresIn: "7d",
-      }
-    );
+
+    const tokenData = {
+      id: currentUser._id,
+      name: currentUser.name,
+      email: currentUser.email,
+    };
+
+    currentUser.passwordToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
+      expiresIn: "7d",
+    });
 
     currentUser.passwordTokenExpiry = Date.now() + 3600000 * 24 * 7; // 7 days
 
@@ -106,7 +107,6 @@ export async function POST(req) {
     return NextResponse.json({
       message: "User created successfully",
       success: true,
-      token: savedUser.passwordToken,
     });
   } catch (error) {
     return NextResponse.json(
