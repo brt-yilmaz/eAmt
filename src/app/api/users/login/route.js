@@ -27,8 +27,6 @@ export async function POST(req) {
       );
     }
 
-    console.log("after first");
-
     // Check if user exists
     const user = await User.findOne({ email });
     if (!user) {
@@ -119,7 +117,7 @@ export async function POST(req) {
     }
 
     // Delete user lockout
-    await UserLockout.deleteOne({ userId: user._id });
+    await UserLockout.deleteOne({ email });
 
     const tokenData = {
       id: user._id,
