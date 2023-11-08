@@ -59,7 +59,6 @@ export async function POST(req) {
       name,
       email,
       taxId,
-      zipCode,
       amtCode: amtCodeMaker(),
     });
 

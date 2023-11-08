@@ -1,19 +1,18 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import plz from "@/data/plz";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
 
 export default function () {
-  //const router = useRouter();
+  const router = useRouter();
   const [user, setUser] = useState({
     name: "",
     email: "",
-    identificationNumber: "",
-    plzNumber: "",
+    taxId: "",
+    amtCode: "",
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -28,7 +27,6 @@ export default function () {
     setFormSubmitted(true);
     try {
       setLoading(true);
-      // Add your email check logic here
       console.log(user);
   
       if (user.identificationNumber.trim().length !== 11 || !/^\d+$/.test(user.identificationNumber)) {
