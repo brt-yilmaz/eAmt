@@ -47,7 +47,7 @@ export async function POST(req) {
       } else {
         return NextResponse.json(
           {
-            error: "User already exists",
+            error: "User already exists, please create a different Email address",
           },
           { status: 400 }
         );
