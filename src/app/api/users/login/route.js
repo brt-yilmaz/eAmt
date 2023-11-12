@@ -32,7 +32,7 @@ export async function POST(req) {
     if (!user) {
       return NextResponse.json(
         {
-          error: "User or password incorrect",
+          error: "Email or password incorrect",
         },
         {
           status: 400,
