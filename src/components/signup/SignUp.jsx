@@ -445,7 +445,7 @@ export default function () {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-full py-20">
+    <div className="flex flex-col items-center justify-center min-h-full py-10">
       <div className="w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 bg-gradient-to-b from-gray-800 via-gray-950 to-black rounded-lg py-5">
         <div className="p-5 rounded-lg border-t-4">
           <h1 className={`${loading ? "text-blue-400" : "text-white"} text-center text-2xl sm:text-4xl font-bold mb-4`}>

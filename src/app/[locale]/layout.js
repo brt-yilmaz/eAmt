@@ -24,7 +24,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
     <html lang={locale}>
       <body
         className={
-          "min-h-screen w-[100vw] flex flex-col justify-between bg-bgBase "
+          "min-h-screen w-[100vw] flex flex-col gap-10 bg-bgBase "
         }
       >
         <StoreProvider

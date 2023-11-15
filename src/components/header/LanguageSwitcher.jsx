@@ -20,7 +20,7 @@ const LanguageSwitcher = () => {
     }
   }
   return (
-    <div className="flex justify-end gap-2 shrink-0">
+    <div className="flex justify-end gap-3 shrink-0">
       <button onClick={() => handleRoute()}>
         <Image
           src={DE}
