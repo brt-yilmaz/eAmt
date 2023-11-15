@@ -123,9 +123,14 @@ function CreatePasswordForm() {
           >
             {isLoading ? "Processing..." : "Create Password"}
           </button>
+          <div className="flex justify-between">
           <Link href="/en/login" className="text-blue-400 hover:underline block mt-3 text-center">
-            Go to Login page
+            Login
           </Link>
+          <Link href="/en/signup" className="text-blue-400 hover:underline mt-3">
+            Signup
+          </Link>
+          </div>
         </div>
       </div>
     </div>
