@@ -1,14 +1,15 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { locales } from "@/navigation";
-import { SWRConfig } from "swr";
-
+import { SWRProvider } from "../swr-provider";
 export default function Home({ children, params: { locale } }) {
   unstable_setRequestLocale(locale);
 
   return (
-    <SWRConfig value={{ provider: () => new Map() }}>
+    <SWRProvider>
       {children}
-    </SWRConfig>
+
+    </SWRProvider>
+
   )
 
 }
