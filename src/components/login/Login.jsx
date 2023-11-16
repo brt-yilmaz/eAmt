@@ -91,10 +91,14 @@ const LoginPage = () => {
           >
             Login
           </button>
-
-          <Link href="/signup" className="text-blue-400 hover:underline">
-            Visit signup page
+          <div className="flex justify-between">
+          <Link href="/en/signup" className="text-blue-400 hover:underline">
+            Signup
           </Link>
+          <Link href="/en/createpassword" className="text-blue-400 text-center hover:underline block ">
+                Create Password
+          </Link>
+          </div>
 
           {errorMessage && (
             <div>

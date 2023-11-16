@@ -1,5 +1,4 @@
 "use client";
-// Import statements
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
@@ -7,7 +6,6 @@ import { useRouter } from "next/navigation";
 
 import FormInput from "../formInput/FormInput";
 
-// VerifyEmailPage component
 const VerifyEmailPage = () => {
   const [formData, setFormData] = useState({
     amtCode: "",
@@ -111,7 +109,7 @@ const VerifyEmailPage = () => {
               >
                 Verify
               </button>
-              <Link href="/en/verify" className="text-blue-400 text-center hover:underline block mt-3">
+              <Link href="/en/createpassword" className="text-blue-400 text-center hover:underline block mt-3">
                 Visit Create Password page
               </Link>
               {error && (

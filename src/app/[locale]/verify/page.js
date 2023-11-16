@@ -1,11 +1,22 @@
-import LanguageSwitcher from '@/components/header/LanguageSwitcher'
-import VerificationForm from '@/components/verify/VerifyIdentityForm'
-
-export default function Home() {
+import LanguageSwitcher from "@/components/header/LanguageSwitcher";
+import ModeSwitcher from "@/components/header/ModeSwitcher";
+import NavBar from "@/components/header/NavBar";
+import VerifyEmailPage from "@/components/verify/VerifyIdentityForm";
+function VerifyIdentityForm() {
   return (
-    <div>
-      <LanguageSwitcher />
-      <VerificationForm />
-    </div>
-  )
+    <>
+      <header
+        className={
+          "flex items-center justify-between px-10  py-[min(3vh,2rem)] sm:px-[min(3vh,2rem)]"
+        }
+      >
+        <NavBar>
+          <ModeSwitcher />
+          <LanguageSwitcher />
+        </NavBar>
+      </header>
+      <VerifyEmailPage />
+    </>
+  );
 }
+export default VerifyIdentityForm;
