@@ -4,6 +4,7 @@
   },
   "NavBar": {
     "home": "Home",
+    "documents": "Documents",
     "about": "About",
     "signIn": "Sign In",
     "menu": "Menu"

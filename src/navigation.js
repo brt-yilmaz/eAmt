@@ -20,6 +20,11 @@ export const pathnames = {
     de: "/dashboard/uber-uns",
   },
 
+  "/dashboard/documents": {
+    en: "/dashboard/documents",
+    de: "/dashboard/Dokumente",
+  },
+
   // // Dynamic params are supported via square brackets
   // '/news/[articleSlug]-[articleId]': {
   //   en: '/news/[articleSlug]-[articleId]',

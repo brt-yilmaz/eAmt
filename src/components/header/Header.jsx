@@ -1,5 +1,6 @@
 import AboutTitle from "./AboutTitle";
 import ButtonGroupNavBar from "./ButtonGroupNavBar";
+import DocumentsTitle from "./DocumentsTitle";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
 
@@ -13,6 +14,7 @@ function Header() {
       <Logo />
       <NavBar>
         <AboutTitle />
+        <DocumentsTitle />
         <ButtonGroupNavBar />
       </NavBar>
     </header>

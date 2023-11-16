@@ -29,7 +29,7 @@ function Footer() {
         </ul>
       </div>
 
-      <div className="p-5">
+      <div className="p-5 hidden md:block">
         <ul>
           <p className="text-xl text-gray-800 font-bold text-2x1 pb-4">
             {t("products.title")}
@@ -37,19 +37,12 @@ function Footer() {
           <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
             {t("products.stocks")}
           </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("products.futuresOptions")}
-          </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("products.investmentFunds")}
-          </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("products.realEstate")}
-          </li>
+         
+          
         </ul>
       </div>
 
-      <div className="p-5">
+      <div className="p-5 hidden md:block">
         <ul>
           <p className="text-xl text-gray-800 font-bold text-2x1 pb-4">
             {t("company.title")}
@@ -61,18 +54,8 @@ function Footer() {
             </Link>
             
           </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("company.services")}
-          </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("company.office")}
-          </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("company.register")}
-          </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("company.faq")}
-          </li>
+         
+          
         </ul>
       </div>
 
@@ -84,18 +67,7 @@ function Footer() {
           <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
             {t("support.contact")}
           </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("support.supportPortal")}
-          </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("support.downloadsResources")}
-          </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("support.videos")}
-          </li>
-          <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-            {t("support.feeList")}
-          </li>
+          
         </ul>
       </div>
     </div>

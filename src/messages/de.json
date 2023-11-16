@@ -4,6 +4,7 @@
   },
   "NavBar": {
     "home": "Startseite",
+    "documents": "Dokumente",
     "about": "Über uns",
     "signIn": "Anmelden",
     "menu": "Menü"

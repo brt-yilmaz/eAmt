@@ -21,7 +21,7 @@ function UploadImageButton() {
       }
       return (
         <button onClick={handleOnClick}>
-          Upload Profile Photo
+          Upload Identity Photo
         </button>
       );
     }}

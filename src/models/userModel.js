@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
+  documents: {
+    type: Array,
+    default: [],
+  },
   taxId: {
     type: String,
     default: "",
@@ -65,6 +69,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.models.UserTest || mongoose.model("UserTest", userSchema);
+const User = mongoose.models.BeratYi || mongoose.model("BeratYi", userSchema);
 
 export default User;

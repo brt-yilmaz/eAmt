@@ -1,4 +1,5 @@
 'use client';
+import DocumentCardsWrapper from "@/components/DocumentCard/DocumentCardsWrapper";
 import SearchPanel from "@/components/searchbar/SearchPanel";
 import { upLoadImage } from "@/services/upLoadImage";
 import { CldUploadWidget } from 'next-cloudinary';
@@ -29,8 +30,8 @@ export default function Dashboard() {
               open();
             }
             return (
-              <button onClick={handleOnClick}>
-                Upload an Image
+              <button onClick={handleOnClick} className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}>
+                Upload Profile Photo
               </button>
             );
           }}

@@ -3,18 +3,20 @@ import { RxAvatar } from "react-icons/rx";
 import { useUser } from "@/services/useUser";
 function Avatar() {
   
-  const { user, isLoading, isError } = useUser();
+  const { user } = useUser();
+
   return (
-      ((isLoading ||isError) && (
-        <div>
-          <RxAvatar className={"text-4xl text-content "} />
-        </div>
-      ) ) ||
     
-     (user?.imageUrl &&
+     (user?.imageUrl ?
       (<div>
         <img src={user.imageUrl} className={"rounded-full w-10 h-10"} alt="avatar" />
-      </div>))
+      </div>)
+      :
+      (<div>
+        <RxAvatar className={"text-4xl text-content "} />
+      </div>)
+      
+      )
     
   )
 }
