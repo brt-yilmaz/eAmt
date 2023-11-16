@@ -3,9 +3,9 @@ import { RxAvatar } from "react-icons/rx";
 import { useUser } from "@/services/useUser";
 function Avatar() {
   
-  const { user, isLoading } = useUser();
+  const { user, isLoading, isError } = useUser();
   return (
-      (isLoading && (
+      ((isLoading ||isError) && (
         <div>
           <RxAvatar className={"text-4xl text-content "} />
         </div>
