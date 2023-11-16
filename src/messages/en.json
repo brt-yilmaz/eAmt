@@ -11,21 +11,24 @@
   "About": {
     "title": "About Our Service",
     "content": {
-        "welcome": {
-            "title": "Welcome",
-            "content": "Welcome to our online platform, designed to serve the residents of Germany with a convenient and efficient way to access official documents, upload necessary files, and schedule appointments."
-        },
-        "whoWeAre": {
-            "title": "Who We Are",
-            "content": "We are a team dedicated to simplifying administrative processes and improving the lives of German citizens. Our platform is here to make government services more accessible and user-friendly."
-        },
-        "whatWeOffer": {
-            "title": "What We Offer",
-            "content": "Document Repository: Find, access, and download official documents easily. Whether you need personal identification, certificates, or permits, we've got you covered."
-        }
+      "welcome": {
+        "title": "Welcome",
+        "content": "Welcome to our online platform, designed to serve the residents of Germany with a convenient and efficient way to access official documents, upload necessary files, and schedule appointments."
+      },
+      "whoWeAre": {
+        "title": "Who We Are",
+        "content": "We are a team dedicated to simplifying administrative processes and improving the lives of German citizens. Our platform is here to make government services more accessible and user-friendly."
+      },
+      "whatWeOffer": {
+        "title": "What We Offer",
+        "content": "Document Repository: Find, access, and download official documents easily. Whether you need personal identification, certificates, or permits, we've got you covered."
+      }
     }
   },
-
+  "Dashboard": {
+    "title": "Dashboard",
+    "uploadButton": "Image Upload"
+  },
   "Footer": {
     "socialMedia": {
       "title": "Amt",
@@ -36,14 +39,14 @@
       "telegram": "Telegram"
     },
     "products": {
-      "title": "Products", 
+      "title": "Products",
       "stocks": "Stocks",
       "futuresOptions": "Futures & Options",
       "investmentFunds": "Investment Funds",
       "realEstate": "Real Estate, Construction, Properties"
     },
     "company": {
-      "title": "Company", 
+      "title": "Company",
       "about": "About",
       "services": "Services",
       "office": "Office",
@@ -51,12 +54,16 @@
       "faq": "Frequently Asked Questions"
     },
     "support": {
-      "title": "Support", 
+      "title": "Support",
       "contact": "Contact",
       "supportPortal": "Support Portal",
       "downloadsResources": "Downloads and Resources",
       "videos": "Videos",
       "feeList": "Fee List"
     }
+  },
+  "Email": {
+    "title": "Email",
+    "verify": "Please visit your email to verify your account"
   }
 }

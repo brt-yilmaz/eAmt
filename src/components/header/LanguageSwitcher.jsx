@@ -7,24 +7,20 @@ import DE from "../../../public/german_flag.png";
 import EN from "../../../public/united-kingdom_flag.png";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
-
 const LanguageSwitcher = () => {
   const pathname = usePathname();
   const router = useRouter();
   const locale = useLocale();
-
   function handleRoute() {
     if (locale === "en") {
       router.push(`/de${pathname.slice(3)}`);
     }
-
     if (locale === "de") {
       router.push(`/en${pathname}`);
     }
   }
-
   return (
-    <div className="flex justify-end gap-2 shrink-0">
+    <div className="flex justify-end gap-3 shrink-0">
       <button onClick={() => handleRoute()}>
         <Image
           src={DE}
@@ -33,7 +29,6 @@ const LanguageSwitcher = () => {
           className="rounded-full aspect-square"
         />
       </button>
-
       <button onClick={() => handleRoute()}>
         <Image
           src={EN}
@@ -45,5 +40,4 @@ const LanguageSwitcher = () => {
     </div>
   );
 };
-
 export default LanguageSwitcher;

@@ -1,12 +1,11 @@
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 function AboutTitle() {
-  const locale = useLocale();
   const t = useTranslations("NavBar");
   return (
     <li className={"sm:mr-auto min-w-[90px] text-center"}>
-      <Link href={`/${locale}/dashboard/about`}>{t("about")}</Link>
+      <Link href={`/dashboard/about`}>{t("about")}</Link>
     </li>
   );
 }

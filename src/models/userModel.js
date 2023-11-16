@@ -21,9 +21,33 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  amtCode: {
+    type: String,
+    default: "",
+  },
+  taxId: {
+    type: String,
+    default: "",
+  },
+  zipCode: {
+    type: String,
+    default: "",
+  },
   role: {
     type: String,
     default: "user",
+  },
+  imageUrl: {
+    type: String,
+    default: "",
+  },
+  authToken: {
+    type: String,
+    default: "",
+  },
+  authTokenExpiry: {
+    type: Date,
+    default: "",
   },
   forgotPasswordToken: {
     type: String,
@@ -41,6 +65,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.models.User || mongoose.model("User", userSchema);
+const User = mongoose.models.UserTest || mongoose.model("UserTest", userSchema);
 
 export default User;
