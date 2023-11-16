@@ -1,11 +1,16 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-export const getDataFromToken = (req) => {
+export const getDataFromToken = (req, res) => {
   try {
-    const token = req.cookies.get("token")?.value || "";
+
+    if (!req.cookies.get("authToken")) {
+      return null
+    }
+
+    const token = req.cookies.get("authToken")?.value || "";
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    return decodedToken.id;
+    return decodedToken;
   } catch (error) {
     return null;
   }

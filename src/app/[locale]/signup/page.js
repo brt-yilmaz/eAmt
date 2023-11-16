@@ -1,3 +1,4 @@
+
 import LanguageSwitcher from "@/components/header/LanguageSwitcher";
 import ModeSwitcher from "@/components/header/ModeSwitcher";
 import NavBar from "@/components/header/NavBar";
@@ -19,4 +20,6 @@ function SignUp() {
     </>
   );
 }
+
 export default SignUp;
+

@@ -26,10 +26,8 @@ const LoginPage = () => {
     try {
       setLoading(true);
       const response = await axios.post("/api/users/login", user);
-      console.log("Successful login", response.data);
       router.push("/dashboard");
     } catch (error) {
-      console.log("Login error", error.message);
       toast.error(error.message);
 
       if (error.response && error.response.status === 400) {

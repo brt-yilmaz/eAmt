@@ -125,19 +125,25 @@ export async function POST(req) {
       email: user.email,
     };
 
-    const passwordToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
+    const authToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
 
+    user.authToken = authToken;
+    user.authTokenExpiry = Date.now() + 3600000 * 24 * 7; // 7 days
+
+    cookies().delete("authToken");
+
     cookies().set({
-      name: "passwordToken",
-      value: passwordToken,
+      name: "authToken",
+      value: authToken,
       httpOnly: true,
       expires: new Date(Date.now() + 3600000 * 24 * 7),
       secure: true,
       sameSite: "strict",
     });
 
+    await user.save();
     return NextResponse.json({
       success: true,
       message: "User logged in successfully",

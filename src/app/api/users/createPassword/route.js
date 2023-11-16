@@ -33,7 +33,7 @@ export async function POST(req) {
       );
     }
 
-    if (currentUser.password || currentUser.passwordToken) {
+    if (currentUser.password || currentUser.authToken) {
       return NextResponse.json(
         {
           error:
@@ -87,22 +87,29 @@ export async function POST(req) {
       email: currentUser.email,
     };
 
-    currentUser.passwordToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
+    const authToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
 
-    currentUser.passwordTokenExpiry = Date.now() + 3600000 * 24 * 7; // 7 days
+    currentUser.authToken = authToken;
 
-    const savedUser = await currentUser.save();
+    currentUser.authTokenExpiry = Date.now() + 3600000 * 24 * 7; // 7 days
+
+
+    cookies().delete("authToken");
 
     // set token to cookie
     cookies().set({
-      name: "passwordToken",
-      value: savedUser.passwordToken,
+      name: "authToken",
+      value: authToken,
       httpOnly: true,
       expires: new Date(Date.now() + 3600000 * 24 * 7),
       secure: true,
+      sameSite: "strict",
     });
+
+    await currentUser.save();
+
 
     return NextResponse.json({
       message: "User created successfully",
