@@ -9,7 +9,7 @@ export async function GET() {
     });
 
     // you can delete toke also but this way is more secure
-    res.cookies.set("token", "", {
+    res.cookies.set("authToken", "", {
       httpOnly: true,
       expires: new Date(0),
     });
