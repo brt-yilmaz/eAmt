@@ -5,7 +5,7 @@ import { upLoadImage } from "@/services/upLoadImage";
 import { CldUploadWidget } from 'next-cloudinary';
 import { useSWRConfig } from "swr"
 
-export default function Dashboard() {
+function Dashboard() {
   const { mutate } = useSWRConfig();
 
   return (
@@ -44,3 +44,5 @@ export default function Dashboard() {
     </>
   );
 }
+
+export default Dashboard

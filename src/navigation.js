@@ -25,6 +25,11 @@ export const pathnames = {
     de: "/dashboard/Dokumente",
   },
 
+  "/dashboard/documents/identity": {
+    en: "/dashboard/documents/identity",
+    de: "/dashboard/Dokumente/Personalausweis",
+  },
+
   // // Dynamic params are supported via square brackets
   // '/news/[articleSlug]-[articleId]': {
   //   en: '/news/[articleSlug]-[articleId]',

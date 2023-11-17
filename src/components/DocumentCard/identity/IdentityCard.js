@@ -9,22 +9,24 @@ function IdentityCard() {
 
   const { user, isLoading } = useUser();
 
+
+
   return (
     (isLoading && (<div>Loading...</div>))
-    ||
-    <div>
-      (user?.documents?.identity === null ? (
-      return <div>
-        <p>You have not uploaded an identity yet.</p>
-        <Link
-        <button className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}> Apply for identity </button>
-      </div>
-      ):
-      <Image src={user?.documents?.identity.imageUrl} alt="identity" width={400} height={252} className={"rounded-2xl"} />
+    // ||
+    // <div>
+    //   ({user?.documents?.identity === null} ?
+    //   <div>
+    //     <p>You have not uploaded an identity yet.</p>
+    //     <Link ><button className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}> Apply for identity </button> </Link>
 
-      )
+    //   </div>
+    //   ):
+    //   <Image src={user?.documents?.identity.imageUrl} alt="identity" width={400} height={252} className={"rounded-2xl"} />
 
-    </div>
+    //   )
+
+    // </div >
   );
 }
 

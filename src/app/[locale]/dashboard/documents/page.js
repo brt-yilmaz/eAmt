@@ -5,11 +5,9 @@ import IdentityCardWrapper from "@/components/DocumentCard/identity/IdentityCard
 function Documents() {
 
   return (
-    <div className="h-[67vh]">
-      <IdentityCardWrapper>
-        <IdentityCard />
-      </IdentityCardWrapper>
-    </div>
+    <IdentityCardWrapper>
+      <IdentityCard />
+    </IdentityCardWrapper>
   );
 }
 

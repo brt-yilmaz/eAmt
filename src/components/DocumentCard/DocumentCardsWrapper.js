@@ -1,9 +1,9 @@
 import IdentityCardWrapper from "./identity/IdentityCardWrapper";
 
-function DocumentCardsWrapper() {
+function DocumentCardsWrapper({ children }) {
   return (
     <div >
-      <IdentityCardWrapper />
+      {children}
     </div>
   );
 }
