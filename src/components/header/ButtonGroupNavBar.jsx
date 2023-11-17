@@ -1,9 +1,9 @@
 'use client'
 import React from "react";
-import SignIn from "./SignIn";
 import Avatar from "./Avatar";
 import ModeToggle from "./ModeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { LanguageToggle } from "./LanguageToggle";
 function ButtonGroupNavBar({children}) {
   return (
     <>
@@ -11,7 +11,7 @@ function ButtonGroupNavBar({children}) {
         <ModeToggle />
       </li>
       <li>
-        <LanguageSwitcher />
+        <LanguageToggle />
       </li>
       <li>
         {children}

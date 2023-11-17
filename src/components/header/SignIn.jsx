@@ -1,15 +1,20 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useLocale } from "next-intl";
+import { Button } from "../ui/button";
+
 
 function SignIn() {
   const t = useTranslations("NavBar");
+  const locale = useLocale();
   return (
-    <div>
-      <button
-        className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}>
-        <Link href={`/en/login`}>{t("signIn")}</Link>
-      </button>
-    </div>
+
+    <Link href={`/login`}>
+      <Button
+        className={"min-w-[100px] "} size="sm" variant="outline">
+        {t("signIn")}
+      </Button>
+    </Link>
   );
 }
 
