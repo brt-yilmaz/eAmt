@@ -3,6 +3,7 @@ import ButtonGroupNavBar from "./ButtonGroupNavBar";
 import DocumentsTitle from "./DocumentsTitle";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
+import SignIn from "./SignIn";
 
 function Header() {
   return (
@@ -15,7 +16,9 @@ function Header() {
       <NavBar>
         <AboutTitle />
         <DocumentsTitle />
-        <ButtonGroupNavBar />
+        <ButtonGroupNavBar >
+          <SignIn />
+        </ButtonGroupNavBar>
       </NavBar>
     </header>
   );

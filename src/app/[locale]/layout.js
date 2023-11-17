@@ -1,4 +1,5 @@
-import "../globals.css";
+import "../global.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
@@ -24,10 +25,19 @@ export default async function LocaleLayout({ children, params: { locale } }) {
           "min-h-screen w-[100vw] flex flex-col gap-10 bg-bgBase "
         }
       >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
 
-        {children}
+          {children}
+        </ThemeProvider>
+
+
       </body>
-    </html>
+    </html >
   );
 }
 

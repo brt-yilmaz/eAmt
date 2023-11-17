@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { locales } from "@/navigation";
 import { SWRProvider } from "../swr-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 function Home({ children, params: { locale } }) {
   unstable_setRequestLocale(locale);
 
