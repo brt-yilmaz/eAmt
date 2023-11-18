@@ -1,9 +1,9 @@
 import "../global.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
-import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
+import CustomNextIntClientProvider from "@/helpers/CustomNextIntClientProvider";
 
 export const metadata = {
   title: "eAmt",
@@ -13,6 +13,7 @@ export const metadata = {
 const locales = ["de", "en"];
 
 export default async function LocaleLayout({ children, params: { locale } }) {
+  // Recieve messages provided in 'i18n.js'
   const isValidLocale = locales.some((cur) => cur === locale);
   if (!isValidLocale) notFound();
 
@@ -32,7 +33,11 @@ export default async function LocaleLayout({ children, params: { locale } }) {
           disableTransitionOnChange
         >
 
-          {children}
+          <CustomNextIntClientProvider
+          >
+            {children}
+
+          </CustomNextIntClientProvider>
         </ThemeProvider>
 
 

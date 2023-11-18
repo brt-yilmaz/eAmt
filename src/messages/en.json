@@ -7,7 +7,22 @@
     "documents": "Documents",
     "about": "About",
     "signIn": "Sign In",
-    "menu": "Menu"
+    "menu": "Menu",
+    "aboutHover": {
+      "slogan": "Your Documents, Your World: Easy, Fast, Online!",
+      "introduction": {
+        "title": "Introduction",
+        "content": "Official documents and online government services."
+      },
+      "whoWeAre": {
+        "title": "Who We Are",
+        "content": "Our team simplifies administrative processes. "
+      },
+      "whatWeOffer": {
+        "title": "What We Offer",
+        "content": "Find, access, and download official documents easily."
+      }
+    }
   },
   "About": {
     "title": "About Our Service",
