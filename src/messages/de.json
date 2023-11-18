@@ -5,6 +5,7 @@
   "NavBar": {
     "home": "Startseite",
     "documents": "Dokumente",
+    "appointments": "Termine",
     "about": "Über uns",
     "signIn": "Anmelden",
     "menu": "Menü",
@@ -21,6 +22,35 @@
       "whatWeOffer": {
         "title": "Was wir anbieten",
         "content": "Finde, greife zu und lade offizielle Dokumente einfach herunter."
+      }
+    },
+    "documentsHover": {
+      "title": "Dokumente",
+      "items": {
+        "identity": {
+          "title": "Identität",
+          "content": "Erkunden Sie Ihren offiziellen Ausweis, der für die persönliche Identifikation und rechtliche Zwecke unerlässlich ist."
+        },
+        "driversLicense": {
+          "title": "Führerschein",
+          "content": "Details zu Ihrem Führerschein, der für die sichere Navigation auf Straßen unerlässlich ist."
+        },
+        "insuranceCard": {
+          "title": "Versicherungskarte",
+          "content": "Erfahren Sie mehr über Ihre Krankenversicherungskarte, die den Zugang zu medizinischen Dienstleistungen ermöglicht."
+        },
+        "carDocuments": {
+          "title": "Fahrzeugdokumente",
+          "content": "Greifen Sie auf wichtige Unterlagen zu Ihrem Fahrzeug zu und sorgen Sie für eine reibungslose Fahrt."
+        },
+        "titleDeed": {
+          "title": "Grundbuch",
+          "content": "Erkunden Sie Details Ihres Grundbuchs, das den Besitz von Grundstücken bestätigt."
+        },
+        "universityDiploma": {
+          "title": "Universitätsdiplom",
+          "content": "Details zu Ihrem Universitätsdiplom, das Ihre erfolgreiche Absolvierung des Studiums bestätigt."
+        }
       }
     },
     "About": {
