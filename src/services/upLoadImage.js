@@ -1,6 +1,6 @@
 export async function upLoadImage(imageUrl) {
   try {
-    await fetch(`/api/users/uploadImage`, {
+    await fetch(`/api/users/uploadProfileImage`, {
       method: "POST",
       body: JSON.stringify({ imageUrl }),
     });

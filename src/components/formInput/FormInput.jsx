@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { OpenEyeIcon, ClosedEyeIcon } from "@/app/library/EyeIcons";
 
-export default function FormInput({ label, value, onChange, errors, isPassword = false }) {
+function FormInput({ label, value, onChange, errors, isPassword = false }) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -32,3 +32,5 @@ export default function FormInput({ label, value, onChange, errors, isPassword =
     </div>
   );
 }
+
+export default  FormInput

@@ -1,5 +1,5 @@
 import LanguageSwitcher from "@/components/header/LanguageSwitcher";
-import ModeSwitcher from "@/components/header/ModeSwitcher";
+import ModeToggle from "@/components/header/ModeToggle";
 import NavBar from "@/components/header/NavBar";
 import LoginPage from "@/components/login/Login";
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
         }
       >
         <NavBar>
-          <ModeSwitcher />
+          <ModeToggle />
           <LanguageSwitcher />
         </NavBar>
       </header>

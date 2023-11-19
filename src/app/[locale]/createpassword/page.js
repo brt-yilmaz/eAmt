@@ -1,6 +1,6 @@
 import CreatePasswordForm from "@/components/createPassword/CreatePasswordFrom";
 import LanguageSwitcher from "@/components/header/LanguageSwitcher";
-import ModeSwitcher from "@/components/header/ModeSwitcher";
+import ModeToggle from "@/components/header/ModeToggle";
 import NavBar from "@/components/header/NavBar";
 
 function CreatePasswordPage() {
@@ -12,7 +12,7 @@ function CreatePasswordPage() {
         }
       >
         <NavBar>
-          <ModeSwitcher />
+          <ModeToggle />
           <LanguageSwitcher />
         </NavBar>
       </header>

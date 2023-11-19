@@ -52,7 +52,6 @@ export async function POST(req) {
 
   const reqBody = await req.json();
   const { imageUrl } = reqBody;
-  console.log(imageUrl)
 
   currentUser.imageUrl = imageUrl;
   await currentUser.save();

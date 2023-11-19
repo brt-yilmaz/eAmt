@@ -1,16 +1,19 @@
 'use client';
+import DocumentCardsWrapper from "@/components/DocumentCard/DocumentCardsWrapper";
 import SearchPanel from "@/components/searchbar/SearchPanel";
+import { Button } from "@/components/ui/button";
 import { upLoadImage } from "@/services/upLoadImage";
 import { CldUploadWidget } from 'next-cloudinary';
 import { useSWRConfig } from "swr"
 
-export default function Dashboard() {
+function Dashboard() {
   const { mutate } = useSWRConfig();
 
   return (
     <>
       <main className="flex flex-1 flex-col items-center justify-between p-24 ">
         <SearchPanel />
+        <Button>Upload</Button>
 
         <CldUploadWidget
           uploadPreset="mnklsx0o"
@@ -29,8 +32,8 @@ export default function Dashboard() {
               open();
             }
             return (
-              <button onClick={handleOnClick}>
-                Upload an Image
+              <button onClick={handleOnClick} className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}>
+                Upload Profile Photo
               </button>
             );
           }}
@@ -43,3 +46,5 @@ export default function Dashboard() {
     </>
   );
 }
+
+export default Dashboard
