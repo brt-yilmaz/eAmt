@@ -20,22 +20,29 @@ import Logo from "./Logo";
 import Image from "next/image";
 
 const components = [
-  { "title": "identity", "href": "identity" },
-  { "title": "driversLicense", "href": "drivers-license" },
-  { "title": "insuranceCard", "href": "insurance-card" },
-  { "title": "carDocuments", "href": "car-documents" },
-  { "title": "titleDeed", "href": "title-deed" },
-  { "title": "universityDiploma", "href": "university-diploma" }
+  { "title": "identity"},
+  { "title": "driversLicense"},
+  { "title": "insuranceCard"},
+  { "title": "carDocuments"},
+  { "title": "titleDeed" },
+  { "title": "universityDiploma"}
 ]
 
 export function NavigationTitles() {
   const t = useTranslations("NavBar");
+
+
+
   console.log(t(`documentsHover.items.universityDiploma.title`))
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>{t("about")}</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            <Link href={"/dashboard/about"}>
+            {t("about")}
+            </Link>
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -73,14 +80,19 @@ export function NavigationTitles() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>{t(("documents"))}</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            <Link href={"/dashboard/documents"}>
+
+            {t(("documents"))}
+            </Link>
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2  ">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
                   title={t(`documentsHover.items.${component.title}.title`)}
-                  href={`/dashboard/documents/${component.href}`}
+                  href={`/dashboard/documents/${t(`documentsHover.items.${component.title}.path`)}`}
                 >
                   {t(`documentsHover.items.${component.title}.content`)}
                 </ListItem>
@@ -89,7 +101,7 @@ export function NavigationTitles() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/dashboard/appointments" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <p className={"min-w-[100px] text-center"}>{t("appointments")}</p>
             </NavigationMenuLink>

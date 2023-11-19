@@ -7,6 +7,7 @@ import {
 import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import { languageToggleHandler } from "@/helpers/LanguageToggleHandler";
 
 
 
@@ -17,17 +18,10 @@ export function LanguageToggle() {
   
   return (
     <ToggleGroup type="single">
-      <ToggleGroupItem value="bold" aria-label="Toggle English" role="button" className={`${locale === "en" ? "text-base bg-accent text-accent-foreground" : ""}`} size={`${locale === "en" ? "sm" : ""}`} onClick={(e) =>{
-          if(locale === "en") {
-            return null
-          }
-        router.push(`/en${pathname}`)}}>
+      <ToggleGroupItem value="bold" aria-label="Toggle English" role="button" className={`${locale === "en" ? "text-base bg-accent text-accent-foreground" : ""}`} size={`${locale === "en" ? "sm" : ""}`} onClick={() => router.push(languageToggleHandler(locale, pathname, "en"))}>
         EN
       </ToggleGroupItem>
-      <ToggleGroupItem value="italic" aria-label="Deutsch umschalten" role="button" className={`${locale === "de" ? "text-base bg-accent text-accent-foreground" : ""}`} size={`${locale === "de" ? "sm" : ""}`} onClick={(e) => {
-          if(locale === "de") {
-            return null}
-        router.push(`/de${pathname.slice(3)}`)}}>
+      <ToggleGroupItem value="italic" aria-label="Deutsch umschalten" role="button" className={`${locale === "de" ? "text-base bg-accent text-accent-foreground" : ""}`} size={`${locale === "de" ? "sm" : ""}`} onClick={() => router.push(languageToggleHandler(locale, pathname, "de"))}>
         DE
       </ToggleGroupItem>
      

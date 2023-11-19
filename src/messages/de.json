@@ -29,86 +29,92 @@
       "items": {
         "identity": {
           "title": "Identität",
-          "content": "Erkunden Sie Ihren offiziellen Ausweis, der für die persönliche Identifikation und rechtliche Zwecke unerlässlich ist."
+          "content": "Erkunden Sie Ihren offiziellen Ausweis, der für die persönliche Identifikation und rechtliche Zwecke unerlässlich ist.",
+          "path": "Personalausweis"
         },
         "driversLicense": {
           "title": "Führerschein",
-          "content": "Details zu Ihrem Führerschein, der für die sichere Navigation auf Straßen unerlässlich ist."
+          "content": "Details zu Ihrem Führerschein, der für die sichere Navigation auf Straßen unerlässlich ist.",
+          "path": "Fuhrerschein"
         },
         "insuranceCard": {
           "title": "Versicherungskarte",
-          "content": "Erfahren Sie mehr über Ihre Krankenversicherungskarte, die den Zugang zu medizinischen Dienstleistungen ermöglicht."
+          "content": "Erfahren Sie mehr über Ihre Krankenversicherungskarte, die den Zugang zu medizinischen Dienstleistungen ermöglicht.",
+          "path": "Versicherungskarte"
         },
         "carDocuments": {
           "title": "Fahrzeugdokumente",
-          "content": "Greifen Sie auf wichtige Unterlagen zu Ihrem Fahrzeug zu und sorgen Sie für eine reibungslose Fahrt."
+          "content": "Greifen Sie auf wichtige Unterlagen zu Ihrem Fahrzeug zu und sorgen Sie für eine reibungslose Fahrt.",
+          "path": "Fahrzeugdokumente"
         },
         "titleDeed": {
           "title": "Grundbuch",
-          "content": "Erkunden Sie Details Ihres Grundbuchs, das den Besitz von Grundstücken bestätigt."
+          "content": "Erkunden Sie Details Ihres Grundbuchs, das den Besitz von Grundstücken bestätigt.",
+          "path": "Grundbuch"
         },
         "universityDiploma": {
           "title": "Universitätsdiplom",
-          "content": "Details zu Ihrem Universitätsdiplom, das Ihre erfolgreiche Absolvierung des Studiums bestätigt."
+          "content": "Details zu Ihrem Universitätsdiplom, das Ihre erfolgreiche Absolvierung des Studiums bestätigt.",
+          "path": "Diplom"
         }
       }
-    },
-    "About": {
-      "title": "Über Unsere Dienstleistung",
-      "content": {
-        "welcome": {
-          "title": "Willkommen",
-          "content": "Herzlich willkommen auf unserer Online-Plattform, die entwickelt wurde, um den Bewohnern Deutschlands einen bequemen und effizienten Zugang zu offiziellen Dokumenten, das Hochladen notwendiger Dateien und das Vereinbaren von Terminen zu bieten."
-        },
-        "whoWeAre": {
-          "title": "Wer Wir Sind",
-          "content": "Wir sind ein Team, das sich der Vereinfachung von Verwaltungsprozessen und der Verbesserung des Lebens der deutschen Bürger verschrieben hat. Unsere Plattform ist hier, um Regierungsdienste zugänglicher und benutzerfreundlicher zu gestalten."
-        },
-        "whatWeOffer": {
-          "title": "Was Wir Anbieten",
-          "content": "Dokumentenarchiv: Finde, greife zu und lade offizielle Dokumente einfach herunter. Egal, ob Sie eine persönliche Identifikation, Zertifikate oder Genehmigungen benötigen, wir haben Sie abgedeckt."
-        }
-      }
-    },
-    "Dashboard": {
-      "title": "Dashboard",
-      "uploadButton": "Bild Hochladen"
-    },
-    "Footer": {
-      "socialMedia": {
-        "instagram": "Instagram",
-        "twitter": "Twitter",
-        "linkedin": "LinkedIn",
-        "youtube": "YouTube",
-        "telegram": "Telegram"
-      },
-      "products": {
-        "title": "Produkte",
-        "stocks": "Aktien",
-        "futuresOptions": "Zukunft & Optionen",
-        "investmentFunds": "Investmentfonds",
-        "realEstate": "Grundstücke, Bau, Immobilien"
-      },
-      "company": {
-        "title": "Unternehmen",
-        "about": "Über",
-        "services": "Dienstleistungen",
-        "office": "Zum Büro",
-        "register": "Registrieren",
-        "faq": "Fragen und Antworten"
-      },
-      "support": {
-        "title": "Unterstützung",
-        "contact": "Kontakt",
-        "supportPortal": "Unterstützung Portal",
-        "downloadsResources": "Downloads und Ressourcen",
-        "videos": "Videos",
-        "feeList": "Gebührenliste"
-      }
-    },
-    "Email": {
-      "title": "E-Mail",
-      "verify": "Bitte besuchen Sie Ihre E-Mail, um Ihr Konto zu bestätigen"
     }
+  },
+  "About": {
+    "title": "Über Unsere Dienstleistung",
+    "content": {
+      "welcome": {
+        "title": "Willkommen",
+        "content": "Herzlich willkommen auf unserer Online-Plattform, die entwickelt wurde, um den Bewohnern Deutschlands einen bequemen und effizienten Zugang zu offiziellen Dokumenten, das Hochladen notwendiger Dateien und das Vereinbaren von Terminen zu bieten."
+      },
+      "whoWeAre": {
+        "title": "Wer Wir Sind",
+        "content": "Wir sind ein Team, das sich der Vereinfachung von Verwaltungsprozessen und der Verbesserung des Lebens der deutschen Bürger verschrieben hat. Unsere Plattform ist hier, um Regierungsdienste zugänglicher und benutzerfreundlicher zu gestalten."
+      },
+      "whatWeOffer": {
+        "title": "Was Wir Anbieten",
+        "content": "Dokumentenarchiv: Finde, greife zu und lade offizielle Dokumente einfach herunter. Egal, ob Sie eine persönliche Identifikation, Zertifikate oder Genehmigungen benötigen, wir haben Sie abgedeckt."
+      }
+    }
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "uploadButton": "Bild Hochladen"
+  },
+  "Footer": {
+    "socialMedia": {
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "telegram": "Telegram"
+    },
+    "products": {
+      "title": "Produkte",
+      "stocks": "Aktien",
+      "futuresOptions": "Zukunft & Optionen",
+      "investmentFunds": "Investmentfonds",
+      "realEstate": "Grundstücke, Bau, Immobilien"
+    },
+    "company": {
+      "title": "Unternehmen",
+      "about": "Über",
+      "services": "Dienstleistungen",
+      "office": "Zum Büro",
+      "register": "Registrieren",
+      "faq": "Fragen und Antworten"
+    },
+    "support": {
+      "title": "Unterstützung",
+      "contact": "Kontakt",
+      "supportPortal": "Unterstützung Portal",
+      "downloadsResources": "Downloads und Ressourcen",
+      "videos": "Videos",
+      "feeList": "Gebührenliste"
+    }
+  },
+  "Email": {
+    "title": "E-Mail",
+    "verify": "Bitte besuchen Sie Ihre E-Mail, um Ihr Konto zu bestätigen"
   }
 }

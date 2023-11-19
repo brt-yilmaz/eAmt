@@ -3,7 +3,13 @@ import {
   Pathnames,
 } from "next-intl/navigation";
 
-export const locales = ["en", "de"];
+export const locales = ["en", "de", "tr", "uk"];
+export const localesDescription = {
+  en: "English",
+  de: "Deutsch",
+  tr: "Türkçe",
+  uk: "Українська",
+};
 
 // The `pathnames` object holds pairs of internal
 // and external paths, separated by locale.
@@ -18,17 +24,24 @@ export const pathnames = {
   "/dashboard/about": {
     en: "/dashboard/about",
     de: "/dashboard/uber-uns",
+    tr: "/dashboard/hakkinda",
+    uk: "/dashboard/pro-nas",
   },
 
   "/dashboard/documents": {
     en: "/dashboard/documents",
     de: "/dashboard/Dokumente",
+    tr: "/dashboard/dokumanlar",
+    uk: "/dashboard/dokumenty",
   },
 
-  "/dashboard/documents/identity": {
-    en: "/dashboard/documents/identity",
-    de: "/dashboard/Dokumente/Personalausweis",
+  "/dashboard/documents/[document]": {
+    en: "/dashboard/documents/[document]",
+    de: "/dashboard/Dokumente/[document]",
+    tr: "/dashboard/dokumanlar/[document]",
+    uk: "/dashboard/dokumenty/[document]",
   },
+
 
   // // Dynamic params are supported via square brackets
   // '/news/[articleSlug]-[articleId]': {
