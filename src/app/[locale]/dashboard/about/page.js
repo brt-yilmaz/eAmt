@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
 
+// You must change pathname to support additional languages
+
 function About() {
   const t = useTranslations("About");
   return (
