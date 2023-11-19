@@ -29,27 +29,33 @@
       "items": {
         "identity": {
           "title": "Identity",
-          "content": "Explore your official ID, crucial for personal identification and legal purposes."
+          "content": "Explore your official ID, crucial for personal identification and legal purposes.",
+          "path": "identity"
         },
         "driversLicense": {
           "title": "Driver's License",
-          "content": "Details about your driver's license, essential for safe navigation on roads."
+          "content": "Details about your driver's license, essential for safe navigation on roads.",
+          "path": "drivers-license"
         },
         "insuranceCard": {
           "title": "Insurance Card",
-          "content": "Learn about your health insurance card, providing access to medical services."
+          "content": "Learn about your health insurance card, providing access to medical services.",
+          "path": "insurance-card"
         },
         "carDocuments": {
           "title": "Car Documents",
-          "content": "Access important paperwork related to your vehicle for a smooth journey."
+          "content": "Access important paperwork related to your vehicle for a smooth journey.",
+          "path": "car-documents"
         },
         "titleDeed": {
           "title": "Title Deed",
-          "content": "Explore details of your title deed, confirming ownership of real estate."
+          "content": "Explore details of your title deed, confirming ownership of real estate.",
+          "path": "title-deed"
         },
         "universityDiploma": {
           "title": "University Diploma",
-          "content": "Details about your university diploma, confirming your successful completion of studies."
+          "content": "Details about your university diploma, confirming your successful completion of studies.",
+          "path": "university-diploma"
         }
       }
     }

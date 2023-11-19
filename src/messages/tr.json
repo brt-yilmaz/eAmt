@@ -1,0 +1,121 @@
+{
+  "Index": {
+    "title": "Merhaba"
+  },
+  "NavBar": {
+    "home": "Ana Sayfa",
+    "documents": "Belgeler",
+    "appointments": "Randevular",
+    "about": "Hakkımızda",
+    "signIn": "Giriş Yap",
+    "menu": "Menü",
+    "aboutHover": {
+      "slogan": "Belgeleriniz, Dünyanız: Kolay, Hızlı, Çevrimiçi!",
+      "introduction": {
+        "title": "Tanıtım",
+        "content": "Resmi belgeler ve çevrimiçi devlet hizmetleri."
+      },
+      "whoWeAre": {
+        "title": "Biz Kimiz",
+        "content": "Ekibimiz idari süreçleri basitleştiriyor."
+      },
+      "whatWeOffer": {
+        "title": "Ne Sunuyoruz",
+        "content": "Resmi belgelere kolayca erişin, indirin ve bulun."
+      }
+    },
+    "documentsHover": {
+      "title": "Belgeler",
+      "items": {
+        "identity": {
+          "title": "Kimlik",
+          "content": "Resmi tanımlama ve yasal amaçlar için önemli.",
+          "path": "kimlik"
+        },
+        "driversLicense": {
+          "title": "Sürücü Belgesi",
+          "content": "Sürücü belgenizle ilgili detaylar, güvenli sürüş için esaslı.",
+          "path": "surucu-belgesi"
+        },
+        "insuranceCard": {
+          "title": "Sigorta Kartı",
+          "content": "Sağlık sigortanızla ilgili bilgiler, tıbbi hizmetlere erişim sağlar.",
+          "path": "sigorta-karti"
+        },
+        "carDocuments": {
+          "title": "Araç Belgeleri",
+          "content": "Araçla ilgili önemli belgeler, sorunsuz bir yolculuk için.",
+          "path": "arac-belgeleri"
+        },
+        "titleDeed": {
+          "title": "Tapu Senedi",
+          "content": "Mülkiyetinizi onaylayan tapu senedi detayları.",
+          "path": "tapu-senedi"
+        },
+        "universityDiploma": {
+          "title": "Üniversite Diploması",
+          "content": "Üniversite diplomanızın detayları, başarılı bir şekilde tamamlanan öğrenimi onaylar.",
+          "path": "diploma"
+        }
+      }
+    }
+  },
+  "About": {
+    "title": "Hizmetimiz Hakkında",
+    "content": {
+      "welcome": {
+        "title": "Hoş Geldiniz",
+        "content": "Çevrimiçi platformumuza hoş geldiniz; Almanya sakinlerine resmi belgelere hızlı ve kolay erişim, gerekli dosyaları yükleme ve randevu planlama imkanı sunmak amacıyla tasarlandı."
+      },
+      "whoWeAre": {
+        "title": "Biz Kimiz",
+        "content": "Biz, idari süreçleri basitleştirmeye ve Alman vatandaşlarının yaşamını iyileştirmeye adamış bir ekibiz. Platformumuz, devlet hizmetlerini daha erişilebilir ve kullanıcı dostu hale getirmek için burada."
+      },
+      "whatWeOffer": {
+        "title": "Ne Sunuyoruz",
+        "content": "Belge Deposu: Resmi belgelere kolayca erişin, indirin ve bulun. Kişisel tanımlama, sertifikalar veya izinler gerekiyorsa, sizi kapsarız."
+      }
+    }
+  },
+  "Dashboard": {
+    "title": "Panel",
+    "uploadButton": "Resim Yükle"
+  },
+  "Footer": {
+    "socialMedia": {
+      "title": "Amt",
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "telegram": "Telegram"
+    },
+    "products": {
+      "title": "Ürünler",
+      "stocks": "Hisse Senetleri",
+      "futuresOptions": "Vadeli İşlemler ve Opsiyonlar",
+      "investmentFunds": "Yatırım Fonları",
+      "realEstate": "Gayrimenkul, İnşaat, Mülkler"
+    },
+    "company": {
+      "title": "Şirket",
+      "about": "Hakkında",
+      "services": "Hizmetler",
+      "office": "Ofis",
+      "register": "Kayıt",
+      "faq": "Sık Sorulan Sorular"
+    },
+    "support": {
+      "title": "Destek",
+      "contact": "İletişim",
+      "supportPortal": "Destek Portalı",
+      "downloadsResources": "İndirilecekler ve Kaynaklar",
+      "videos": "Videolar",
+      "feeList": "Ücret Listesi"
+    }
+  },
+  "Email": {
+    "title": "E-Posta",
+    "verify": "Lütfen hesabınızı doğrulamak için e-postanıza gidin"
+  }
+}
