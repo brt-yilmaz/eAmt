@@ -19,13 +19,13 @@ import {
 import Logo from "./Logo";
 import Image from "next/image";
 
-const components= [
-    {"title": "identity", "href": "identity"},
-    {"title": "driversLicense", "href": "drivers-license"},
-    {"title": "insuranceCard", "href": "insurance-card"},
-    {"title": "carDocuments", "href": "car-documents"},
-    {"title": "titleDeed", "href": "title-deed"},
-    {"title": "universityDiploma", "href": "university-diploma"}
+const components = [
+  { "title": "identity", "href": "identity" },
+  { "title": "driversLicense", "href": "drivers-license" },
+  { "title": "insuranceCard", "href": "insurance-card" },
+  { "title": "carDocuments", "href": "car-documents" },
+  { "title": "titleDeed", "href": "title-deed" },
+  { "title": "universityDiploma", "href": "university-diploma" }
 ]
 
 export function NavigationTitles() {
@@ -45,12 +45,12 @@ export function NavigationTitles() {
                     href="/"
                   >
                     <div>
-                    <Image
-                      src={logo}
-                      alt="logo"
-                      width={100}
-                      className="rounded-md"
-                    />
+                      <Image
+                        src={logo}
+                        alt="logo"
+                        width={100}
+                        className="rounded-md"
+                      />
                     </div>
                     <div className="mb-2 mt-4 text-lg font-medium">
                       eAmt             </div>
@@ -60,13 +60,13 @@ export function NavigationTitles() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title={`${t("aboutHover.introduction.title")}`}>
+              <ListItem href="/dashboard/about#introduction" title={`${t("aboutHover.introduction.title")}`}>
                 {t("aboutHover.introduction.content")}
-                  </ListItem>
-              <ListItem href="/docs/installation" title={t("aboutHover.whoWeAre.title")}>
+              </ListItem>
+              <ListItem href="/dashboard/about#whoWeAre" title={t("aboutHover.whoWeAre.title")}>
                 {t("aboutHover.whoWeAre.content")}
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title={t("aboutHover.whatWeOffer.title")}>
+              <ListItem href="/dashboard/about#whatWeOffer" title={t("aboutHover.whatWeOffer.title")}>
                 {t("aboutHover.whatWeOffer.content")}
               </ListItem>
             </ul>
