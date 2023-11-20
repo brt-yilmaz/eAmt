@@ -5,25 +5,29 @@ import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-const NavigationMenu = React.forwardRef(({ className, children, ...props }, ref) => (
-  <NavigationMenuPrimitive.Root
-    ref={ref}
-    className={cn(
-      "relative z-10 flex max-w-max flex-1 items-center justify-center",
-      className
-    )}
-    {...props}>
-    {children}
-    <NavigationMenuViewport />
-  </NavigationMenuPrimitive.Root>
-))
+const NavigationMenu = React.forwardRef(({ className, type = "Root", children, ...props }, ref) => {
+  const RootOrSub = type === "Sub" ? NavigationMenuPrimitive.Sub : NavigationMenuPrimitive.Root;
+
+  return (
+    <RootOrSub
+      ref={ref}
+      className={cn(
+        "relative z-10 flex max-w-max flex-1 items-center justify-center",
+        className
+      )}
+      {...props}>
+      {children}
+      <NavigationMenuViewport  defaultValue='sub1'/>
+    </RootOrSub>
+  );
+});
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
 
 const NavigationMenuList = React.forwardRef(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      "group flex flex-1 list-none items-center justify-center space-x-1",
+      "group flex flex-1 list-none items-center justify-center  space-x-1",
       className
     )}
     {...props} />

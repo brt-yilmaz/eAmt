@@ -17,7 +17,7 @@ export function LanguageToggle() {
   const locale = useLocale();
   
   return (
-    <ToggleGroup type="single">
+    <ToggleGroup type="single" className="hidden md:block">
       <ToggleGroupItem value="bold" aria-label="Toggle English" role="button" className={`${locale === "en" ? "text-base bg-accent text-accent-foreground" : ""}`} size={`${locale === "en" ? "sm" : ""}`} onClick={() => router.push(languageToggleHandler(locale, pathname, "en"))}>
         EN
       </ToggleGroupItem>
