@@ -1,10 +1,11 @@
 'use client'
 import React from "react";
-import Avatar from "./Avatar";
+import AvatarUser from "./Avatar";
 import ModeToggle from "./ModeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { LanguageToggle } from "./LanguageToggle";
 import { MultiLanguageSelector } from "./MultiLanguageSelector";
+import AvatarDropDown from "./AvatarDropDown";
 function ButtonGroupNavBar({children}) {
   return (
     <>
@@ -19,7 +20,7 @@ function ButtonGroupNavBar({children}) {
         {children}
       </li>
       <li>
-        <Avatar />
+        <AvatarDropDown />
       </li>
     </>
   );

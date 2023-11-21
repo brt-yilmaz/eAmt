@@ -6,7 +6,6 @@ import logo from "../../../public/logo.png";
 import { Link } from "@/navigation";
 
 import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
   NavigationMenuContent,

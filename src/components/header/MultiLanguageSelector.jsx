@@ -28,9 +28,9 @@ export function MultiLanguageSelector() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger><Languages className={'md:hidden'}/></NavigationMenuTrigger>
+          <NavigationMenuTrigger><Languages className={'md:hidden text-muted-foreground'}/></NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6  ">
+            <ul className="grid  p-2  ">
              
               {locales.map((localeFromArray) => (
                 <ListItem
