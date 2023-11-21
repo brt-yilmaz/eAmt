@@ -7,7 +7,6 @@ export default async function middleware(request) {
   const path = request.nextUrl.pathname;
   const cookiesStore = cookies();
   const authToken = cookiesStore.get("authToken")?.value || "";
-  console.log(authToken)
 
   if (
     request.nextUrl.pathname.startsWith("/_next") ||

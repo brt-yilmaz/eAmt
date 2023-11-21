@@ -90,7 +90,7 @@ export default function TeamSwitcher({ className }) {
             aria-label="Select a team"
             className={cn("w-[200px] justify-between", className)}
           >
-            <AvatarUser />
+            <AvatarUser className="mr-2 h-7 w-7" />
             {selectedTeam.label}
             <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
           </Button>
@@ -111,7 +111,7 @@ export default function TeamSwitcher({ className }) {
                       }}
                       className="text-sm"
                     >
-                      <AvatarUser />
+                      <AvatarUser  className="mr-2 h-7 w-7" />
                       {team.label}
                       <CheckIcon
                         className={cn(

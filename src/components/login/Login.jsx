@@ -34,7 +34,6 @@ const LoginPage = () => {
         const errorMessage = error.response.data.error;
         setErrorMessage(errorMessage);
       } else {
-        console.error("Unknown error", error);
       }
     } finally {
       setLoading(false);

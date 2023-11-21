@@ -10,7 +10,6 @@ function DarkMode() {
   const { theme, setTheme } = useTheme()
  
 
-  console.log(theme)
     return (
         <div className='dark_mode' role={"button"} onClick={() => setTheme("dark")}>
             <input

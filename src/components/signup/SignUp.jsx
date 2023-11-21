@@ -359,7 +359,6 @@ export default function () {
     setFormSubmitted(true);
     try {
       setLoading(true);
-      console.log(user);
 
       const newErrors = {};
 
@@ -392,10 +391,8 @@ export default function () {
       }
 
       const response = await axios.post("/api/users/signup", user);
-      console.log("Signup success", response.data);
       setRegistrationSuccess(true);
     } catch (error) {
-      console.log("Signup error", typeof error.response.data.error);
       if (error.response.data.error.startsWith("User")) {
         setErrors({
           ...errors,

@@ -42,7 +42,6 @@ const { mutate } = useSWRConfig();
   const router = useRouter();
   const t = useTranslations("NavBar");
   const { user } = useUser();
-  console.log(user)
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
