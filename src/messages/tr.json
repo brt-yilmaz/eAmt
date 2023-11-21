@@ -9,6 +9,13 @@
     "about": "Hakkımızda",
     "signIn": "Giriş Yap",
     "menu": "Menü",
+    "logout": {
+      "title": "Çıkış Yap",
+      "content": "Emin misiniz çıkış yapmak istediğinizden?",
+      "subContent": "Çıkış yaptıktan sonra tüm verilerinize erişemezsiniz.",
+      "confirm": "Devam",
+      "cancel": "İptal"
+    },
     "aboutHover": {
       "slogan": "Belgeleriniz, Dünyanız: Kolay, Hızlı, Çevrimiçi!",
       "introduction": {
@@ -58,6 +65,16 @@
           "path": "diploma"
         }
       }
+    },
+    "avatarDropDown": {
+      "myAccount": "Hesabım",
+      "profile": "Profil",
+      "documents": "Belgeler",
+      "settings": "Ayarlar",
+      "petition": "Dilekçe",
+      "appointments": "Randevular",
+      "newAppointment": "Yeni Randevu",
+      "logout": "Çıkış Yap"
     }
   },
   "About": {

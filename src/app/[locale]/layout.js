@@ -22,9 +22,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={
-          "min-h-screen w-[100vw] flex flex-col gap-10 bg-bgBase "
-        }
+
       >
         <ThemeProvider
           attribute="class"

@@ -9,6 +9,13 @@
     "about": "Про нас",
     "signIn": "Увійти",
     "menu": "Меню",
+    "logout": {
+      "title": "Abmelden",
+      "content": "Möchten Sie sich wirklich abmelden?",
+      "subContent": "Nach dem Abmelden können Sie nicht mehr auf alle Ihre Daten zugreifen.",
+      "confirm": "Fortfahren",
+      "cancel": "Abbrechen"
+    },
     "aboutHover": {
       "slogan": "Ваші документи, ваш світ: Легко, Швидко, Онлайн!",
       "introduction": {
@@ -58,6 +65,16 @@
           "path": "diplom-unіversitetu"
         }
       }
+    },
+    "avatarDropDown": {
+      "myAccount": "Мій обліковий запис",
+      "profile": "Профіль",
+      "documents": "Документи",
+      "settings": "Налаштування",
+      "petition": "Петиція",
+      "appointments": "Зустрічі",
+      "newAppointment": "Нова Зустріч",
+      "logout": "Вийти"
     }
   },
   "About": {

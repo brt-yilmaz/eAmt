@@ -12,8 +12,7 @@ function Dashboard() {
   return (
     <>
       <main className="flex flex-1 flex-col items-center justify-between p-24 ">
-        <SearchPanel />
-        <Button>Upload</Button>
+
 
         <CldUploadWidget
           uploadPreset="mnklsx0o"
