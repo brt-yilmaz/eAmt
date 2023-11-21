@@ -239,6 +239,7 @@ const SignupPage = () => {
     <div className="flex items-center justify-center h-screen">
       <div className="w-full max-w-md bg-slate-200 p-6 dark:bg-slate-800 rounded-md">
         <Form {...form} className="w-full">
+        <h1 className="text-center text-4xl font-bold mb-4 ">Sign Up</h1>
           {registrationSuccess ? (
             <div className="text-green-400 text-center mb-4">
               Registration completed successfully! Please check your email for a verification code.
