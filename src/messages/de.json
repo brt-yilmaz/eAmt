@@ -9,6 +9,13 @@
     "about": "Über uns",
     "signIn": "Anmelden",
     "menu": "Menü",
+    "logout": {
+      "title": "Abmelden",
+      "content": "Möchten Sie sich wirklich abmelden?",
+      "subContent": "Nach dem Abmelden können Sie nicht mehr auf alle Ihre Daten zugreifen.",
+      "confirm": "Fortfahren",
+      "cancel": "Abbrechen"
+    },
     "aboutHover": {
       "slogan": "Deine Dokumente, Deine Welt: Einfach, Schnell, Online!",
       "introduction": {
@@ -58,6 +65,16 @@
           "path": "Diplom"
         }
       }
+    },
+    "avatarDropDown": {
+      "myAccount": "Mein Konto",
+      "profile": "Profil",
+      "documents": "Dokumente",
+      "settings": "Einstellungen",
+      "petition": "Petition",
+      "appointments": "Termine",
+      "newAppointment": "Neuer Termin",
+      "logout": "Abmelden"
     }
   },
   "About": {

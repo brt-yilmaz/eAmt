@@ -9,6 +9,13 @@
     "about": "About",
     "signIn": "Sign In",
     "menu": "Menu",
+    "logout": {
+      "title": "Logout",
+      "content": "Are you sure you want to log out?",
+      "subContent": "You can not access all your data after logging out.",
+      "confirm": "Continue",
+      "cancel": "Cancel"
+    },
     "aboutHover": {
       "slogan": "Your Documents, Your World: Easy, Fast, Online!",
       "introduction": {
@@ -58,6 +65,16 @@
           "path": "university-diploma"
         }
       }
+    },
+    "avatarDropDown": {
+      "myAccount": "My Account",
+      "profile": "Profile",
+      "documents": "Documents",
+      "settings": "Settings",
+      "petition": "Petition",
+      "appointments": "Appointments",
+      "newAppointment": "New Appointment",
+      "logout": "Logout"
     }
   },
   "About": {

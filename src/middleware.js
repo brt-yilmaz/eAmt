@@ -1,9 +1,13 @@
 import createIntlMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { locales, pathnames } from "./navigation";
+import { cookies } from "next/headers";
 
 export default async function middleware(request) {
   const path = request.nextUrl.pathname;
+  const cookiesStore = cookies();
+  const authToken = cookiesStore.get("authToken")?.value || "";
+  console.log(authToken)
 
   if (
     request.nextUrl.pathname.startsWith("/_next") ||
@@ -33,8 +37,6 @@ export default async function middleware(request) {
 
   const isPublicPath = path === "/dashboard";
 
-  const token = request.cookies.get("token")?.value || "";
-
   if (!isAuthPage) {
     if (path === "/") {
       return NextResponse.redirect(new URL("/dashboard", request.nextUrl));
@@ -45,7 +47,11 @@ export default async function middleware(request) {
     }
   }
 
+
   /* if ((isPublicPath || isAuthPage) && token) {
+=======
+  if ((isPublicPath || isAuthPage) && authToken) {
+
     return NextResponse.redirect(
       new URL("/dashboard/profile", request.nextUrl)
     );
@@ -54,7 +60,7 @@ export default async function middleware(request) {
   if (
     (path.startsWith("/dashboard/profile") ||
       path.startsWith("/en/dashboard/profile")) &&
-    !token
+    !authToken
   ) {
     return NextResponse.redirect(new URL("/login", request.nextUrl));
   }

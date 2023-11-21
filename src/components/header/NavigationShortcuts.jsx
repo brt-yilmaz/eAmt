@@ -1,13 +1,11 @@
 "use client"
-import { Languages } from 'lucide-react';
+
 import * as React from "react"
 import { Link } from "@/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { locales } from "@/navigation";
-import { localesDescription } from "@/navigation";
-import { languageToggleHandler } from "@/helpers/LanguageToggleHandler";
 import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
@@ -17,33 +15,45 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu-multiLanguage"
+} from "@/components/ui/navigation-menu"
+import { NavigationTitles } from "./NavigationTitles";
 
 
-export function MultiLanguageSelector() {
+export function NavigationShortcuts() {
   const pathname = usePathname();
   const router = useRouter();
   const locale = useLocale();
+  const t = useTranslations('NavBar');
   return (
-    <NavigationMenu>
+    <NavigationMenu className="lg:hidden">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger><Languages className={'md:hidden text-muted-foreground'}/></NavigationMenuTrigger>
+          <NavigationMenuTrigger> Shortcuts</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid  p-2  ">
-             
-              {locales.map((localeFromArray) => (
-                <ListItem
-                  key={localeFromArray}
-                  title={localesDescription[localeFromArray]}
-                  onClick={()=>router.push(languageToggleHandler(locale, pathname, localeFromArray))}
-                />
-              ))}
-                
+            <ul className="flex gap-3 p-1 flex-col ">
+
+
+              <ListItem
+                title={t("about")}
+                onClick={() => router.push(`/${locale}/dashboard/about`)}
+                className= "whitespace-nowrap"
+              />
+
+              <ListItem
+                title={t("documents")}
+                onClick={() => router.push(`/${locale}/dashboard/documents`)}
+              />
+
+              <ListItem
+                title={t("appointments")}
+                onClick={() => router.push(`/${locale}/dashboard/appointments`)}
+              />
+
+
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-       
+
       </NavigationMenuList>
     </NavigationMenu>
   )
@@ -52,7 +62,7 @@ export function MultiLanguageSelector() {
 const ListItem = React.forwardRef(({ className, title, children, ...props }, ref) => {
   return (
     <li>
-      <NavigationMenuLink  asChild>
+      <NavigationMenuLink asChild>
         <button
           ref={ref}
           className={cn(

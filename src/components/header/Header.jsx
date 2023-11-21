@@ -3,6 +3,7 @@ import ButtonGroupNavBar from "./ButtonGroupNavBar";
 import DocumentsTitle from "./DocumentsTitle";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
+import { NavigationShortcuts } from "./NavigationShortcuts";
 import { NavigationTitles } from "./NavigationTitles";
 import SignIn from "./SignIn";
 
@@ -15,6 +16,8 @@ function Header() {
     >
       <Logo />
       <NavBar>
+       
+        <NavigationShortcuts />
         <NavigationTitles />
         <ButtonGroupNavBar >
           <SignIn />

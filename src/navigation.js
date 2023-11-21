@@ -3,12 +3,12 @@ import {
   Pathnames,
 } from "next-intl/navigation";
 
-export const locales = ["en", "de", "tr", "uk"];
+export const locales = ["en", "de", "tr", "ua"];
 export const localesDescription = {
   en: "English",
   de: "Deutsch",
   tr: "Türkçe",
-  uk: "Українська",
+  ua: "Українська",
 };
 
 // The `pathnames` object holds pairs of internal
@@ -25,21 +25,21 @@ export const pathnames = {
     en: "/dashboard/about",
     de: "/dashboard/uber-uns",
     tr: "/dashboard/hakkinda",
-    uk: "/dashboard/pro-nas",
+    ua: "/dashboard/pro-nas",
   },
 
   "/dashboard/documents": {
     en: "/dashboard/documents",
     de: "/dashboard/Dokumente",
     tr: "/dashboard/dokumanlar",
-    uk: "/dashboard/dokumenty",
+    ua: "/dashboard/dokumenty",
   },
 
   "/dashboard/documents/[document]": {
     en: "/dashboard/documents/[document]",
     de: "/dashboard/Dokumente/[document]",
     tr: "/dashboard/dokumanlar/[document]",
-    uk: "/dashboard/dokumenty/[document]",
+    ua: "/dashboard/dokumenty/[document]",
   },
 
 
