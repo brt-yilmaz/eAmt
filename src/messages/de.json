@@ -133,5 +133,20 @@
   "Email": {
     "title": "E-Mail",
     "verify": "Bitte besuchen Sie Ihre E-Mail, um Ihr Konto zu bestätigen"
+  },
+
+
+  "login": {
+    "title": "Anmelden",
+    "emailLabel": "E-Mail",
+    "enterEmail": "Geben Sie Ihre E-Mail-Adresse ein",
+    "passwordLabel": "Passwort",
+    "enterPassword": "Geben Sie Ihr Passwort ein",
+    "signInButton": "Anmelden",
+    "orText": "oder",
+    "noAccountText": "Wenn Sie noch kein Konto haben, melden Sie sich bitte an",
+    "signupLinkText": "Hier registrieren",
+    "loginSuccessful": "Anmeldung erfolgreich"
   }
+  
 }

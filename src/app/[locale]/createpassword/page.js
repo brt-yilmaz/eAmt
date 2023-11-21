@@ -13,7 +13,7 @@ function CreatePasswordPage() {
       >
         <NavBar>
           <ModeToggle />
-          <LanguageSwitcher />
+          
         </NavBar>
       </header>
       <CreatePasswordForm />
