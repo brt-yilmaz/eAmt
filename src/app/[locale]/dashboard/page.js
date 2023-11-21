@@ -1,6 +1,5 @@
 'use client';
 import DocumentCardsWrapper from "@/components/DocumentCard/DocumentCardsWrapper";
-import SearchPanel from "@/components/searchbar/SearchPanel";
 import { Button } from "@/components/ui/button";
 import { upLoadImage } from "@/services/upLoadImage";
 import { CldUploadWidget } from 'next-cloudinary';
