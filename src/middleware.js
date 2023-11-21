@@ -45,11 +45,11 @@ export default async function middleware(request) {
     }
   }
 
-  if ((isPublicPath || isAuthPage) && token) {
+  /* if ((isPublicPath || isAuthPage) && token) {
     return NextResponse.redirect(
       new URL("/dashboard/profile", request.nextUrl)
     );
-  }
+  } */
 
   if (
     (path.startsWith("/dashboard/profile") ||
