@@ -2,9 +2,7 @@ import createIntlMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { locales, pathnames } from "./navigation";
 import { cookies } from "next/headers";
-import { getDataFromToken } from "./helpers/getDataFromToken";
-import { connectDB } from "./dbConfig/dbConfig";
-import jwt from "jsonwebtoken";
+import { verifyAuth } from "./lib/auth";
 
 export default async function middleware(request) {
   const path = request.nextUrl.pathname;
@@ -33,38 +31,43 @@ export default async function middleware(request) {
   response.headers.set("x-default-locale", defaultLocale);
 
   // ------------------------  Protected Routes ----------------------------------------------
+  const protectedRoutes = ["/profile"];
+  const authRoutes = ["/signup", "/login", '/verifyAccount', '/forgotPassword', '/resetPassword'];
 
-  if (request.nextUrl.pathname.includes("/profile")) {
+  const isProtected = protectedRoutes.some((route) =>
+    request.nextUrl.pathname.includes(route)
+  );
 
+  const isAuth = authRoutes.some((route) =>
+    request.nextUrl.pathname.includes(route)
+  );
+
+  if (isProtected || isAuth) {
     const cookiesStore = cookies();
     const authToken = cookiesStore.get("authToken")?.value;
-    console.log(' authToken: ', authToken)
+    const verifiedToken = await verifyAuth(authToken).catch((error) => {
+      return !NextResponse.redirect(new URL("/dashboard/login", request.nextUrl));
+    });
+    // const decoded = jwt.verify(authToken, process.env.JWT_SECRET_KEY) (not working with edge functions);
 
-    if (!request.cookies.get("authToken")) {
-      return NextResponse.redirect(new URL("/login", request.nextUrl));
+    if (isProtected) {
+      if (!request.cookies.get("authToken")) {
+        return NextResponse.redirect(new URL("/dashboard/login", request.nextUrl));
+      }
+      if (!verifiedToken) {
+        return NextResponse.redirect(new URL("/dashboard/login", request.nextUrl));
+      }
     }
 
-    const decoded = jwt.verify(authToken, process.env.JWT_SECRET_KEY);
+    if (isAuth) {
 
-    if (!decoded) {
-      return NextResponse.redirect(new URL("/login", request.nextUrl));
+      if (verifiedToken) {
+        return NextResponse.redirect(new URL("/dashboard/profile", request.nextUrl));
+      }
+
+
     }
 
-    const currentUser = await User.findOne({ email: decoded.email }).select(
-      "-password"
-    );
-
-    if (!currentUser) {
-      return NextResponse.redirect(new URL("/login", request.nextUrl));
-    }
-
-    if (!currentUser.isVerified) {
-      return NextResponse.redirect(new URL("/verifyAccount", request.nextUrl));
-    }
-
-    if (currentUser.authToken !== authToken) {
-      return NextResponse.redirect(new URL("/login", request.nextUrl));
-    }
 
   }
 

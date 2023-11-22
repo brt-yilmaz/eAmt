@@ -14,7 +14,7 @@ function IdentityCardWrapper({ children }) {
       user?.documents?.length === 0 && (
         <div>
           <p>You have not uploaded any documents yet.</p>
-          <Link href="/dashboard/documents/identity" ><button className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}> Apply for documents </button> </Link>
+          <Link href="/dashboard/profile/documents/identity" ><button className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}> Apply for documents </button> </Link>
         </div>
       )
     )

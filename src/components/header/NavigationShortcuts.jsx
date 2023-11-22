@@ -41,12 +41,12 @@ export function NavigationShortcuts() {
 
               <ListItem
                 title={t("documents")}
-                onClick={() => router.push(`/${locale}/dashboard/documents`)}
+                onClick={() => router.push(`/${locale}/dashboard/profile/documents`)}
               />
 
               <ListItem
                 title={t("appointments")}
-                onClick={() => router.push(`/${locale}/dashboard/appointments`)}
+                onClick={() => router.push(`/${locale}/dashboard/profile/appointments`)}
               />
 
 

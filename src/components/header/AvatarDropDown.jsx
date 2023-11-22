@@ -76,7 +76,7 @@ export default function AvatarDropDown() {
           </DropdownMenuItem>
           <DropdownMenuItem disabled={!user} >
             <CreditCard className="mr-2 h-4 w-4" />
-            <span onClick={() => router.push("/dashboard/documents") }>{t("avatarDropDown.documents")}</span>
+            <span onClick={() => router.push("/dashboard/profile/documents") }>{t("avatarDropDown.documents")}</span>
             <DropdownMenuShortcut>{!user && <KeyRound size={16}/>}</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
@@ -86,7 +86,7 @@ export default function AvatarDropDown() {
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Keyboard className="mr-2 h-4 w-4" />
-            <span onClick={() => router.push("/dashboard/petition")}>{t("avatarDropDown.petition")}</span>
+            <span onClick={() => router.push(`/dashboard/${user ? 'profile' : ''}/petition`)}>{t("avatarDropDown.petition")}</span>
             <DropdownMenuShortcut></DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -94,14 +94,14 @@ export default function AvatarDropDown() {
         <DropdownMenuGroup>
           <DropdownMenuItem disabled={!user} >
             <CalendarSearch className="mr-2 h-4 w-4" />
-            <span onClick={() => router.push("/dashboard/appointments")}>{t("avatarDropDown.appointments")}</span>
+            <span onClick={() => router.push("/dashboard/profile/appointments")}>{t("avatarDropDown.appointments")}</span>
             <DropdownMenuShortcut> {!user && <KeyRound size={16}/>} </DropdownMenuShortcut>
 
           </DropdownMenuItem>
           
           <DropdownMenuItem disabled={!user} >
           <CalendarPlus className="mr-2 h-4 w-4" />
-              <span onClick={() => router.push("/dashboard/appointments/new") }> {t("avatarDropDown.newAppointment")} </span>
+              <span onClick={() => router.push("/dashboard/profile/appointments/new") }> {t("avatarDropDown.newAppointment")} </span>
             <DropdownMenuShortcut>{!user && <KeyRound size={16}/>}</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -116,7 +116,7 @@ export default function AvatarDropDown() {
             }}> {t("avatarDropDown.logout")} </span>
           <DropdownMenuShortcut></DropdownMenuShortcut>
         </DropdownMenuItem>
-        </AlertDialogTrigger>) : (<Link href={`/login`}>
+        </AlertDialogTrigger>) : (<Link href={`/dashboard/login`}>
           <DropdownMenuItem>
             <LogIn className="mr-2 h-4 w-4" />
             <span> {t("signIn")} </span>

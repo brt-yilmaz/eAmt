@@ -71,7 +71,7 @@ function SignIn() {
 
     )
       : (
-        <Link href={`/login`}>
+        <Link href={`/dashboard/login`}>
           <Button
             className={"min-w-[100px] border-none "} size="sm"  >
             {t("signIn")}
