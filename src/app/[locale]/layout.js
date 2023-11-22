@@ -21,7 +21,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   unstable_setRequestLocale(locale);
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body
+      <body className={"relative h-full antialiased"}
 
       >
         <ThemeProvider

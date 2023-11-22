@@ -20,7 +20,7 @@ import { CalendarDateRangePicker } from "@/components/profile/date-range-picker"
 import { MainNav } from "@/components/profile/main-nav";
 import { RecentSales } from "@/components/profile/recent-sales";
 import { Search } from "@/components/profile/search";
-import TeamSwitcher from "@/components/profile/team-switcher";
+import FamilyMemberSwitcher from "@/components/profile/FamilyMemberSwitcher";
 import { UserNav } from "@/components/profile/user-nav";
 
 
@@ -50,7 +50,7 @@ function ProfilePage() {
       <div className="hidden flex-col md:flex">
         <div className="border-b">
           <div className="flex h-16 items-center px-4">
-            <TeamSwitcher />
+            <FamilyMemberSwitcher />
             <MainNav className="mx-6" />
             <div className="ml-auto flex items-center space-x-4">
               <Search />

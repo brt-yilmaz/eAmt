@@ -87,7 +87,7 @@ export async function POST(req) {
       email: currentUser.email,
     };
 
-    const authToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
+    const authToken = jwt.sign(tokenData, process.env.JWT_SECRET_KEY, {
       expiresIn: "7d",
     });
 

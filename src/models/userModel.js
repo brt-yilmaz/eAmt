@@ -17,6 +17,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     minlength: 8,
   },
+  family: {
+    type: Array,
+    default: [],
+  },
+  friends: {
+    type: Array,
+    default: [],
+  },
   isVerified: {
     type: Boolean,
     default: false,
@@ -69,6 +77,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.models.BeratYi || mongoose.model("BeratYi", userSchema);
+const User = mongoose.models.UserWithFamily || mongoose.model("UserWithFamily", userSchema);
 
 export default User;

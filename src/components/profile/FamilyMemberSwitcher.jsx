@@ -46,7 +46,7 @@ import AvatarUser from "../header/Avatar"
 
 const groups = [
   {
-    label: "Personal Account",
+    label: "personalAccount",
     teams: [
       {
         label: "Alicia Koch",
@@ -72,7 +72,7 @@ const groups = [
 
 
 
-export default function TeamSwitcher({ className }) {
+export default function FamilyMemberSwitcher({ className }) {
   const [open, setOpen] = React.useState(false)
   const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false)
   const [selectedTeam, setSelectedTeam] = React.useState(

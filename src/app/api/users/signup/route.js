@@ -21,7 +21,7 @@ export async function POST(req) {
     if (currentUser) {
       if (currentUser.verifyTokenExpiry < Date.now()) {
         //check if verify token is correct
-        const hashedToken = await bcryptjs.hash(process.env.JWT_SECRET, 10);
+        const hashedToken = await bcryptjs.hash(process.env.JWT_SECRET_KEY, 10);
         const validToken = bcryptjs.compare(
           currentUser.verifyToken,
           hashedToken
