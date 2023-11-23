@@ -98,6 +98,35 @@
     "title": "Dashboard",
     "uploadButton": "Bild Hochladen"
   },
+  "SignUp": {
+    "CardTitle": "Ein Konto erstellen",
+    "CardDescription": "Dokumentenverwaltung und Termine in Deutschland vereinfachen!",
+    "nameLabel": "Name",
+    "nameLabelPlaceholder": "Max Mustermann",
+    "emailLabel": "E-Mail",
+    "emailLabelPlaceholder": "max.mustermann@example.com",
+    "taxIdLabel": "Steuernummer",
+    "taxIdLabelPlaceholder": "DE123456789",
+    "signUpButton": "Registrieren",
+    "zipCodeLabel": "Postleitzahl",
+    "zipCodeLabelPlaceholder": "12345",
+    "alreadyHaveAccount": "Sie haben bereits ein Konto?",
+    "needToVerify": "Wenn Sie Ihr Konto bestätigen müssen ",
+    "verify": "Verifizieren",
+    "loginText": "Anmelden",
+    "submit": "Absenden",
+    "toast": {
+      "success": {
+        "title": "Erfolgreich",
+        "content": "Konto erstellt. Bitte verifizieren Sie Ihr Konto.",
+        "action": "Verstanden"
+      },
+      "error": {
+        "title": "Fehler",
+        "content": "Kontoerstellung fehlgeschlagen. Bitte versuchen Sie es erneut."
+      }
+    }
+  },
   "Footer": {
     "socialMedia": {
       "instagram": "Instagram",
@@ -134,19 +163,18 @@
     "title": "E-Mail",
     "verify": "Bitte besuchen Sie Ihre E-Mail, um Ihr Konto zu bestätigen"
   },
-
-
-  "login": {
-    "title": "Anmelden",
-    "emailLabel": "E-Mail",
-    "enterEmail": "Geben Sie Ihre E-Mail-Adresse ein",
-    "passwordLabel": "Passwort",
-    "enterPassword": "Geben Sie Ihr Passwort ein",
-    "signInButton": "Anmelden",
-    "orText": "oder",
-    "noAccountText": "Wenn Sie noch kein Konto haben, melden Sie sich bitte an",
-    "signupLinkText": "Hier registrieren",
-    "loginSuccessful": "Anmeldung erfolgreich"
+  "AuthenticationError": {
+    "title": "Authentifizierung",
+    "signUp": {
+      "AS101": "Bitte geben Sie einen gültigen Namen an.",
+      "AS102": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
+      "AS103": "Bitte geben Sie eine gültige Steuer-ID an.",
+      "AS104": "Bitte geben Sie eine gültige Postleitzahl an.",
+      "AS105": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "AS106": "Bitte geben Sie einen gültigen Überprüfungstoken an.",
+      "AS107": "E-Mail existiert bereits.",
+      "AS108": "Bitte geben Sie alle erforderlichen Felder an.",
+      "AS109": "Verifizierungs-E-Mail nicht gesendet."
+    }
   }
-  
 }

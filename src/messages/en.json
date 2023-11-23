@@ -98,6 +98,35 @@
     "title": "Dashboard",
     "uploadButton": "Image Upload"
   },
+  "SignUp": {
+    "CardTitle": "Create an Account",
+    "CardDescription": "Simplify document management and appointments in Germany!",
+    "nameLabel": "Name",
+    "nameLabelPlaceholder": "John Doe",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "taxIdLabel": "Tax ID",
+    "taxIdLabelPlaceholder": "US123456789",
+    "signUpButton": "Sign Up",
+    "zipCodeLabel": "Zip Code",
+    "zipCodeLabelPlaceholder": "90210",
+    "alreadyHaveAccount": "Already have an account?",
+    "needToVerify": "If you need to verify your account ",
+    "verify": "Verify",
+    "loginText": "Login",
+    "submit": "Submit",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Account created.Please verify your account.",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to create account. Please try again."
+      }
+    }
+  },
   "Footer": {
     "socialMedia": {
       "title": "Amt",
@@ -134,5 +163,19 @@
   "Email": {
     "title": "Email",
     "verify": "Please visit your email to verify your account"
+  },
+  "AuthenticationError": {
+    "title": "Authentication",
+    "signUp": {
+      "AS101": "Please provide a valid name.",
+      "AS102": "Please provide a valid email.",
+      "AS103": "Please provide a valid tax id.",
+      "AS104": "Please provide a valid zip code.",
+      "AS105": "Sign up failed. Please try again.",
+      "AS106": "Please provide a valid verify token.",
+      "AS107": "Email already exists.",
+      "AS108": "Please provide all required fields.",
+      "AS109": "Verification email not sent."
+    }
   }
 }

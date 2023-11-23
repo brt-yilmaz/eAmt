@@ -9,7 +9,7 @@ export const getDataFromToken = (req, res) => {
     }
 
     const token = req.cookies.get("authToken")?.value || "";
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY);
     return decodedToken;
   } catch (error) {
     return null;

@@ -4,7 +4,7 @@ import { SWRConfig } from 'swr'
 export const SWRProvider = ({ children }) => {
   return (
 
-    <SWRConfig>
+    <SWRConfig >
       {children}
     </SWRConfig> )
 };

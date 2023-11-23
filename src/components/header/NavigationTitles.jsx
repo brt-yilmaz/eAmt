@@ -102,7 +102,7 @@ export function NavigationTitles( {type = "Root"} ) {
         </NavigationMenuItem>
         <NavigationMenuItem value={"sub2"}>
           <NavigationMenuTrigger>
-            <Link href={"/dashboard/documents"}>
+            <Link href={"/dashboard/profile/documents"}>
 
             {t(("documents"))}
             </Link>
@@ -113,7 +113,7 @@ export function NavigationTitles( {type = "Root"} ) {
                 <ListItem
                   key={component.title}
                   title={t(`documentsHover.items.${component.title}.title`)}
-                  href={`/dashboard/documents/${t(`documentsHover.items.${component.title}.path`)}`}
+                  href={`/dashboard/profile/documents/${t(`documentsHover.items.${component.title}.path`)}`}
                 >
                   {t(`documentsHover.items.${component.title}.content`)}
                 </ListItem>
@@ -122,7 +122,7 @@ export function NavigationTitles( {type = "Root"} ) {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem value={"sub3"}>
-          <Link href="/dashboard/appointments" legacyBehavior passHref>
+          <Link href="/dashboard/profile/appointments" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <p className={"min-w-[100px] text-center"}>{t("appointments")}</p>
             </NavigationMenuLink>

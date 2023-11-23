@@ -12,6 +12,19 @@ import {
 import { logout } from "@/services/logout";
 import { useSWRConfig } from "swr"
 import { Button } from "@/components/ui/button"
+import { LogIn } from 'lucide-react';
+
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 import {
   DropdownMenu,
@@ -36,14 +49,15 @@ import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 
 export default function AvatarDropDown() {
-const { mutate } = useSWRConfig();
 
   const locale =  useLocale();
   const router = useRouter();
   const t = useTranslations("NavBar");
   const { user } = useUser();
-  console.log(user)
+  const { mutate } = useSWRConfig();
+
   return (
+    <AlertDialog>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
       <Avatar role="button">
@@ -62,7 +76,7 @@ const { mutate } = useSWRConfig();
           </DropdownMenuItem>
           <DropdownMenuItem disabled={!user} >
             <CreditCard className="mr-2 h-4 w-4" />
-            <span onClick={() => router.push("/dashboard/documents") }>{t("avatarDropDown.documents")}</span>
+            <span onClick={() => router.push("/dashboard/profile/documents") }>{t("avatarDropDown.documents")}</span>
             <DropdownMenuShortcut>{!user && <KeyRound size={16}/>}</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
@@ -72,7 +86,7 @@ const { mutate } = useSWRConfig();
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Keyboard className="mr-2 h-4 w-4" />
-            <span onClick={() => router.push("/dashboard/petition")}>{t("avatarDropDown.petition")}</span>
+            <span onClick={() => router.push(`/dashboard/${user ? 'profile' : ''}/petition`)}>{t("avatarDropDown.petition")}</span>
             <DropdownMenuShortcut></DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -80,19 +94,19 @@ const { mutate } = useSWRConfig();
         <DropdownMenuGroup>
           <DropdownMenuItem disabled={!user} >
             <CalendarSearch className="mr-2 h-4 w-4" />
-            <span onClick={() => router.push("/dashboard/appointments")}>{t("avatarDropDown.appointments")}</span>
+            <span onClick={() => router.push("/dashboard/profile/appointments")}>{t("avatarDropDown.appointments")}</span>
             <DropdownMenuShortcut> {!user && <KeyRound size={16}/>} </DropdownMenuShortcut>
 
           </DropdownMenuItem>
           
           <DropdownMenuItem disabled={!user} >
           <CalendarPlus className="mr-2 h-4 w-4" />
-              <span onClick={() => router.push("/dashboard/appointments/new") }> {t("avatarDropDown.newAppointment")} </span>
+              <span onClick={() => router.push("/dashboard/profile/appointments/new") }> {t("avatarDropDown.newAppointment")} </span>
             <DropdownMenuShortcut>{!user && <KeyRound size={16}/>}</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        
+        {user ? (<AlertDialogTrigger asChild>
         <DropdownMenuItem>
           <LogOut className="mr-2 h-4 w-4" />
           <span onClick={async () => {
@@ -102,7 +116,31 @@ const { mutate } = useSWRConfig();
             }}> {t("avatarDropDown.logout")} </span>
           <DropdownMenuShortcut></DropdownMenuShortcut>
         </DropdownMenuItem>
+        </AlertDialogTrigger>) : (<Link href={`/dashboard/login`}>
+          <DropdownMenuItem>
+            <LogIn className="mr-2 h-4 w-4" />
+            <span> {t("signIn")} </span>
+            <DropdownMenuShortcut></DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </Link>)}
       </DropdownMenuContent>
     </DropdownMenu>
+    <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t("logout.content")}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t("logout.subContent")}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>{t("logout.cancel")}</AlertDialogCancel>
+            <AlertDialogAction onClick={async () => {
+              await logout()
+              mutate("/api/users/me", true)
+              router.push("/dashboard")
+            }} >{t("logout.confirm")}</AlertDialogAction>
+          </AlertDialogFooter>
+          </AlertDialogContent>
+    </AlertDialog>
   )
 }

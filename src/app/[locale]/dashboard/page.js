@@ -1,6 +1,6 @@
 'use client';
 import DocumentCardsWrapper from "@/components/DocumentCard/DocumentCardsWrapper";
-import SearchPanel from "@/components/searchbar/SearchPanel";
+import SignUp from "@/components/signup/SignUpBerat";
 import { Button } from "@/components/ui/button";
 import { upLoadImage } from "@/services/upLoadImage";
 import { CldUploadWidget } from 'next-cloudinary';
@@ -14,7 +14,7 @@ function Dashboard() {
       <main className="flex flex-1 flex-col items-center justify-between p-24 ">
 
 
-        <CldUploadWidget
+        {/* <CldUploadWidget
           uploadPreset="mnklsx0o"
           onSuccess={async (result, { widget }) => {
             await upLoadImage(result?.info?.url);
@@ -36,9 +36,9 @@ function Dashboard() {
               </button>
             );
           }}
-        </CldUploadWidget>
+        </CldUploadWidget> */}
 
-
+        <SignUp />
 
 
       </main>

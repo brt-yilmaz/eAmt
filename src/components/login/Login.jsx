@@ -47,7 +47,6 @@ const LoginPage = () => {
           message: errorMessage,
         });
       } else {
-        console.error("Unknown error", error);
       }
     }
   };

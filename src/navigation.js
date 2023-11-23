@@ -28,15 +28,15 @@ export const pathnames = {
     ua: "/dashboard/pro-nas",
   },
 
-  "/dashboard/documents": {
-    en: "/dashboard/documents",
+  "/dashboard/profile/documents": {
+    en: "/dashboard/profile/documents",
     de: "/dashboard/Dokumente",
     tr: "/dashboard/dokumanlar",
     ua: "/dashboard/dokumenty",
   },
 
-  "/dashboard/documents/[document]": {
-    en: "/dashboard/documents/[document]",
+  "/dashboard/profile/documents/[document]": {
+    en: "/dashboard/profile/documents/[document]",
     de: "/dashboard/Dokumente/[document]",
     tr: "/dashboard/dokumanlar/[document]",
     ua: "/dashboard/dokumenty/[document]",

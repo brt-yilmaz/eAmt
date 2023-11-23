@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please add a name"],
-    trim: true,
     minlength: 3,
+    maxlength: 30,
+    required: [true, "Please add a name"],
   },
   email: {
     type: String,
@@ -16,6 +16,14 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     minlength: 8,
+  },
+  family: {
+    type: Array,
+    default: [],
+  },
+  friends: {
+    type: Array,
+    default: [],
   },
   isVerified: {
     type: Boolean,
@@ -69,6 +77,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.models.BeratYi || mongoose.model("BeratYi", userSchema);
+const User = mongoose.models.UserWithOnlyName || mongoose.model("UserWithOnlyName", userSchema);
 
 export default User;

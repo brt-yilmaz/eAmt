@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
+import { createToken } from "@/lib/auth";
 
 connectDB();
 
@@ -125,9 +126,7 @@ export async function POST(req) {
       email: user.email,
     };
 
-    const authToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
-      expiresIn: "7d",
-    });
+    const authToken = await createToken(tokenData);
 
     user.authToken = authToken;
     user.authTokenExpiry = Date.now() + 3600000 * 24 * 7; // 7 days

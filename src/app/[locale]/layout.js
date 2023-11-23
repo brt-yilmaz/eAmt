@@ -4,6 +4,7 @@ import { locales } from "@/navigation";
 import { notFound } from "next/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
 import CustomNextIntClientProvider from "@/helpers/CustomNextIntClientProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "eAmt",
@@ -21,7 +22,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   unstable_setRequestLocale(locale);
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body
+      <body className={"relative h-full antialiased"}
 
       >
         <ThemeProvider
@@ -33,7 +34,10 @@ export default async function LocaleLayout({ children, params: { locale } }) {
 
           <CustomNextIntClientProvider
           >
-            {children}
+            <>
+              {children}
+              <Toaster />
+            </>
 
           </CustomNextIntClientProvider>
         </ThemeProvider>
