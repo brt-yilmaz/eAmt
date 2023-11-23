@@ -98,6 +98,35 @@
     "title": "Panel",
     "uploadButton": "Resim Yükle"
   },
+  "SignUp": {
+    "CardTitle": "Hesap Oluştur",
+    "CardDescription": "Belge yönetimini ve randevuları Almanya'da kolaylaştırın!",
+    "nameLabel": "Ad",
+    "nameLabelPlaceholder": "Ayşe Yılmaz",
+    "emailLabel": "E-Posta",
+    "emailLabelPlaceholder": "ayse.yilmaz@example.com",
+    "taxIdLabel": "Vergi No",
+    "taxIdLabelPlaceholder": "TR123456789",
+    "signUpButton": "Kaydol",
+    "zipCodeLabel": "Posta Kodu",
+    "zipCodeLabelPlaceholder": "06520",
+    "alreadyHaveAccount": "Zaten bir hesabınız mı var?",
+    "needToVerify": "Hesabınızı doğrulamanız gerekiyorsa ",
+    "verify": "Onayla",
+    "loginText": "Giriş",
+    "submit": "Gönder",
+    "toast": {
+      "success": {
+        "title": "Başarılı",
+        "content": "Hesap oluşturuldu. Lütfen hesabınızı doğrulayın.",
+        "action": "Anladım"
+      },
+      "error": {
+        "title": "Hata",
+        "content": "Hesap oluşturma başarısız. Lütfen tekrar deneyin."
+      }
+    }
+  },
   "Footer": {
     "socialMedia": {
       "title": "Amt",
@@ -134,5 +163,19 @@
   "Email": {
     "title": "E-Posta",
     "verify": "Lütfen hesabınızı doğrulamak için e-postanıza gidin"
+  },
+  "AuthenticationError": {
+    "title": "Kimlik Doğrulama",
+    "signUp": {
+      "AS101": "Lütfen geçerli bir ad sağlayın.",
+      "AS102": "Lütfen geçerli bir e-posta sağlayın.",
+      "AS103": "Lütfen geçerli bir vergi kimliği sağlayın.",
+      "AS104": "Lütfen geçerli bir posta kodu sağlayın.",
+      "AS105": "Kaydolma başarısız. Lütfen tekrar deneyin.",
+      "AS106": "Lütfen geçerli bir doğrulama belirteci sağlayın.",
+      "AS107": "E-posta zaten mevcut.",
+      "AS108": "Lütfen tüm gerekli alanları sağlayın.",
+      "AS109": "Doğrulama e-postası gönderilemedi."
+    }
   }
 }
