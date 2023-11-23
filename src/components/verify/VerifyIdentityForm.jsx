@@ -1,62 +1,48 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { toast } from "react-hot-toast";
+import Link from "next/link";
 
-import FormInput from "../formInput/FormInput";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "../ui/button";
+
+const formSchema = z.object({
+  amtCode: z.string().min(1, {
+    message: "Activation Code is required",
+  }),
+  email: z.string().min(1, {
+    message: "Email is required",
+  }),
+});
 
 const VerifyEmailPage = () => {
-  const [formData, setFormData] = useState({
-    amtCode: "",
-    email: "",
+  const router = useRouter();
+  const form = useForm({
+    resolver: zodResolver(formSchema),
   });
 
-  const [token, setToken] = useState("");
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [errors, setErrors] = useState({
-    amtCode: "",
-    email: "",
-  });
 
-  const router = useRouter();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-
-    if (formData.amtCode.trim() === "") {
-      newErrors.amtCode = "Activation Code is required";
-    }
-
-    if (formData.email.trim() === "") {
-      newErrors.email = "Email is required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const verifyUserEmail = async () => {
-    setError(false);
-
-    if (!validateForm()) {
-      return;
-    }
-
+  const onSubmit = async (data) => {
     try {
-      const response = await axios.post("/api/users/verifyAccount", formData);
+      const response = await axios.post("/api/users/verifyAccount", data);
       setVerified(true);
-      setToken(response.data.token);
+      toast.success("Verification successful!");
     } catch (error) {
       setError(true);
       if (error.response && error.response.status === 400) {
@@ -71,44 +57,58 @@ const VerifyEmailPage = () => {
   useEffect(() => {
     setError(false);
     setErrorMessage("");
-  }, [formData]);
+  }, [form.watch()]);
 
   return (
-    <div className="flex items-center justify-center py-40">
-      <div className="w-full sm:w-full md:w-96 lg:w-96 xl:w-96 bg-gradient-to-b from-gray-800 via-gray-950 to-black rounded-lg">
-        <div className="p-5 rounded-lg border-t-4">
-          <h1 className="text-white text-center text-4xl font-bold mb-4">
+    <div className="flex items-center justify-center mt-44">
+    <div className="w-full max-w-md bg-slate-200 p-6 dark:bg-slate-800 rounded-md">
+        <Form {...form} className="w-full">
+          <h1 className="text-center text-4xl font-bold mb-4">
             Verification
           </h1>
           {verified ? (
-            <div>
-              <h2 className="text-center text-4xl text-blue-400 m-4">Successfull  ☑️</h2>
-              <p>{token}</p>
-              <Link href="/en/createpassword" className="text-green-400 text-center text-xl hover:underline">            
+            <div className="text-center mb-4">
+              <h2 className="text-4xl ">Verification Successful
+              </h2>
+              <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
+          </div>
+              <Link href="/en/createpassword" className="text-green-400 text-center text-xl hover:underline">
                 <h2>Go to password creation page</h2>
               </Link>
             </div>
           ) : (
-            <div>
-              <FormInput 
-                label="Activation Code (Amt Code)" 
-                value={formData.amtCode} 
-                onChange={(value) => setFormData({ ...formData, amtCode: value })}
-                errors={errors.amtCode}
-              />
-              <FormInput 
-                label="Email" 
-                value={formData.email} 
-                onChange={(value) => setFormData({ ...formData, email: value })}
-                errors={errors.email}
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+              <FormField
+                control={form.control}
+                name="amtCode"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Activation Code (Amt Code)</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter Activation Code" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
 
-              <button
-                onClick={verifyUserEmail}
-                className="mt-4 w-full p-2 border border-blue-400 rounded-lg focus:outline-none text-blue-400 hover:bg-blue-400 hover:text-white"
-              >
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter Email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button className="w-full mt-6" type="submit">
                 Verify
-              </button>
+              </Button>
               <Link href="/en/createpassword" className="text-blue-400 text-center hover:underline block mt-3">
                 Visit Create Password page
               </Link>
@@ -117,9 +117,9 @@ const VerifyEmailPage = () => {
                   <p className="text-red-500">{errorMessage}</p>
                 </div>
               )}
-            </div>
+            </form>
           )}
-        </div>
+        </Form>
       </div>
     </div>
   );

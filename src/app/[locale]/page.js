@@ -8,7 +8,7 @@ function Home({ children, params: { locale } }) {
   return (
     <SWRProvider>
       {children}
-
+      
     </SWRProvider>
 
   )
