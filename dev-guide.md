@@ -1,3 +1,4 @@
+
 #### Backend Error Codes (example: errorCode: 101 )  
 
 ***************** Authentication *********************  
@@ -22,3 +23,4 @@
 **EM102** - Token is invalid
 **EM103** - Verify Token is expired
 **EM104** - Email is already verified
+
