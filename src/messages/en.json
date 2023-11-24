@@ -189,5 +189,13 @@
       "AS108": "Please provide all required fields.",
       "AS109": "Verification email not sent."
     }
+  },
+  "verifyAccountPage": {
+    "CardTitle": "Verify Your Account",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "amtCodeLabel": "AMT Code",
+    "amtCodeLabelPlaceholder": "2z3jr4@Ror",
+    "verifyButton": "Verify Account"
   }
 }

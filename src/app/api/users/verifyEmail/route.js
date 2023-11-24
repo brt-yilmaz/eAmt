@@ -1,4 +1,3 @@
-// email verification route
 
 import { connectDB, disconnectDB } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
@@ -8,7 +7,6 @@ import { cookies } from "next/headers";
 connectDB();
 
 export async function POST(req) {
-  console.log('indide verify email')
 
   const reqBody = await req.json();
   const { verifyToken } = reqBody;
@@ -16,14 +14,13 @@ export async function POST(req) {
   try {
 
     const user = await User.findOne({ verifyToken });
-    console.log(user)
     if (!user) return NextResponse.json({
       error: 'User not found',
       errorCode: 'AA101' // user not found
     },
       { status: 404 });
 
-    if (user.isVerified) return NextResponse.json({
+    if (user.isEmailVerified) return NextResponse.json({
       error: 'User already verified',
       errorCode: 'AA104' // user already verified
     },
@@ -41,14 +38,15 @@ export async function POST(req) {
     },
       { status: 404 });
 
-    user.isVerified = true;
+    user.isEmailVerified = true;
     user.verifyToken = undefined;
     user.verifyTokenExpiry = undefined;
 
     await user.save();
 
     return NextResponse.json({
-      message: 'Email verified successfully'
+      message: 'Email verified successfully',
+      userEmail: user.email
     },
       { status: 200 });
 

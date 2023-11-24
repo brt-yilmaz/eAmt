@@ -36,10 +36,11 @@ export default function VerifyEmailPage() {
         setProgress(60);
 
         if (res.status === 200) {
+          console.log(res.data)
           // Third setTimeout
           await new Promise((resolve) => setTimeout(resolve, 500));
           setProgress(100);
-          router.replace('/dashboard/verifyAccount');
+          router.replace(`/dashboard/verifyAccount?email=${res.data.userEmail}`);
 
           toast({
             title: t('emailVerified'),
@@ -69,8 +70,6 @@ export default function VerifyEmailPage() {
   }, [token]);
 
   return (
-    <div className="flex justify-center items-center min-h-[67vh] ">
-      <Progress value={progress} className="w-[35%]" />
-    </div>
+    <Progress value={progress} className="w-[30%]" />
   );
 }

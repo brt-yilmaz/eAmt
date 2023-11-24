@@ -14,13 +14,13 @@
 **AS109** - Verification email not sent  
 
 -------- Account Verification (AA...) --------  
-**AA101** - Email or AmtCode is invalid  
-**AA102** - Email is already verified  
-**AA103** - Verify Token is expired  
+**AV101** - Email or AmtCode is invalid  
+**AV102** - Email is already verified  
+**AV103** - Account verification failed  
+**AV104** - Missing one or more required fields
 
 -------- Email Verification (EM...) --------  
 **EM101** - User not found
 **EM102** - Token is invalid
 **EM103** - Verify Token is expired
 **EM104** - Email is already verified
-

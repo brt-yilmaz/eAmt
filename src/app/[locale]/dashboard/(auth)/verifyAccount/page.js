@@ -1,14 +1,15 @@
-import LanguageSwitcher from "@/components/header/LanguageSwitcher";
-import ModeToggle from "@/components/header/ModeToggle";
-import NavBar from "@/components/header/NavBar";
-import VerifyEmailPage from "@/components/verify/VerifyIdentityForm";
+import AccountVerification from "@/components/verifyAccount/AccountVerification";
+
+
+
 function VerifyAccountPage() {
+
   return (
     <div>
-      Verify account page
+      <AccountVerification />
     </div>
   )
 
 }
 
-export default VerifyIdentityPage;
+export default VerifyAccountPage;

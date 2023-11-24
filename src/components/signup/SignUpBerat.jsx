@@ -32,6 +32,7 @@ import { useToast } from "../ui/use-toast"
 import { useTranslations } from "next-intl"
 import { Link } from "@/navigation"
 import { Router } from "lucide-react"
+import FormCard from "../FormCard"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -115,7 +116,7 @@ export default function SignUp() {
 }
 
   return (
-    <Card className="w-[380px] bg-muted">
+    <FormCard >
        <CardHeader className="space-y-1">
         <CardTitle className="text-2xl">{tf('CardTitle')}</CardTitle>
         <CardDescription>
@@ -160,7 +161,7 @@ export default function SignUp() {
           control={form.control}
           name="taxId"
           render={({ field }) => (
-            <FormItem className="w-[158px]">
+            <FormItem className="w-[49%]">
               <FormLabel> { tf('taxIdLabel') }  </FormLabel>
               <FormControl>
                 <Input placeholder= {`${tf('taxIdLabelPlaceholder')}`} {...field} />
@@ -175,8 +176,8 @@ export default function SignUp() {
           control={form.control}
           name="zipCode"
           render={({ field }) => (
-            <FormItem className="w-[158px] align-self-end">
-              <FormLabel>Zip Code</FormLabel>
+            <FormItem className="w-[49%] align-self-end">
+              <FormLabel> { tf('zipCodeLabel') }  </FormLabel>
               <FormControl>
                 <Input placeholder= {`${tf('zipCodeLabelPlaceholder')}`} {...field} />
               </FormControl>
@@ -195,10 +196,10 @@ export default function SignUp() {
           </Button>
       </form>
     </Form>
-    <Label className={"text-muted-foreground"}>{tf('alreadyHaveAccount')} <Link className={"underline hover:text-primary ml-1 "} href="/dashboard/login">{tf('loginText')}</Link>  </Label>
+    <Label className={"text-muted-foreground "}>{tf('alreadyHaveAccount')} <Link className={"underline hover:text-primary ml-1 animate-pulse "} href="/dashboard/login">{tf('loginText')}</Link>  </Label>
     <Label className={"text-muted-foreground"}>{tf('needToVerify')} <Link className={"underline hover:text-primary ml-1"} href="/dashboard/verifyAccount">{tf('verify')}</Link>  </Label>
     </CardContent>
-    </Card>
+    </FormCard>
   )
 
 }

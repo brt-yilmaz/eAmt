@@ -13,7 +13,10 @@ export default async function MainLayout({ children }) {
     }>
 
       <Header />
-      {children}
+      <main className={"min-h-[50vh] flex justify-center items-center"}>
+
+        {children}
+      </main>
     </div>
   );
 }

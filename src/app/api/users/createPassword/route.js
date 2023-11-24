@@ -24,7 +24,7 @@ export async function POST(req) {
       );
     }
 
-    if (!currentUser.isVerified) {
+    if (!currentUser.isEmailVerified) {
       return NextResponse.json(
         {
           error: "User not verified, please verify your account",
