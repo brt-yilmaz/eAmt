@@ -14,7 +14,6 @@ export default async function MainLayout({ children }) {
 
       <Header />
       {children}
-      <Footer />
     </div>
   );
 }

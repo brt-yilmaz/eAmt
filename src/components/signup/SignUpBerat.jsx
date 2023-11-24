@@ -6,6 +6,7 @@ import * as z from "zod"
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
+import { useRouter } from "@/navigation"
 import {
   Form,
   FormControl,
@@ -30,6 +31,7 @@ import { ToastAction } from "../ui/toast"
 import { useToast } from "../ui/use-toast"
 import { useTranslations } from "next-intl"
 import { Link } from "@/navigation"
+import { Router } from "lucide-react"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -60,6 +62,7 @@ export default function SignUp() {
   const {toast} = useToast()
   const tf = useTranslations('SignUp')
   const tb = useTranslations('AuthenticationError')
+  const router = useRouter()
 
   // 1. Define your form.
   const form = useForm({
@@ -78,6 +81,20 @@ export default function SignUp() {
 
    if(response.status === 200) {
     form.reset()
+
+    toast({
+      title: tf('toast.success.title'),
+      description: tf('toast.success.content'),
+      duration: 15000,
+      action: (
+        <ToastAction className="bg-muted" altText={tf('toast.success.action')}>
+          {tf('toast.success.action')}
+        </ToastAction>
+      ),
+    })
+
+    router.push(`/dashboard`)
+    
 
    } else {
     if (data.errorCode === 'AS107') {
@@ -98,7 +115,7 @@ export default function SignUp() {
 }
 
   return (
-    <Card className="w-[380px]">
+    <Card className="w-[380px] bg-muted">
        <CardHeader className="space-y-1">
         <CardTitle className="text-2xl">{tf('CardTitle')}</CardTitle>
         <CardDescription>

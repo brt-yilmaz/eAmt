@@ -1,4 +1,4 @@
-import { connectDB } from "@/dbConfig/dbConfig";
+import { connectDB, disconnectDB } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
@@ -140,10 +140,10 @@ export async function POST(req) {
       );
     }
 
-
     return NextResponse.json({
       message: "verify your account",
       success: true,
+      userEmail: email,
     });
   } catch (error) {
     return NextResponse.json(

@@ -118,7 +118,7 @@
     "toast": {
       "success": {
         "title": "Erfolgreich",
-        "content": "Konto erstellt. Bitte verifizieren Sie Ihr Konto.",
+        "content": "Konto erstellt. Bitte prüfen Sie Ihren E-Mail-Posteingang.",
         "action": "Verstanden"
       },
       "error": {
@@ -126,6 +126,18 @@
         "content": "Kontoerstellung fehlgeschlagen. Bitte versuchen Sie es erneut."
       }
     }
+  },
+  "VerifyEmailPage": {
+    "tokenNotFound": "Token nicht gefunden",
+    "emailVerified": "E-Mail verifiziert",
+    "emailVerifiedDesc": "Sie werden zur Seite zur Erstellung eines Passworts weitergeleitet.",
+    "tokenExpired": "Ihr Code ist abgelaufen.",
+    "tokenExpiredDesc": "Bitte versuchen Sie sich erneut anzumelden.",
+    "emailAlreadyVerified": "E-Mail bereits verifiziert",
+    "emailAlreadyVerifiedDesc": "Sie werden zur Seite zur Erstellung eines Passworts weitergeleitet.",
+    "emailVerificationFailed": "E-Mail-Verifizierung fehlgeschlagen",
+    "emailVerificationFailedDesc": "Bitte versuchen Sie es erneut.",
+    "verifyEmail": "E-Mail verifizieren"
   },
   "Footer": {
     "socialMedia": {

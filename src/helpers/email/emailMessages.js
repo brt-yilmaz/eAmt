@@ -3,31 +3,36 @@ export function createVerifyEmailTemplate(hashedToken, locale) {
   let template = "";
 
   if (locale === "en") {
-    template = `<p>Click <a href="${domain}/verifyemail?token=${hashedToken}">here</a> to verify your email.
-      or copy and paste the link below in your browser. <br> ${domain}/verifyemail?token=${hashedToken}
+    template = `<p>Click <a href="${domain}/dashboard/verifyEmail?token=${hashedToken}">here</a> to verify your email.
+      or copy and paste the link below in your browser. <br> ${domain}/dashboard/verifyEmail?token=${hashedToken}
+    </p>`;
+  } else if (locale === "tr") {
+    template = `<p>E-postanızı doğrulamak için <a href="${domain}/dashboard/verifyEmail?token=${hashedToken}">buraya</a> tıklayın.
+      veya aşağıdaki bağlantıyı tarayıcınıza kopyalayın ve yapıştırın. <br> ${domain}/dashboard/verifyEmail?token=${hashedToken}
+    </p>`;
+  } else if (locale === "uk") {
+    template = `<p>Натисніть <a href="${domain}/dashboard/verifyEmail?token=${hashedToken}">тут</a>, щоб підтвердити свою електронну адресу.
+      або скопіюйте та вставте посилання нижче у свій браузер. <br> ${domain}/dashboard/verifyEmail?token=${hashedToken}
     </p>`;
   } else {
-    template = `<p>Klicken Sie <a href="${domain}/verifyemail?token=${hashedToken}">hier</a>, um Ihr E-Mail zu verifizieren.
-      oder kopieren Sie den folgenden Link und fügen Sie ihn in Ihren Browser ein. <br> ${domain}/verifyemail?token=${hashedToken}
+    template = `<p>Klicken Sie <a href="${domain}/dashboard/verifyEmail?token=${hashedToken}">hier</a>, um Ihre E-Mail zu verifizieren.
+      oder kopieren Sie den folgenden Link und fügen Sie ihn in Ihren Browser ein. <br> ${domain}/dashboard/verifyEmail?token=${hashedToken}
     </p>`;
   }
 
   return template;
 }
-
 export function createAmtEmailTemplate(name, taxId, eamtCode, locale) {
   let template = "";
 
   if (locale === "en") {
-    template = `Dear Employee,Please note the following eAmt code for the individual named ${name} with the tax ID ${taxId}: eAmt Code: ${eamtCode}.
-    Best regards,
-    eAmt Support Team`;
+    template = `Dear Employee, Please note the following eAmt code for the individual named ${name} with the tax ID ${taxId}: eAmt Code: ${eamtCode}. Best regards, eAmt Support Team`;
+  } else if (locale === "tr") {
+    template = `Sayın Çalışan, Lütfen şu eAmt kodunu dikkate alın, adı ${name}, vergi kimlik numarası ${taxId}: eAmt Kodu: ${eamtCode}. Saygılarımla, eAmt Destek Ekibi`;
+  } else if (locale === "uk") {
+    template = `Шановний працівнику, Зверніть увагу на наступний код eAmt для особи на ім'я ${name} із податковим ідентифікатором ${taxId}: eAmt-код: ${eamtCode}. З найкращими побажаннями, Команда підтримки eAmt`;
   } else {
-    template = `Sehr geehrter Mitarbeiter,
-    bitte beachten Sie den folgenden Amtskode für die Person namens ${name} mit der Steuernummer ${taxId}: eAmt-Kode: ${eamtCode}.
-
-    Mit freundlichen Grüßen,
-    eAmt Support Team`;
+    template = `Liebe Mitarbeiterin, lieber Mitarbeiter, bitte beachten Sie den folgenden eAmt-Code für die Person namens ${name} mit der Steueridentifikationsnummer ${taxId}: eAmt-Code: ${eamtCode}. Mit freundlichen Grüßen, Ihr eAmt Support Team`;
   }
 
   return template;
@@ -42,13 +47,29 @@ export function createSubject(emailType, locale) {
     } else if (emailType === "RESET") {
       return "Reset your password";
     }
+  } else if (locale === "tr") {
+    if (emailType === "VERIFY") {
+      return "E-postanızı doğrulayın";
+    } else if (emailType === "AMTCODE") {
+      return "e-Amt Destek Ekibi";
+    } else if (emailType === "RESET") {
+      return "Şifrenizi sıfırlayın";
+    }
+  } else if (locale === "uk") {
+    if (emailType === "VERIFY") {
+      return "Підтвердіть свою електронну адресу";
+    } else if (emailType === "AMTCODE") {
+      return "Команда підтримки e-Amt";
+    } else if (emailType === "RESET") {
+      return "Скидання вашого пароля";
+    }
   } else {
     if (emailType === "VERIFY") {
-      return "E-Mail verifizieren";
+      return "Bestätigen Sie Ihre E-Mail";
     } else if (emailType === "AMTCODE") {
       return "e-Amt Support Team";
     } else if (emailType === "RESET") {
-      return "Passwort zurücksetzen";
+      return "Setzen Sie Ihr Passwort zurück";
     }
   }
 }

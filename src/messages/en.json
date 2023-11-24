@@ -118,7 +118,7 @@
     "toast": {
       "success": {
         "title": "Successful",
-        "content": "Account created.Please verify your account.",
+        "content": "Verification email sent. Please check your email.",
         "action": "Got it"
       },
       "error": {
@@ -126,6 +126,18 @@
         "content": "Failed to create account. Please try again."
       }
     }
+  },
+  "VerifyEmailPage": {
+    "tokenNotFound": "Token not found",
+    "emailVerified": "Email verified",
+    "emailVerifiedDesc": "You are redirected to the password create page.",
+    "tokenExpired": "Your code is expired. ",
+    "tokenExpiredDesc": "Please try sign up again.",
+    "emailAlreadyVerified": "Email already verified",
+    "emailAlreadyVerifiedDesc": "You are redirected to the password create page.",
+    "emailVerificationFailed": "Email verification failed",
+    "emailVerificationFailedDesc": "Please try again.",
+    "verifyEmail": "Verify Email"
   },
   "Footer": {
     "socialMedia": {
