@@ -1,4 +1,4 @@
-import { connectDB } from "@/dbConfig/dbConfig";
+import { connectDB, disconnectDB } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
@@ -17,6 +17,7 @@ export async function POST(req) {
       return NextResponse.json(
         {
           error: "Email or Code does not exist",
+          errorCode: 'AV101',
         },
         { status: 400 }
       );
@@ -26,6 +27,7 @@ export async function POST(req) {
       return NextResponse.json(
         {
           error: `${email} is already verified. Please login`,
+          errorCode: 'AV102',
         },
         { status: 400 }
       );
@@ -35,6 +37,7 @@ export async function POST(req) {
       return NextResponse.json(
         {
           error: "Token expired, please signup again",
+          errorCode: 'AV103',
         },
         { status: 400 }
       );
@@ -57,5 +60,7 @@ export async function POST(req) {
       },
       { status: 500 }
     );
+  } finally {
+    await disconnectDB();
   }
 }

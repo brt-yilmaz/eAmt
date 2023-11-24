@@ -2,6 +2,7 @@
 import DocumentCardsWrapper from "@/components/DocumentCard/DocumentCardsWrapper";
 import SignUp from "@/components/signup/SignUpBerat";
 import { Button } from "@/components/ui/button";
+import Verification from "@/components/verification/verification";
 import { upLoadImage } from "@/services/upLoadImage";
 import { CldUploadWidget } from 'next-cloudinary';
 import { useSWRConfig } from "swr"
@@ -37,8 +38,6 @@ function Dashboard() {
             );
           }}
         </CldUploadWidget> */}
-
-        <SignUp />
 
 
       </main>

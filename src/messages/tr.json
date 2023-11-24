@@ -118,7 +118,7 @@
     "toast": {
       "success": {
         "title": "Başarılı",
-        "content": "Hesap oluşturuldu. Lütfen hesabınızı doğrulayın.",
+        "content": "Hesap oluşturuldu. Lütfen mail adresinizi onaylayın.",
         "action": "Anladım"
       },
       "error": {
@@ -126,6 +126,18 @@
         "content": "Hesap oluşturma başarısız. Lütfen tekrar deneyin."
       }
     }
+  },
+  "VerifyEmailPage": {
+    "tokenNotFound": "Token bulunamadı",
+    "emailVerified": "E-posta doğrulandı",
+    "emailVerifiedDesc": "Şifre oluşturma sayfasına yönlendiriliyorsunuz.",
+    "tokenExpired": "Kodunuz süresi doldu.",
+    "tokenExpiredDesc": "Lütfen tekrar kayıt olmayı deneyin.",
+    "emailAlreadyVerified": "E-posta zaten doğrulandı",
+    "emailAlreadyVerifiedDesc": "Şifre oluşturma sayfasına yönlendiriliyorsunuz.",
+    "emailVerificationFailed": "E-posta doğrulama başarısız",
+    "emailVerificationFailedDesc": "Lütfen tekrar deneyin.",
+    "verifyEmail": "E-postayı Doğrula"
   },
   "Footer": {
     "socialMedia": {
