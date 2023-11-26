@@ -1,6 +1,5 @@
 'use client';
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { useLocale } from "next-intl";
 import { Button } from "../ui/button";
 import { LogOut } from 'lucide-react';
@@ -20,10 +19,11 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
+import {  Link, useRouter } from "@/navigation";
 function SignIn() {
   const { user, isLoading, isError } = useUser();
+  const router = useRouter();
   const t = useTranslations("NavBar");
-  const locale = useLocale();
   const { mutate } = useSWRConfig();
   return (
 

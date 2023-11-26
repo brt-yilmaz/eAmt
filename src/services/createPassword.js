@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
-export async function verifyAccount(data) {
+export async function createPassword(data) {
 
   try {
-    const response = await fetch('/api/users/verifyAccount', {
+    const response = await fetch('/api/users/createPassword', {
       method: 'POST',
       body: JSON.stringify(data),
     });
@@ -14,7 +14,7 @@ export async function verifyAccount(data) {
       return NextResponse.json(
         {
           error: responseData.message,
-          errorCode: responseData.errorCode || 'AV103'
+          errorCode: responseData.errorCode || 'ACP201'
         },
         {
           status: 500,
@@ -33,7 +33,7 @@ export async function verifyAccount(data) {
     return NextResponse.json(
       {
         error: error.message,
-        errorCode: 'AS103'
+        errorCode: 'ACP201'
       })
   }
 }

@@ -1,5 +1,4 @@
 'use client'
-// Import necessary libraries and components
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -28,7 +27,7 @@ import { useState } from "react";
 import { ToastAction } from "../ui/toast";
 import { useToast } from "../ui/use-toast";
 import { useTranslations } from "next-intl";
-import { Link } from "@/navigation";
+import { Link, useRouter } from "@/navigation";
 import { verifyAccount } from "@/services/verifyAccount";
 import FormCard from "../FormCard";
 
@@ -46,7 +45,9 @@ const verificationSchema = z.object({
 export default function AccountVerification() {
   const { toast } = useToast();
   const t = useTranslations("verifyAccountPage");
-  
+  const tl = useTranslations('SignUp');
+  const router = useRouter();
+
   const userEmail = useSearchParams().get('email')
 
 
@@ -55,7 +56,7 @@ export default function AccountVerification() {
     resolver: zodResolver(verificationSchema),
     defaultValues: {
       amtCode: "",
-      email: userEmail,
+      email: userEmail ? userEmail : "",
     },
   });
 
@@ -64,15 +65,42 @@ export default function AccountVerification() {
     // Assuming a verify function is available in the verify service
     const response = await verifyAccount(values);
     const data = await response.json();
+    console.log(data)
 
     if (response.status === 200) {
-      // Verification successful, you can handle success actions here
+
+    toast({
+      title: t('toast.success.title'),
+      description: t('toast.success.content'),
+      duration: 3000,
+      action: (
+        <ToastAction className="bg-muted" altText={t('toast.success.action')}>
+          {t('toast.success.action')}
+        </ToastAction>
+      ),
+    })
+
+    router.replace(`/dashboard/createPassword?email=${response.data.userEmail}`);
+
+
     } else {
-      // Handle verification error
-      toast({
-        title: "Error",
-        description: tb(`verification.${data.errorCode}`),
-      });
+      if(data.errorCode === 'AV102') {
+        form.formState.errors.email = {
+          type: 'manual',
+          message: t('toast.error.contentAV102'),
+        }
+       
+      } else {
+
+        toast({
+          title: t('toast.error.title'),
+          description: t('toast.error.content'),
+          variant: "destructive",
+          duration: 3000,
+        });
+
+      }
+     
     }
   }
 
@@ -145,6 +173,7 @@ export default function AccountVerification() {
             </Button>
           </form>
         </Form>
+        <Label className={"text-muted-foreground "}>{tl('alreadyHaveAccount')} <Link className={"underline hover:text-primary ml-1 animate-pulse "} href="/dashboard/login">{tl('loginText')}</Link>  </Label>
        
       </CardContent>
     </FormCard>

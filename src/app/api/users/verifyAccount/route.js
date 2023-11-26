@@ -1,4 +1,5 @@
 import { connectDB } from "@/dbConfig/dbConfig";
+import { NextResponse } from "next/server";
 import User from "@/models/userModel";
 
 connectDB();
@@ -25,7 +26,7 @@ export async function POST(req) {
       return NextResponse.json(
         {
           error: `${email} is not verified`,
-          errorCode: 'AV102',
+          errorCode: 'AV105',
         },
         { status: 400 }
       );
@@ -36,6 +37,16 @@ export async function POST(req) {
         {
           error: "Email or Code does not exist",
           errorCode: 'AV101', // invalid email or amtCode
+        },
+        { status: 400 }
+      );
+    }
+
+    if (currentUser.isAccountVerified) {
+      return NextResponse.json(
+        {
+          error: `This account is already verified`,
+          errorCode: 'AV102',
         },
         { status: 400 }
       );

@@ -21,6 +21,7 @@ export async function POST(req) {
       return NextResponse.json(
         {
           error: "Your account has been locked. Please try again later.",
+          errorCode: "AL108",
         },
         {
           status: 400,
@@ -34,6 +35,7 @@ export async function POST(req) {
       return NextResponse.json(
         {
           error: "Email or password incorrect",
+          errorCode: "AL106",
         },
         {
           status: 400,
@@ -44,7 +46,8 @@ export async function POST(req) {
     if (!user.isEmailVerified) {
       return NextResponse.json(
         {
-          error: "User not verified, please verify your account",
+          error: "Email not verified, please verify your account",
+          errorCode: "AL104",
         },
         {
           status: 400,
@@ -69,6 +72,7 @@ export async function POST(req) {
         return NextResponse.json(
           {
             error: "User or password incorrect",
+            errorCode: "AL106",
           },
           {
             status: 400,
@@ -86,6 +90,7 @@ export async function POST(req) {
           {
             error:
               "Your account has been locked for 1 minute. Please try again later.",
+            errorCode: "AL108",
           },
           {
             status: 400,
