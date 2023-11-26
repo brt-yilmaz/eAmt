@@ -80,7 +80,7 @@ export default function AccountVerification() {
       ),
     })
 
-    router.replace(`/dashboard/createPassword?email=${response.data.userEmail}`);
+    router.replace(`/dashboard/createPassword?email=${data.userEmail}`);
 
 
     } else {

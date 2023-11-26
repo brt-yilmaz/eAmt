@@ -79,8 +79,20 @@ const userSchema = new mongoose.Schema({
   verifyTokenExpiry: {
     type: Date,
   },
+  signature: {
+    type: String,
+    default: "",
+  },
+  notifications: {
+    type: Array,
+    default: [],
+  },
+  messages: {
+    type: Array,
+    default: [],
+  }
 });
 
-const User = mongoose.models.UserWithOnlyName || mongoose.model("UserWithOnlyName", userSchema);
+const User = mongoose.models.UserWithNotifications || mongoose.model("UserWithNotifications", userSchema);
 
 export default User;

@@ -256,6 +256,7 @@
     "verify": "Verify",
     "signUpText": "Sign Up",
     "loginText": "Login",
+    "accountLocked": "Your account is locked. Please try again after one minute.",
     "toast": {
       "success": {
         "title": "Successful",
@@ -265,6 +266,39 @@
       "error": {
         "title": "Error",
         "content": "Failed to log in. Please try again."
+      }
+    }
+  },
+  "identityForm": {
+    "CardTitle": "PERSONALAUSWEIS",
+    "CardDescription": "BUNDESREPUBLIC DEUTSCHLAND",
+    "surnameLabel": "Name",
+    "surnameLabelPlaceholder": "MUSTERMANN",
+    "nameOfBirthLabel": "Geburtsname",
+    "nameOfBirthLabelPlaceholder": "Gabler",
+    "firstNameLabel": "Vornamen",
+    "firstNameLabelPlaceholder": "Erika",
+    "nationalityLabel": "Nationalität",
+    "nationalityLabelPlaceholder": "DEUTSCHLAND",
+    "dateOfBirthLabel": "Geburtsdatum",
+    "dateOfBirthLabelPlaceholder": "01.01.1900",
+    "dateOfExpiryLabel": "Ausstellungsdatum",
+    "dateOfExpiryLabelPlaceholder": "01.01.2025",
+    "placeOfBirthLabel": "Geburtsort",
+    "placeOfBirthLabelPlaceholder": "Musterstadt",
+    "submit": "Submit",
+    "placeOfBirth": "Geburtsort",
+    "placeOfBirthPlaceholder": "Musterstadt",
+    "failed": "Application failed. Please try again.",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Your application is being processed. Check your notifications. ",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to create account. Please try again."
       }
     }
   }

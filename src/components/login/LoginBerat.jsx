@@ -92,10 +92,11 @@ export default function LoginForm() {
 
 
     } else {
-      if (responseData.errorCode === 'AL101') {
+      console.log(responseData)
+      if (responseData.errorCode === 'AL106') {
         form.formState.errors.email = {
           type: 'manual',
-          message: t('toast.invalidCredentials'),
+          message: '',
         }
 
         form.formState.errors.password = {
@@ -103,12 +104,10 @@ export default function LoginForm() {
           message: t('invalidCredentials'),
         }
 
-      }
-       else {
-
+      }else  {
         toast({
           title: t('toast.error.title'),
-          description: t('toast.error.content'),
+          description: responseData.errorCode === 'AL108' ? t('accountLocked') : t('toast.error.content'),
           variant: "destructive",
           duration: 3000,
         });
