@@ -7,7 +7,7 @@ function Logo() {
   const locale = useLocale();
   return (
     <div className={"w-14 shrink-0"}>
-      <Link href={`/dashdsboard`}>
+      <Link href={`/dashboard`}>
         <Image src={logo} alt="logo" width={50} className={"rounded-md"} />
       </Link>
     </div>
