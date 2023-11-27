@@ -55,7 +55,7 @@ const CreatePasswordForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center mt-44">
+    <div className="flex items-center justify-center mt-10">
       <div className="w-full max-w-md bg-slate-200 p-6 dark:bg-slate-800 rounded-md">
         <h1 className={`${form.formState.isSubmitting ? "text-blue-400" : ""} text-center text-2xl sm:text-4xl font-bold mb-4`}>
           {form.formState.isSubmitting ? "Processing" : "Create Password"}

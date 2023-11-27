@@ -10,11 +10,11 @@
     "signIn": "Увійти",
     "menu": "Меню",
     "logout": {
-      "title": "Abmelden",
-      "content": "Möchten Sie sich wirklich abmelden?",
-      "subContent": "Nach dem Abmelden können Sie nicht mehr auf alle Ihre Daten zugreifen.",
-      "confirm": "Fortfahren",
-      "cancel": "Abbrechen"
+      "title": "Вийти",
+      "content": "Ви дійсно хочете вийти?",
+      "subContent": "Після виходу ви більше не зможете отримати доступ до всіх своїх даних.",
+      "confirm": "Продовжити",
+      "cancel": "Скасувати"
     },
     "aboutHover": {
       "slogan": "Ваші документи, ваш світ: Легко, Швидко, Онлайн!",
@@ -35,34 +35,34 @@
       "title": "Документи",
       "items": {
         "identity": {
-          "title": "Identifikatsiya",
-          "content": "Doslidzhuyte svіy ofіtsіyniy ID, vazhliviy dlya osobistoi іdentifikatsіyi ta yuridichnikh tsіlei.",
-          "path": "identifikatsiya"
+          "title": "Ідентифікація",
+          "content": "Досліджуйте свій офіційний ID, важливий для особистої ідентифікації та юридичних цілей.",
+          "path": "ідентифікація"
         },
         "driversLicense": {
-          "title": "Vodіiskі prava",
-          "content": "Detalі shchodo vashikh vodіiskikh prav, neobkhіdnikh dlya bezpechnogo rukhu na dorogakh.",
-          "path": "vodіiskі-prava"
+          "title": "Водійські права",
+          "content": "Деталі щодо ваших водійських прав, необхідних для безпечного руху на дорогах.",
+          "path": "водійські-права"
         },
         "insuranceCard": {
-          "title": "Strakhovii polіs",
-          "content": "Dіznaytesya pro vash medichnii strakhovii polіs, yakiy nadaye dostup do medichnikh poslug.",
-          "path": "medichnii-polіs"
+          "title": "Страховий поліс",
+          "content": "Дізнайтеся про ваш медичний страховий поліс, який надає доступ до медичних послуг.",
+          "path": "медичний-поліс"
         },
         "carDocuments": {
-          "title": "Avtodokumenti",
-          "content": "Otrimuyte vazhlivі dokumenti, pov'yazanі z vashim transportnim zasobom dlya gladkogo podorozhuvannya.",
-          "path": "avto-dokumenti"
+          "title": "Права водія",
+          "content": "Отримайте важливі документи, пов'язані з вашим транспортним засобом для гладкого подорожування.",
+          "path": "автодокументи"
         },
         "titleDeed": {
-          "title": "Dokument vlasnosti",
-          "content": "Doslidzhuyte detalі vashogo dokumenta vlasnosti, yakiy pіdtverdzhuye vlasnist nerukhomostі.",
-          "path": "dokument-vlasnosti"
+          "title": "Документ власності",
+          "content": "Досліджуйте деталі вашого документа влади, який підтверджує власність нерухомості.",
+          "path": "документ-власності"
         },
         "universityDiploma": {
-          "title": "Diplom unіversitetu",
-          "content": "Detalі shchodo vashogo diplomu unіversitetu, shcho pіdtverdzhuye uspіshne zavershennya navchannya.",
-          "path": "diplom-unіversitetu"
+          "title": "Диплом університету",
+          "content": "Деталі щодо вашого диплому університету, що підтверджує успішне завершення навчання.",
+          "path": "диплом-університету"
         }
       }
     },
