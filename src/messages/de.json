@@ -239,5 +239,66 @@
         "contentACP106": "E-Mail ist nicht überprüft."
       }
     }
+  },
+  "LoginPage": {
+    "CardTitle": "Anmelden",
+    "emailLabel": "E-Mail",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Passwort",
+    "passwordLabelPlaceholder": "Passwort",
+    "loginButton": "Anmelden",
+    "forgotPassword": "Passwort vergessen?",
+    "invalidCredentials": "E-Mail oder Passwort ist falsch.",
+    "signInButton": "Anmelden",
+    "dontHaveAccount": "Sie haben noch kein Konto?",
+    "needToVerify": "Wenn Sie Ihr Konto verifizieren müssen ",
+    "verify": "Verifizieren",
+    "signUpText": "Registrieren",
+    "loginText": "Anmelden",
+    "accountLocked": "Ihr Konto ist gesperrt. Bitte versuchen Sie es nach einer Minute erneut.",
+    "toast": {
+      "success": {
+        "title": "Erfolgreich",
+        "content": "Sie sind jetzt angemeldet. Sie werden zur Profilseite weitergeleitet.",
+        "action": "Verstanden"
+      },
+      "error": {
+        "title": "Fehler",
+        "content": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut."
+      }
+    }
+  },
+  "IdentityForm": {
+    "CardTitle": "AUSWEISKARTE",
+    "CardDescription": "Beantragen Sie eine digitale Identität.",
+    "surnameLabel": "Nachname",
+    "surnameLabelPlaceholder": "MUSTERMANN",
+    "nameOfBirthLabel": "Geburtsname",
+    "nameOfBirthLabelPlaceholder": "Gabler",
+    "firstNameLabel": "Vorname",
+    "firstNameLabelPlaceholder": "Erika",
+    "nationalityLabel": "Nationalität",
+    "nationalityLabelPlaceholder": "DEUTSCHLAND",
+    "dateOfBirthLabel": "Geburtsdatum",
+    "dateOfBirthLabelPlaceholder": "TT.MM.JJJJ",
+    "dateOfExpiryLabel": "Gültig bis",
+    "dateOfExpiryLabelPlaceholder": "01.01.2025",
+    "placeOfBirthLabel": "Geburtsort",
+    "placeOfBirthLabelPlaceholder": "Musterstadt",
+    "submit": "Beantragen",
+    "placeOfBirth": "Geburtsort",
+    "placeOfBirthPlaceholder": "Musterstadt",
+    "failed": "Antrag fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "toast": {
+      "success": {
+        "title": "Erfolgreich",
+        "content": "Ihr Antrag wird bearbeitet. Überprüfen Sie Ihre Benachrichtigungen.",
+        "action": "Verstanden"
+      },
+      "error": {
+        "title": "Fehler",
+        "content": "Antrag konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
+      }
+    }
   }
 }
