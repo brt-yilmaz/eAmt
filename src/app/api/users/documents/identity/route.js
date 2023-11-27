@@ -51,31 +51,15 @@ export async function POST(req) {
   }
 
   const reqBody = await req.json();
-  const { surname, firstName, nationality, dateOfBirth, placeOfBirth } = reqBody;
+  const { imageUrl } = reqBody;
+  console.log()
 
-  if (!surname || !firstName || !nationality || !dateOfBirth || !placeOfBirth) {
-    return NextResponse.json(
-      {
-        error: "All fields are required",
-        errorCode: "All fields are required",
-      },
-      {
-        status: 400,
-      }
-    );
-  }
-
-  currentUser.identity.surname = surname;
-  currentUser.identity.firstName = firstName;
-  currentUser.identity.nationality = nationality;
-  currentUser.identity.dateOfBirth = dateOfBirth;
-  currentUser.identity.placeOfBirth = placeOfBirth;
-
+  currentUser.identity.imageUrl = imageUrl;
   await currentUser.save();
 
   return NextResponse.json(
     {
-      message: "Application submitted successfully",
+      message: "Image uploaded successfully",
     }
   )
 

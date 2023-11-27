@@ -1,4 +1,5 @@
 'use client'
+import { Icons } from '../icons';
 import React, { useState, useEffect } from "react";
 import SignatureCanvas from 'react-signature-canvas';
 import { Button } from "../ui/button";
@@ -17,6 +18,7 @@ function SignaturePad(){
 
   const handleClear= () =>{
     sign.clear()
+    setUrl(undefined)
   }
   const handleGenerate= () =>{
     setUrl(sign.getTrimmedCanvas().toDataURL('image/png'))
@@ -24,6 +26,15 @@ function SignaturePad(){
   }
 
   const handleSubmit = async() =>{
+
+    if(url === undefined){
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Please sign or generate first",
+      });
+      return
+    }
     setIsSubmitting(true);
     try {
       await signature(url)
@@ -47,12 +58,12 @@ function SignaturePad(){
   }
   
   const updateCanvasWidth = () => {
-      setCanvasWidth(window.innerWidth * 0.8 > 600 ? 600 : window.innerWidth * 0.8); 
+      setCanvasWidth(window.innerWidth * 0.8 > 440 ? 440 : window.innerWidth * 0.8); 
   };
 
   useEffect(() => {
 
-      setCanvasWidth(window.innerWidth * 0.8 > 600 ? 600 : window.innerWidth * 0.8); 
+      setCanvasWidth(window.innerWidth * 0.8 > 440 ? 440 : window.innerWidth * 0.8); 
       window.addEventListener('resize', updateCanvasWidth);
       return () => {
           window.removeEventListener('resize', updateCanvasWidth);
@@ -61,10 +72,9 @@ function SignaturePad(){
 
 
     const width = 500
-    console.log(showSignature)
     return(
         <div className={ `flex flex-col  gap-6 w-[${canvasWidth}] ` }>
-            <div className={`border-2 border-slate-900 bg-slate-600 ${showSignature ? "hidden" : "block"} rounded-lg` }>
+            <div className={`border-2 border-slate-900 bg-slate-600 ${showSignature ? "hidden" : "block"} rounded-lg w-max` }>
                 <SignatureCanvas 
                     canvasProps={{ width: `${canvasWidth}`, height: `${canvasWidth * 0.5}`, className: "sigCanvas" }}
                     ref={data=>setSign(data)}
@@ -77,7 +87,7 @@ function SignaturePad(){
             <Button variant="outline"  onClick={handleSubmit}> { isSubmitting && (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
               )}Save</Button>
-            <Button variant="outline" onClick={handleGenerate} >{showSignature ? "Hide" : "Show "} Signature</Button>
+            <Button variant="outline" onClick={handleGenerate} >Generate </Button>
             </div>
 
         </div>

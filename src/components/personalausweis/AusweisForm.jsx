@@ -7,6 +7,17 @@ import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import SignaturePad from "../signature/signature"
+import { useSWRConfig } from "swr"
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
 import {
   Form,
   FormControl,
@@ -16,14 +27,14 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-      import {
-        Card,
-        CardContent,
-        CardDescription,
-        CardFooter,
-        CardHeader,
-        CardTitle,
-      } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
 import { signup } from "@/services/signup"
@@ -34,16 +45,17 @@ import { Link } from "@/navigation"
 import { Router } from "lucide-react"
 import FormCard from "../FormCard"
 import { identity } from "@/services/identity"
+import UploadImageButton from "../ui/UploadIdentityImage"
+import { useRouter } from "@/navigation"
 
 const formSchema = z.object({
   surname: z.string().min(3, { message: "Name must be at least 3 characters long" }),
-  nameOfBirth: z.string().min(3, { message: "Name must be at least 3 characters long" }),
   firstName: z.string().min(3, { message: "Name must be at least 3 characters long" }),
   nationality: z.string().min(3, { message: "Nationality must be at least 3 characters long" }),
   dateOfBirth: z
     .string()
     .refine((data) => /^(0[1-9]|[12]\d|3[01])\.(0[1-9]|1[0-2])\.\d{4}$/.test(data), {
-        message: "Invalid date format. Use DD.MM.YYYY format.",
+      message: "Invalid date format. Use DD.MM.YYYY format.",
     }),
 
   placeOfBirth: z.string().min(3, { message: "Place of Birth must be at least 3 characters long" }),
@@ -52,13 +64,12 @@ const formSchema = z.object({
 export default function AusweisForm() {
   const { toast } = useToast()
   const tf = useTranslations('IdentityForm')
-
+  const router = useRouter()
   // 1. Define your form.
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       surname: "",
-      nameOfBirth: "",
       firstName: "",
       nationality: "",
       dateOfBirth: "",
@@ -67,6 +78,7 @@ export default function AusweisForm() {
   })
   // 2. Define a submit handler.
   async function onSubmit(values) {
+    console.log(values)
     const response = await identity(values)
     const data = await response.json()
 
@@ -83,6 +95,7 @@ export default function AusweisForm() {
           </ToastAction>
         ),
       })
+      router.push('/dashboard/profile/documents')
 
     } else {
 
@@ -112,7 +125,7 @@ export default function AusweisForm() {
 
             <FormField
               control={form.control}
-              
+
               name="surname"
               render={({ field }) => (
                 <FormItem >
@@ -127,21 +140,7 @@ export default function AusweisForm() {
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="nameOfBirth"
-              render={({ field }) => (
-                <FormItem >
-                  <FormLabel> {tf('nameOfBirthLabel')} </FormLabel>
-                  <FormControl>
-                    <Input placeholder={`${tf('nameOfBirthLabelPlaceholder')}`} {...field} autoFocus />
-                  </FormControl>
 
-                  <FormMessage />
-                </FormItem>
-
-              )}
-            />
 
             <FormField
               control={form.control}
@@ -207,8 +206,19 @@ export default function AusweisForm() {
               )}
             />
 
+            <div className="flex justify-between ">
 
-            <Button type="submit" disabled={(!form.formState.isValid && Object.keys(form.formState.errors).length !== 0) || form.formState.isSubmitting} className="w-full">
+            <UploadImageButton  />
+              <Dialog >
+              <DialogTrigger className={"underline"} >Add Signature</DialogTrigger>
+              <DialogContent>
+                <SignaturePad />
+              </DialogContent>
+            </Dialog>
+            </div>
+            
+
+            <Button type="submit" onClick={form.handleSubmit(onSubmit)} disabled={form.formState.isSubmitting} className="w-full">
               {form.formState.isSubmitting && (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
               )}

@@ -1,7 +1,9 @@
 import { upLoadImage } from "@/services/upLoadImage";
 import { CldUploadWidget } from "next-cloudinary";
+import { useSWRConfig } from "swr";
 
 function UploadImageButton() {
+  const { mutate } = useSWRConfig();
   return (
     <CldUploadWidget
     uploadPreset="mnklsx0o"
