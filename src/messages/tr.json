@@ -1,0 +1,244 @@
+{
+  "Index": {
+    "title": "Merhaba"
+  },
+  "NavBar": {
+    "home": "Ana Sayfa",
+    "documents": "Belgeler",
+    "appointments": "Randevular",
+    "about": "Hakkımızda",
+    "signIn": "Giriş Yap",
+    "menu": "Menü",
+    "logout": {
+      "title": "Çıkış Yap",
+      "content": "Emin misiniz çıkış yapmak istediğinizden?",
+      "subContent": "Çıkış yaptıktan sonra tüm verilerinize erişemezsiniz.",
+      "confirm": "Devam",
+      "cancel": "İptal"
+    },
+    "aboutHover": {
+      "slogan": "Belgeleriniz, Dünyanız: Kolay, Hızlı, Çevrimiçi!",
+      "introduction": {
+        "title": "Tanıtım",
+        "content": "Resmi belgeler ve çevrimiçi devlet hizmetleri."
+      },
+      "whoWeAre": {
+        "title": "Biz Kimiz",
+        "content": "Ekibimiz idari süreçleri basitleştiriyor."
+      },
+      "whatWeOffer": {
+        "title": "Ne Sunuyoruz",
+        "content": "Resmi belgelere kolayca erişin, indirin ve bulun."
+      }
+    },
+    "documentsHover": {
+      "title": "Belgeler",
+      "items": {
+        "identity": {
+          "title": "Kimlik",
+          "content": "Resmi tanımlama ve yasal amaçlar için önemli.",
+          "path": "kimlik"
+        },
+        "driversLicense": {
+          "title": "Sürücü Belgesi",
+          "content": "Sürücü belgenizle ilgili detaylar, güvenli sürüş için esaslı.",
+          "path": "surucu-belgesi"
+        },
+        "insuranceCard": {
+          "title": "Sigorta Kartı",
+          "content": "Sağlık sigortanızla ilgili bilgiler, tıbbi hizmetlere erişim sağlar.",
+          "path": "sigorta-karti"
+        },
+        "carDocuments": {
+          "title": "Araç Belgeleri",
+          "content": "Araçla ilgili önemli belgeler, sorunsuz bir yolculuk için.",
+          "path": "arac-belgeleri"
+        },
+        "titleDeed": {
+          "title": "Tapu Senedi",
+          "content": "Mülkiyetinizi onaylayan tapu senedi detayları.",
+          "path": "tapu-senedi"
+        },
+        "universityDiploma": {
+          "title": "Üniversite Diploması",
+          "content": "Üniversite diplomanızın detayları, başarılı bir şekilde tamamlanan öğrenimi onaylar.",
+          "path": "diploma"
+        }
+      }
+    },
+    "avatarDropDown": {
+      "myAccount": "Hesabım",
+      "profile": "Profil",
+      "documents": "Belgeler",
+      "settings": "Ayarlar",
+      "petition": "Dilekçe",
+      "appointments": "Randevular",
+      "newAppointment": "Yeni Randevu",
+      "logout": "Çıkış Yap"
+    }
+  },
+  "About": {
+    "title": "Hizmetimiz Hakkında",
+    "content": {
+      "welcome": {
+        "title": "Hoş Geldiniz",
+        "content": "Çevrimiçi platformumuza hoş geldiniz; Almanya sakinlerine resmi belgelere hızlı ve kolay erişim, gerekli dosyaları yükleme ve randevu planlama imkanı sunmak amacıyla tasarlandı."
+      },
+      "whoWeAre": {
+        "title": "Biz Kimiz",
+        "content": "Biz, idari süreçleri basitleştirmeye ve Alman vatandaşlarının yaşamını iyileştirmeye adamış bir ekibiz. Platformumuz, devlet hizmetlerini daha erişilebilir ve kullanıcı dostu hale getirmek için burada."
+      },
+      "whatWeOffer": {
+        "title": "Ne Sunuyoruz",
+        "content": "Belge Deposu: Resmi belgelere kolayca erişin, indirin ve bulun. Kişisel tanımlama, sertifikalar veya izinler gerekiyorsa, sizi kapsarız."
+      }
+    }
+  },
+  "Dashboard": {
+    "title": "Panel",
+    "uploadButton": "Resim Yükle"
+  },
+  "SignUp": {
+    "CardTitle": "Hesap Oluştur",
+    "CardDescription": "Belge yönetimini ve randevuları Almanya'da kolaylaştırın!",
+    "nameLabel": "Ad",
+    "nameLabelPlaceholder": "Ayşe Yılmaz",
+    "emailLabel": "E-Posta",
+    "emailLabelPlaceholder": "ayse.yilmaz@example.com",
+    "taxIdLabel": "Vergi No",
+    "taxIdLabelPlaceholder": "TR123456789",
+    "signUpButton": "Kaydol",
+    "zipCodeLabel": "Posta Kodu",
+    "zipCodeLabelPlaceholder": "06520",
+    "alreadyHaveAccount": "Zaten bir hesabınız mı var?",
+    "needToVerify": "Hesabınızı doğrulamanız gerekiyorsa ",
+    "verify": "Onayla",
+    "loginText": "Giriş",
+    "submit": "Gönder",
+    "toast": {
+      "success": {
+        "title": "Başarılı",
+        "content": "Hesap oluşturuldu. Lütfen mail adresinizi onaylayın.",
+        "action": "Anladım"
+      },
+      "error": {
+        "title": "Hata",
+        "content": "Hesap oluşturma başarısız. Lütfen tekrar deneyin."
+      }
+    }
+  },
+  "VerifyEmailPage": {
+    "tokenNotFound": "Token bulunamadı",
+    "emailVerified": "E-posta doğrulandı",
+    "emailVerifiedDesc": "Şifre oluşturma sayfasına yönlendiriliyorsunuz.",
+    "tokenExpired": "Kodunuz süresi doldu.",
+    "tokenExpiredDesc": "Lütfen tekrar kayıt olmayı deneyin.",
+    "emailAlreadyVerified": "E-posta zaten doğrulandı",
+    "emailAlreadyVerifiedDesc": "Şifre oluşturma sayfasına yönlendiriliyorsunuz.",
+    "emailVerificationFailed": "E-posta doğrulama başarısız",
+    "emailVerificationFailedDesc": "Lütfen tekrar deneyin.",
+    "verifyEmail": "E-postayı Doğrula"
+  },
+  "Footer": {
+    "socialMedia": {
+      "title": "Amt",
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "telegram": "Telegram"
+    },
+    "products": {
+      "title": "Ürünler",
+      "stocks": "Hisse Senetleri",
+      "futuresOptions": "Vadeli İşlemler ve Opsiyonlar",
+      "investmentFunds": "Yatırım Fonları",
+      "realEstate": "Gayrimenkul, İnşaat, Mülkler"
+    },
+    "company": {
+      "title": "Şirket",
+      "about": "Hakkında",
+      "services": "Hizmetler",
+      "office": "Ofis",
+      "register": "Kayıt",
+      "faq": "Sık Sorulan Sorular"
+    },
+    "support": {
+      "title": "Destek",
+      "contact": "İletişim",
+      "supportPortal": "Destek Portalı",
+      "downloadsResources": "İndirilecekler ve Kaynaklar",
+      "videos": "Videolar",
+      "feeList": "Ücret Listesi"
+    }
+  },
+  "Email": {
+    "title": "E-Posta",
+    "verify": "Lütfen hesabınızı doğrulamak için e-postanıza gidin"
+  },
+  "AuthenticationError": {
+    "title": "Kimlik Doğrulama",
+    "signUp": {
+      "AS101": "Lütfen geçerli bir ad sağlayın.",
+      "AS102": "Lütfen geçerli bir e-posta sağlayın.",
+      "AS103": "Lütfen geçerli bir vergi kimliği sağlayın.",
+      "AS104": "Lütfen geçerli bir posta kodu sağlayın.",
+      "AS105": "Kaydolma başarısız. Lütfen tekrar deneyin.",
+      "AS106": "Lütfen geçerli bir doğrulama belirteci sağlayın.",
+      "AS107": "E-posta zaten mevcut.",
+      "AS108": "Lütfen tüm gerekli alanları sağlayın.",
+      "AS109": "Doğrulama e-postası gönderilemedi."
+    }
+  },
+  "verifyAccountPage": {
+    "CardTitle": "Hesabınızı Doğrulayın",
+    "emailLabel": "E-posta",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "amtCodeLabel": "AMT Kodu",
+    "amtCodeLabelPlaceholder": "2z3jr4@Ror",
+    "verifyButton": "Hesabı Doğrula",
+    "toast": {
+      "success": {
+        "title": "Başarılı",
+        "content": "Hesabınız doğrulandı. Şifre oluşturma sayfasına yönlendiriliyorsunuz.",
+        "action": "Tamam"
+      },
+      "error": {
+        "title": "Hata",
+        "content": "Hesap doğrulama başarısız. Lütfen tekrar deneyin.",
+        "contentAV102": "Hesap zaten doğrulanmış."
+      }
+    }
+  },
+  "createPasswordPage": {
+    "CardTitle": "Şifre Oluştur",
+    "emailLabel": "E-posta",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Şifre",
+    "passwordLabelPlaceholder": "Şifre",
+    "confirmPasswordLabel": "Şifreyi Onayla",
+    "confirmPasswordLabelPlaceholder": "Şifreyi Onayla",
+    "createPasswordButton": "Şifre Oluştur",
+    "alreadyHaveAccount": "Zaten bir hesabınız mı var?",
+    "needToVerify": "Hesabınızı doğrulamak için ",
+    "verify": "Doğrula",
+    "loginText": "Giriş",
+    "toast": {
+      "success": {
+        "title": "Başarılı",
+        "content": "Şifre oluşturuldu. Giriş sayfasına yönlendiriliyorsunuz.",
+        "action": "Tamam"
+      },
+      "error": {
+        "title": "Hata",
+        "content": "Şifre oluşturma başarısız. Lütfen tekrar deneyin.",
+        "contentACP101": "Hesap zaten doğrulanmış.",
+        "contentACP200": "Şifre eşleşmiyor.",
+        "contentACP109": "Şifre en az 8 karakter uzunluğunda olmalıdır.",
+        "contentACP107": "Hesap doğrulanmamış.",
+        "contentACP201": "Şifre oluşturma başarısız. Lütfen tekrar deneyin.",
+        "contentACP106": "E-posta doğrulanmamış."
+      }
+    }
+  }
+}

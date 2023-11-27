@@ -4,9 +4,78 @@
   },
   "NavBar": {
     "home": "Home",
+    "documents": "Documents",
+    "appointments": "Appointments",
     "about": "About",
     "signIn": "Sign In",
-    "menu": "Menu"
+    "menu": "Menu",
+    "logout": {
+      "title": "Logout",
+      "content": "Are you sure you want to log out?",
+      "subContent": "You can not access all your data after logging out.",
+      "confirm": "Continue",
+      "cancel": "Cancel"
+    },
+    "aboutHover": {
+      "slogan": "Your Documents, Your World: Easy, Fast, Online!",
+      "introduction": {
+        "title": "Introduction",
+        "content": "Official documents and online government services."
+      },
+      "whoWeAre": {
+        "title": "Who We Are",
+        "content": "Our team simplifies administrative processes. "
+      },
+      "whatWeOffer": {
+        "title": "What We Offer",
+        "content": "Find, access, and download official documents easily."
+      }
+    },
+    "documentsHover": {
+      "title": "Documents",
+      "items": {
+        "identity": {
+          "title": "Identity",
+          "content": "Explore your official ID, crucial for personal identification and legal purposes.",
+          "path": "identity"
+        },
+        "driversLicense": {
+          "title": "Driver's License",
+          "content": "Details about your driver's license, essential for safe navigation on roads.",
+          "path": "drivers-license"
+        },
+        "insuranceCard": {
+          "title": "Insurance Card",
+          "content": "Learn about your health insurance card, providing access to medical services.",
+          "path": "insurance-card"
+        },
+        "carDocuments": {
+          "title": "Car Documents",
+          "content": "Access important paperwork related to your vehicle for a smooth journey.",
+          "path": "car-documents"
+        },
+        "titleDeed": {
+          "title": "Title Deed",
+          "content": "Explore details of your title deed, confirming ownership of real estate.",
+          "path": "title-deed"
+        },
+        "universityDiploma": {
+          "title": "University Diploma",
+          "content": "Details about your university diploma, confirming your successful completion of studies.",
+          "path": "university-diploma"
+        }
+      }
+    },
+    "avatarDropDown": {
+      "myAccount": "My Account",
+      "profile": "Profile",
+      "documents": "Documents",
+      "settings": "Settings",
+      "petition": "Petition",
+      "appointments": "Appointments",
+      "newAppointment": "New Appointment",
+      "logout": "Logout"
+    }
   },
   "About": {
     "title": "About Our Service",
@@ -28,6 +97,47 @@
   "Dashboard": {
     "title": "Dashboard",
     "uploadButton": "Image Upload"
+  },
+  "SignUp": {
+    "CardTitle": "Create an Account",
+    "CardDescription": "Simplify document management and appointments in Germany!",
+    "nameLabel": "Name",
+    "nameLabelPlaceholder": "John Doe",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "taxIdLabel": "Tax ID",
+    "taxIdLabelPlaceholder": "US123456789",
+    "signUpButton": "Sign Up",
+    "zipCodeLabel": "Zip Code",
+    "zipCodeLabelPlaceholder": "90210",
+    "alreadyHaveAccount": "Already have an account?",
+    "needToVerify": "If you need to verify your account ",
+    "verify": "Verify",
+    "loginText": "Login",
+    "submit": "Submit",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Verification email sent. Please check your email.",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to create account. Please try again."
+      }
+    }
+  },
+  "VerifyEmailPage": {
+    "tokenNotFound": "Token not found",
+    "emailVerified": "Email verified",
+    "emailVerifiedDesc": "You are redirected to the password create page.",
+    "tokenExpired": "Your code is expired. ",
+    "tokenExpiredDesc": "Please try sign up again.",
+    "emailAlreadyVerified": "Email already verified",
+    "emailAlreadyVerifiedDesc": "You are redirected to the password create page.",
+    "emailVerificationFailed": "Email verification failed",
+    "emailVerificationFailedDesc": "Please try again.",
+    "verifyEmail": "Verify Email"
   },
   "Footer": {
     "socialMedia": {
@@ -65,5 +175,131 @@
   "Email": {
     "title": "Email",
     "verify": "Please visit your email to verify your account"
+  },
+  "AuthenticationError": {
+    "title": "Authentication",
+    "signUp": {
+      "AS101": "Please provide a valid name.",
+      "AS102": "Please provide a valid email.",
+      "AS103": "Please provide a valid tax id.",
+      "AS104": "Please provide a valid zip code.",
+      "AS105": "Sign up failed. Please try again.",
+      "AS106": "Please provide a valid verify token.",
+      "AS107": "Email already exists.",
+      "AS108": "Please provide all required fields.",
+      "AS109": "Verification email not sent."
+    }
+  },
+  "verifyAccountPage": {
+    "CardTitle": "Verify Your Account",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "amtCodeLabel": "AMT Code",
+    "amtCodeLabelPlaceholder": "2z3jr4@Ror",
+    "verifyButton": "Verify Account",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Your account has been verified. You are redirected to the password create page.",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to verify account. Please try again.",
+        "contentAV102": "Account has already been verified."
+      }
+    }
+  },
+  "createPasswordPage": {
+    "CardTitle": "Create Password",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Password",
+    "passwordLabelPlaceholder": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordLabelPlaceholder": "Confirm Password",
+    "createPasswordButton": "Create Password",
+    "alreadyHaveAccount": "Already have an account?",
+    "needToVerify": "If you need to verify your account ",
+    "verify": "Verify",
+    "loginText": "Login",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Password created. You are redirected to the login page.",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to create password. Please try again.",
+        "contentACP101": "Account has already been verified.",
+        "contentACP200": "Password does not match.",
+        "contentACP109": "Password must be at least 8 characters long.",
+        "contentACP107": "Account is not verified.",
+        "contentACP201": "Failed to create password. Please try again.",
+        "contentACP106": "Email is not verified."
+      }
+    }
+  },
+  "LoginPage": {
+    "CardTitle": "Sign In",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Password",
+    "passwordLabelPlaceholder": "Password",
+    "loginButton": "Login",
+    "forgotPassword": "Forgot Password?",
+    "invalidCredentials": "Email or password is incorrect.",
+    "signInButton": "Sign In",
+    "dontHaveAccount": "Don't have an account?",
+    "needToVerify": "If you need to verify your account ",
+    "verify": "Verify",
+    "signUpText": "Sign Up",
+    "loginText": "Login",
+    "accountLocked": "Your account is locked. Please try again after one minute.",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "You are now logged in. You are redirected to the profile page.",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to log in. Please try again."
+      }
+    }
+  },
+  "IdentityForm": {
+    "CardTitle": "IDENTITY CARD",
+    "CardDescription": "Appy for a digital identity.",
+    "surnameLabel": "Surname",
+    "surnameLabelPlaceholder": "MUSTERMANN",
+    "nameOfBirthLabel": "Geburtsname",
+    "nameOfBirthLabelPlaceholder": "Gabler",
+    "firstNameLabel": "First Name",
+    "firstNameLabelPlaceholder": "Erika",
+    "nationalityLabel": "Nationality",
+    "nationalityLabelPlaceholder": "DEUTSCHLAND",
+    "dateOfBirthLabel": "Date of Birth",
+    "dateOfBirthLabelPlaceholder": "DD.MM.YYYY",
+    "dateOfExpiryLabel": "Gültig bis",
+    "dateOfExpiryLabelPlaceholder": "01.01.2025",
+    "placeOfBirthLabel": "Place of Birth",
+    "placeOfBirthLabelPlaceholder": "Musterstadt",
+    "submit": "Apply",
+    "placeOfBirth": "Geburtsort",
+    "placeOfBirthPlaceholder": "Musterstadt",
+    "failed": "Application failed. Please try again.",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Your application is being processed. Check your notifications. ",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to create application. Please try again."
+      }
+    }
   }
 }

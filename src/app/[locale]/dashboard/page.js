@@ -1,18 +1,20 @@
 'use client';
-import SearchPanel from "@/components/searchbar/SearchPanel";
+import DocumentCardsWrapper from "@/components/DocumentCard/DocumentCardsWrapper";
+import SignUp from "@/components/signup/SignUpBerat";
+import { Button } from "@/components/ui/button";
 import { upLoadImage } from "@/services/upLoadImage";
 import { CldUploadWidget } from 'next-cloudinary';
 import { useSWRConfig } from "swr"
 
-export default function Dashboard() {
+function Dashboard() {
   const { mutate } = useSWRConfig();
 
   return (
     <>
-      <main className="flex flex-1 flex-col items-center justify-between p-24 ">
-        <SearchPanel />
+      <main className="flex justify-center items-center  p-24 ">
 
-        <CldUploadWidget
+
+        {/* <CldUploadWidget
           uploadPreset="mnklsx0o"
           onSuccess={async (result, { widget }) => {
             await upLoadImage(result?.info?.url);
@@ -29,17 +31,17 @@ export default function Dashboard() {
               open();
             }
             return (
-              <button onClick={handleOnClick}>
-                Upload an Image
+              <button onClick={handleOnClick} className={"py-1 px-2 min-w-[100px] bg-bgBut text-butContent rounded"}>
+                Upload Profile Photo
               </button>
             );
           }}
-        </CldUploadWidget>
-
-
+        </CldUploadWidget> */}
 
 
       </main>
     </>
   );
 }
+
+export default Dashboard

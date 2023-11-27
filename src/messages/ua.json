@@ -1,0 +1,244 @@
+{
+  "Index": {
+    "title": "Привіт"
+  },
+  "NavBar": {
+    "home": "Головна",
+    "documents": "Документи",
+    "appointments": "Запис на прийом",
+    "about": "Про нас",
+    "signIn": "Увійти",
+    "menu": "Меню",
+    "logout": {
+      "title": "Вихід",
+      "content": "Ви впевнені, що хочете вийти?",
+      "subContent": "Після виходу ви не зможете переглядати всі ваші дані.",
+      "confirm": "Продовжити",
+      "cancel": "Відмінити"
+    },
+    "aboutHover": {
+      "slogan": "Ваші документи, ваш світ: Легко, Швидко, Онлайн!",
+      "introduction": {
+        "title": "Вступ",
+        "content": "Офіційні документи та онлайн-послуги уряду."
+      },
+      "whoWeAre": {
+        "title": "Хто ми",
+        "content": "Наша команда спрощує адміністративні процеси."
+      },
+      "whatWeOffer": {
+        "title": "Що ми пропонуємо",
+        "content": "Знаходьте, отримуйте та завантажуйте офіційні документи легко."
+      }
+    },
+    "documentsHover": {
+      "title": "Документи",
+      "items": {
+        "identity": {
+          "title": "Identifikatsiya",
+          "content": "Doslidzhuyte svіy ofіtsіyniy ID, vazhliviy dlya osobistoi іdentifikatsіyi ta yuridichnikh tsіlei.",
+          "path": "identifikatsiya"
+        },
+        "driversLicense": {
+          "title": "Vodіiskі prava",
+          "content": "Detalі shchodo vashikh vodіiskikh prav, neobkhіdnikh dlya bezpechnogo rukhu na dorogakh.",
+          "path": "vodіiskі-prava"
+        },
+        "insuranceCard": {
+          "title": "Strakhovii polіs",
+          "content": "Dіznaytesya pro vash medichnii strakhovii polіs, yakiy nadaye dostup do medichnikh poslug.",
+          "path": "medichnii-polіs"
+        },
+        "carDocuments": {
+          "title": "Avtodokumenti",
+          "content": "Otrimuyte vazhlivі dokumenti, pov'yazanі z vashim transportnim zasobom dlya gladkogo podorozhuvannya.",
+          "path": "avto-dokumenti"
+        },
+        "titleDeed": {
+          "title": "Dokument vlasnosti",
+          "content": "Doslidzhuyte detalі vashogo dokumenta vlasnosti, yakiy pіdtverdzhuye vlasnist nerukhomostі.",
+          "path": "dokument-vlasnosti"
+        },
+        "universityDiploma": {
+          "title": "Diplom unіversitetu",
+          "content": "Detalі shchodo vashogo diplomu unіversitetu, shcho pіdtverdzhuye uspіshne zavershennya navchannya.",
+          "path": "diplom-unіversitetu"
+        }
+      }
+    },
+    "avatarDropDown": {
+      "myAccount": "Мій обліковий запис",
+      "profile": "Профіль",
+      "documents": "Документи",
+      "settings": "Налаштування",
+      "petition": "Петиція",
+      "appointments": "Зустрічі",
+      "newAppointment": "Нова Зустріч",
+      "logout": "Вийти"
+    }
+  },
+  "About": {
+    "title": "Про наш сервіс",
+    "content": {
+      "welcome": {
+        "title": "Ласкаво просимо",
+        "content": "Ласкаво просимо на нашу онлайн-платформу, створену для обслуговування мешканців Німеччини зручним та ефективним способом отримання офіційних документів, завантаження необхідних файлів та запису на прийом."
+      },
+      "whoWeAre": {
+        "title": "Хто ми",
+        "content": "Ми - команда, присвячена спрощенню адміністративних процесів та поліпшенню життя громадян Німеччини. Наша платформа призначена зробити державні послуги більш доступними та зручними для користувачів."
+      },
+      "whatWeOffer": {
+        "title": "Що ми пропонуємо",
+        "content": "Репозиторій документів: Знаходьте, отримуйте та завантажуйте офіційні документи легко. Незалежно від того, чи вам потрібна особиста ідентифікація, сертифікати чи дозволи, ми вас прикриваємо."
+      }
+    }
+  },
+  "Dashboard": {
+    "title": "Панель керування",
+    "uploadButton": "Завантажити зображення"
+  },
+  "SignUp": {
+    "CardTitle": "Створити обліковий запис",
+    "CardDescription": "Спростити управління документами та призначеннями в Україні!",
+    "nameLabel": "Ім'я",
+    "nameLabelPlaceholder": "Олена Іванова",
+    "emailLabel": "Електронна Пошта",
+    "emailLabelPlaceholder": "olena.ivanova@example.com",
+    "taxIdLabel": "ІПН",
+    "taxIdLabelPlaceholder": "UA123456789",
+    "signUpButton": "Зареєструватися",
+    "zipCodeLabel": "Поштовий Індекс",
+    "zipCodeLabelPlaceholder": "03058",
+    "alreadyHaveAccount": "У вас вже є обліковий запис?",
+    "needToVerify": "Якщо вам потрібно підтвердити свій обліковий запис ",
+    "verify": "Підтвердити",
+    "loginText": "Увійти",
+    "submit": "Підтвердити",
+    "toast": {
+      "success": {
+        "title": "Успішно",
+        "content": "Обліковий запис створено. Будь ласка, спробуйте увійти.",
+        "action": "Зрозуміло"
+      },
+      "error": {
+        "title": "Помилка",
+        "content": "Не вдалося створити обліковий запис. Будь ласка, спробуйте ще раз."
+      }
+    }
+  },
+  "VerifyEmailPage": {
+    "tokenNotFound": "Токен не знайдено",
+    "emailVerified": "Електронна пошта перевірена",
+    "emailVerifiedDesc": "Вас перенаправлять на сторінку створення пароля.",
+    "tokenExpired": "Ваш код закінчився.",
+    "tokenExpiredDesc": "Будь ласка, спробуйте зареєструватися знову.",
+    "emailAlreadyVerified": "Електронна пошта вже підтверджена",
+    "emailAlreadyVerifiedDesc": "Вас перенаправлять на сторінку створення пароля.",
+    "emailVerificationFailed": "Помилка підтвердження електронної пошти",
+    "emailVerificationFailedDesc": "Будь ласка, спробуйте ще раз.",
+    "verifyEmail": "Підтвердити електронну пошту"
+  },
+  "Footer": {
+    "socialMedia": {
+      "title": "Управління",
+      "instagram": "Інстаграм",
+      "twitter": "Твіттер",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "telegram": "Телеграм"
+    },
+    "products": {
+      "title": "Продукти",
+      "stocks": "Акції",
+      "futuresOptions": "Фьючерси та опції",
+      "investmentFunds": "Інвестиційні фонди",
+      "realEstate": "Нерухомість, Будівництво, Об'єкти"
+    },
+    "company": {
+      "title": "Компанія",
+      "about": "Про нас",
+      "services": "Послуги",
+      "office": "Офіс",
+      "register": "Реєстрація",
+      "faq": "Часті питання"
+    },
+    "support": {
+      "title": "Підтримка",
+      "contact": "Контакт",
+      "supportPortal": "Портал підтримки",
+      "downloadsResources": "Завантаження та ресурси",
+      "videos": "Відео",
+      "feeList": "Список комісій"
+    }
+  },
+  "Email": {
+    "title": "Електронна пошта",
+    "verify": "Будь ласка, перейдіть на свою електронну пошту для підтвердження вашого облікового запису"
+  },
+  "AuthenticationError": {
+    "title": "Аутентифікація",
+    "signUp": {
+      "AS101": "Будь ласка, вкажіть дійсне ім'я.",
+      "AS102": "Будь ласка, вкажіть дійсну електронну адресу.",
+      "AS103": "Будь ласка, вкажіть дійсний ідентифікаційний номер податкового платника.",
+      "AS104": "Будь ласка, вкажіть дійсний поштовий індекс.",
+      "AS105": "Помилка реєстрації. Будь ласка, спробуйте ще раз.",
+      "AS106": "Будь ласка, вкажіть дійсний токен підтвердження.",
+      "AS107": "Електронна адреса вже існує.",
+      "AS108": "Будь ласка, вкажіть всі обов'язкові поля.",
+      "AS109": "Не відправлено електронного листа для підтвердження."
+    }
+  },
+  "verifyAccountPage": {
+    "CardTitle": "Верифікуйте свій обліковий запис",
+    "emailLabel": "Електронна пошта",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "amtCodeLabel": "AMT-код",
+    "amtCodeLabelPlaceholder": "2z3jr4@Ror",
+    "verifyButton": "Верифікувати обліковий запис",
+    "toast": {
+      "success": {
+        "title": "Успішно",
+        "content": "Ваш обліковий запис був верифікований. Вас перенаправлять на сторінку створення пароля.",
+        "action": "Зрозуміло"
+      },
+      "error": {
+        "title": "Помилка",
+        "content": "Не вдалося верифікувати обліковий запис. Будь ласка, спробуйте знову.",
+        "contentAV102": "Обліковий запис вже був верифікований."
+      }
+    }
+  },
+  "createPasswordPage": {
+    "CardTitle": "Створити пароль",
+    "emailLabel": "Електронна пошта",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Пароль",
+    "passwordLabelPlaceholder": "Пароль",
+    "confirmPasswordLabel": "Підтвердіть пароль",
+    "confirmPasswordLabelPlaceholder": "Підтвердіть пароль",
+    "createPasswordButton": "Створити пароль",
+    "alreadyHaveAccount": "Вже є обліковий запис?",
+    "needToVerify": "Якщо вам потрібно перевірити свій обліковий запис ",
+    "verify": "Перевірити",
+    "loginText": "Увійти",
+    "toast": {
+      "success": {
+        "title": "Успішно",
+        "content": "Пароль створено. Вас перенаправлять на сторінку входу.",
+        "action": "Зрозуміло"
+      },
+      "error": {
+        "title": "Помилка",
+        "content": "Не вдалося створити пароль. Будь ласка, спробуйте знову.",
+        "contentACP101": "Обліковий запис вже був верифікований.",
+        "contentACP200": "Пароль не співпадає.",
+        "contentACP109": "Пароль повинен містити щонайменше 8 символів.",
+        "contentACP107": "Обліковий запис не верифікований.",
+        "contentACP201": "Не вдалося створити пароль. Будь ласка, спробуйте знову.",
+        "contentACP106": "Електронна пошта не верифікована."
+      }
+    }
+  }
+}

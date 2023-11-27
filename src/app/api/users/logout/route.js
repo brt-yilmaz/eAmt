@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-// implement logut
 export async function GET() {
   try {
     const res = NextResponse.json({

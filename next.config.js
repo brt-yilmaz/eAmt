@@ -12,4 +12,8 @@ module.exports = withNextIntl({
       },
     ];
   },
+  images: {
+    domains: ["res.cloudinary.com"],
+  }
 });
+

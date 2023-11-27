@@ -1,21 +1,22 @@
 'use client';
-import { RxAvatar } from "react-icons/rx";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { User2 } from 'lucide-react';
 import { useUser } from "@/services/useUser";
-function Avatar() {
-  
-  const { user, isLoading, isError } = useUser();
+import { cn } from "@/lib/utils"
+import * as React from "react";
+
+const  AvatarUser = React.forwardRef(({ className, ...props }, ref) => {
+
+  const { user } = useUser();
+
   return (
-      ((isLoading ||isError) && (
-        <div>
-          <RxAvatar className={"text-4xl text-content "} />
-        </div>
-      ) ) ||
-    
-     (user?.imageUrl &&
-      (<div>
-        <img src={user.imageUrl} className={"rounded-full w-10 h-10"} alt="avatar" />
-      </div>))
-    
+
+    <Avatar ref={ref} className={ cn(className)} role="button">
+      {user && <AvatarImage src={user.imageUrl} />}
+      {!user && <AvatarFallback><User2 /></AvatarFallback>}
+    </Avatar>
+
   )
-}
-export default Avatar;
+})
+
+export default AvatarUser;

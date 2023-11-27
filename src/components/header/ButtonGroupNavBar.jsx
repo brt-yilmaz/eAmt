@@ -1,22 +1,26 @@
+'use client'
 import React from "react";
-import ModeSwitcher from "./ModeSwitcher";
+import AvatarUser from "./Avatar";
+import ModeToggle from "./ModeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
-import SignIn from "./SignIn";
-import Avatar from "./Avatar";
-function ButtonGroupNavBar() {
+import { LanguageToggle } from "./LanguageToggle";
+import { MultiLanguageSelector } from "./MultiLanguageSelector";
+import AvatarDropDown from "./AvatarDropDown";
+function ButtonGroupNavBar({children}) {
   return (
     <>
       <li>
-        <ModeSwitcher />
+        <ModeToggle />
+      </li>
+      <li className="flex items-center gap-1">
+        <LanguageToggle />
+        <MultiLanguageSelector />
       </li>
       <li>
-        <LanguageSwitcher />
+        {children}
       </li>
       <li>
-        <SignIn />
-      </li>
-      <li>
-        <Avatar />
+        <AvatarDropDown />
       </li>
     </>
   );

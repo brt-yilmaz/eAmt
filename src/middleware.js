@@ -1,6 +1,8 @@
 import createIntlMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { locales, pathnames } from "./navigation";
+import { cookies } from "next/headers";
+import { verifyAuth } from "./lib/auth";
 
 export default async function middleware(request) {
   const path = request.nextUrl.pathname;
@@ -28,35 +30,51 @@ export default async function middleware(request) {
   // Step 3: Alter the response
   response.headers.set("x-default-locale", defaultLocale);
 
-  const isAuthPage =
-    path === "/login" || path === "/signup" || path === "/verifyAccount";
+  // ------------------------  Protected Routes ----------------------------------------------
+  const protectedRoutes = ["/profile"];
+  const authRoutes = ["/signup", "/login", '/verifyAccount', '/forgotPassword', '/resetPassword'];
 
-  const isPublicPath = path === "/dashboard";
+  const isProtected = protectedRoutes.some((route) =>
+    request.nextUrl.pathname.includes(route)
+  );
 
-  const token = request.cookies.get("token")?.value || "";
+  const isAuth = authRoutes.some((route) =>
+    request.nextUrl.pathname.includes(route)
+  );
 
-  if (!isAuthPage) {
-    if (path === "/") {
-      return NextResponse.redirect(new URL("/dashboard", request.nextUrl));
+  if (isProtected || isAuth) {
+    const cookiesStore = cookies();
+    const authToken = cookiesStore.get("authToken")?.value;
+    const verifiedToken = await verifyAuth(authToken).catch((error) => {
+      return !NextResponse.redirect(new URL("/dashboard/login", request.nextUrl));
+    });
+    // const decoded = jwt.verify(authToken, process.env.JWT_SECRET_KEY) (not working with edge functions);
+
+    if (isProtected) {
+      if (!request.cookies.get("authToken")) {
+        return NextResponse.redirect(new URL("/dashboard/login", request.nextUrl));
+      }
+      if (!verifiedToken) {
+        return NextResponse.redirect(new URL("/dashboard/login", request.nextUrl));
+      }
     }
 
-    if (path === "/en") {
-      return NextResponse.redirect(new URL("/en/dashboard", request.nextUrl));
+    if (isAuth) {
+
+      if (verifiedToken) {
+        return NextResponse.redirect(new URL("/dashboard/profile", request.nextUrl));
+      }
+
+
     }
+
+
   }
 
-  if ((isPublicPath || isAuthPage) && token) {
-    return NextResponse.redirect(
-      new URL("/dashboard/profile", request.nextUrl)
-    );
-  }
 
-  if (
-    (path.startsWith("/dashboard/profile") ||
-      path.startsWith("/en/dashboard/profile")) &&
-    !token
-  ) {
-    return NextResponse.redirect(new URL("/login", request.nextUrl));
+  // Redirect to public dashboard
+  if (path === "/") {
+    return NextResponse.redirect(new URL("/dashboard", request.nextUrl));
   }
 
   return response;

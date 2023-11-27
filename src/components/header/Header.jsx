@@ -1,7 +1,11 @@
 import AboutTitle from "./AboutTitle";
 import ButtonGroupNavBar from "./ButtonGroupNavBar";
+import DocumentsTitle from "./DocumentsTitle";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
+import { NavigationShortcuts } from "./NavigationShortcuts";
+import { NavigationTitles } from "./NavigationTitles";
+import SignIn from "./SignIn";
 
 function Header() {
   return (
@@ -12,8 +16,12 @@ function Header() {
     >
       <Logo />
       <NavBar>
-        <AboutTitle />
-        <ButtonGroupNavBar />
+       
+        <NavigationShortcuts />
+        <NavigationTitles />
+        <ButtonGroupNavBar >
+          <SignIn />
+        </ButtonGroupNavBar>
       </NavBar>
     </header>
   );

@@ -19,15 +19,27 @@ export async function POST(req) {
       return NextResponse.json(
         {
           error: "Email does not exist",
+          errorCode: 'ACP102',
         },
         { status: 400 }
       );
     }
 
-    if (!currentUser.isVerified) {
+    if (!currentUser.isEmailVerified) {
       return NextResponse.json(
         {
           error: "User not verified, please verify your account",
+          errorCode: 'ACP106',
+        },
+        { status: 400 }
+      );
+    }
+
+    if (!currentUser.isAccountVerified) {
+      return NextResponse.json(
+        {
+          error: "User not verified, please verify your account",
+          errorCode: 'ACP107',
         },
         { status: 400 }
       );
@@ -48,18 +60,17 @@ export async function POST(req) {
       Must contain at least one uppercase letter.
       Must contain at least one lowercase letter.
       Must contain at least one digit.
-      Must contain at least one special character (@, #, $, %, ^, &, +, =, !).
-      Should not include spaces.
-      Should not include parentheses or quotation marks (, ), {, }, [, ], <, >).
+      Must contain at least one special character 
     */
 
     const passwordRegex =
-      /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!])(?![\s\S]*\s)(?!.*[(){}[\]<>])(?!.*["'])[A-Za-z\d@#$%^&+=!]{8,}$/;
+      /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
 
     if (!passwordRegex.test(password)) {
       return NextResponse.json(
         {
           error: "Password does not meet requirements",
+          errorCode: 'ACP109',
         },
         { status: 400 }
       );
@@ -69,6 +80,7 @@ export async function POST(req) {
       return NextResponse.json(
         {
           error: "Password does not match",
+          errorCode: 'ACP200',
         },
         { status: 400 }
       );
@@ -87,7 +99,7 @@ export async function POST(req) {
       email: currentUser.email,
     };
 
-    const authToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
+    const authToken = jwt.sign(tokenData, process.env.JWT_SECRET_KEY, {
       expiresIn: "7d",
     });
 
@@ -114,11 +126,13 @@ export async function POST(req) {
     return NextResponse.json({
       message: "User created successfully",
       success: true,
+      userEmail: currentUser.email,
     });
   } catch (error) {
     return NextResponse.json(
       {
         error: error.message,
+        errorCode: 'ACP201',
       },
       { status: 500 }
     );

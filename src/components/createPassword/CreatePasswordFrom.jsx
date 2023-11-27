@@ -1,143 +1,249 @@
-'use client';
+"use client"
+import React from "react";
+import { useRouter } from "@/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import axios from "axios";
+import { Link } from "@/navigation";
+import { useSearchParams } from 'next/navigation'
+import { EyeOff } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { ToastAction } from "../ui/toast";
+import { useToast } from "../ui/use-toast";
+import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
+import FormCard from "../FormCard";
+import { createPassword } from "@/services/createPassword";
+import { Label } from "../ui/label";
+import { Icons } from "../icons";
 
-import FormInput from "../formInput/FormInput";
 
-function CreatePasswordForm() {
+
+const createPasswordFormSchema = z.object({
+  email: z
+    .string()
+    .email({ message: "Invalid email" })
+  ,
+  password: z
+    .string()
+    .min(8, { message: "Password must be at least 8 characters" })
+    .refine((data) => /[A-Z]/.test(data), {
+      message: "Password must contain at least one uppercase letter",
+    })
+    .refine((data) => /[a-z]/.test(data), {
+      message: "Password must contain at least one lowercase letter",
+    })
+    .refine((data) => /\d/.test(data), {
+      message: "Password must contain at least one digit",
+    })
+    .refine((data) => /[!@#$%^&*(),.?":{}|<>]/.test(data), {
+      message: "Password must contain at least one special character",
+    }),
+  confirmPassword: z
+    .string()
+    ,
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords do not match",
+  path: ["confirmPassword"],
+});
+
+const CreatePasswordForm = () => {
+  const { toast } = useToast();
+  const t = useTranslations("createPasswordPage");
   const router = useRouter();
+  const userEmail = useSearchParams().get('email');
 
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
+  const form = useForm({
+    resolver: zodResolver(createPasswordFormSchema),
+    defaultValues: {
+      password: "",
+      confirmPassword: "",
+      email: userEmail || "",
+    },
   });
 
-  const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const onSubmit = async (data) => {
 
-  const [errors, setErrors] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+    const response = await createPassword(data);
+    const responseData = await response.json();
+    console.log(responseData)
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+    if (response.status === 200) {
 
-  const validateForm = () => {
-    const newErrors = {};
+      toast({
+        title: t('toast.success.title'),
+        description: t('toast.success.content'),
+        duration: 3000,
+        action: (
+          <ToastAction className="bg-muted" altText={t('toast.success.action')}>
+            {t('toast.success.action')}
+          </ToastAction>
+        ),
+      })
 
-    if (formData.email.trim() === "") {
-      newErrors.email = "Email is required";
-    }
+      router.replace(`/dashboard/login`);
 
-    if (formData.password.trim() === "") {
-      newErrors.password = "Password is required";
-    }
 
-    if (formData.confirmPassword.trim() === "") {
-      newErrors.confirmPassword = "Confirm Password is required";
-    } else if (formData.confirmPassword !== formData.password) {
-      newErrors.confirmPassword = "Passwords do not match";
-    }
+    } else {
+      if (responseData.errorCode === 'ACP101') {
+        form.formState.errors.email = {
+          type: 'manual',
+          message: t('toast.error.contentACP101'),
+        }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/users/createPassword", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setMessage(data.message);
-        setError("");
-      } else {
-        const errorData = await response.json();
-        setError(errorData.error);
-        setMessage("");
       }
-    } catch (error) {
-      setError("An error occurred while sending the request");
-      setMessage("");
-    } finally {
-      setIsLoading(false);
+
+      else if (responseData.errorCode === 'ACP200') {
+        form.formState.errors.password = {
+          type: 'manual',
+          message: t('toast.error.contentACP200'),
+        }
+
+      }
+
+      else if (responseData.errorCode === 'ACP109') {
+        form.formState.errors.confirmPassword = {
+          type: 'manual',
+          message: t('toast.error.contentACP109'),
+        }
+
+      }
+
+      else if (responseData.errorCode === 'ACP107') {
+        form.formState.errors.confirmPassword = {
+          type: 'manual',
+          message: t('toast.error.contentACP107'),
+        }
+
+      }
+
+      else if (responseData.errorCode === 'ACP106') {
+        form.formState.errors.confirmPassword = {
+          type: 'manual',
+          message: t('toast.error.contentACP106'),
+        }
+
+      } else {
+
+        toast({
+          title: t('toast.error.title'),
+          description: t('toast.error.content'),
+          variant: "destructive",
+          duration: 3000,
+        });
+
+      }
+
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-full py-20">
-      <div className="w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 bg-gradient-to-b from-gray-800 via-gray-950 to-black rounded-lg py-5">
-        <div className="p-5 rounded-lg border-t-4">
-          <h1 className={`${isLoading ? "text-blue-400" : "text-white"} text-center text-2xl sm:text-4xl font-bold mb-4`}>
-            {isLoading ? "Processing" : "Create Password"}
-          </h1>
-          <FormInput
-            label="Email"
-            value={formData.email}
-            onChange={(value) => handleChange({ target: { name: "email", value } })}
-            errors={errors.email}
-          />
-          <FormInput
-            label="Password"
-            value={formData.password}
-            onChange={(value) => handleChange({ target: { name: "password", value } })}
-            errors={errors.password}
-            isPassword={true}
-          />
-          <FormInput
-            label="Confirm Password"
-            value={formData.confirmPassword}
-            onChange={(value) => handleChange({ target: { name: "confirmPassword", value } })}
-            errors={errors.confirmPassword}
-            isPassword={true}
-          />
-
-          <button
-            onClick={handleSubmit}
-            className="w-full p-3 border border-blue-400 rounded-lg focus:outline-none text-blue-400 hover:bg-blue-400 hover:text-white"
+    <FormCard>
+      <CardHeader className="space-y-1">
+        <CardTitle className="text-2xl">{t("CardTitle")}</CardTitle>
+      </CardHeader>
+      <CardContent className="grid gap-4">
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-6 flex flex-col "
           >
-            {isLoading ? "Processing..." : "Create Password"}
-          </button>
-          <div className="flex justify-between">
-          <Link href="/en/login" className="text-blue-400 hover:underline block mt-3 text-center">
-            Login
-          </Link>
-          <Link href="/en/signup" className="text-blue-400 hover:underline mt-3">
-            Signup
-          </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+
+            {/* Email Input */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("emailLabel")}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t("emailLabelPlaceholder")}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("passwordLabel")}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t("passwordLabelPlaceholder")}
+                      type="password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("confirmPasswordLabel")}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t("confirmPasswordLabelPlaceholder")}
+                      type="password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+
+            {/* Submit Button */}
+            <Button
+              type="submit"
+              disabled={
+                (!form.formState.isValid &&
+                  Object.keys(form.formState.errors).length !== 0) ||
+                form.formState.isSubmitting
+              }
+              className="w-full"
+            >
+              {form.formState.isSubmitting && (
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              )}
+              {t("createPasswordButton")}
+            </Button>
+          </form>
+        </Form>
+        <Label className={"text-muted-foreground "}>{t('alreadyHaveAccount')} <Link className={"underline hover:text-primary ml-1 animate-pulse "} href="/dashboard/login">{t('loginText')}</Link>  </Label>
+
+      </CardContent>
+    </FormCard>
   );
-}
+};
 
 export default CreatePasswordForm;
-
-
-

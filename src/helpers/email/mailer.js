@@ -18,7 +18,7 @@ export const sendEmail = async ({
 }) => {
   let message = "";
   let subject = "";
-  const hashedToken = await bcrypt.hash(process.env.JWT_SECRET, 10);
+  const hashedToken = await bcrypt.hash(process.env.JWT_SECRET_KEY, 10);
 
   try {
     if (emailType === "VERIFY") {

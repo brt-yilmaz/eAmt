@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please add a name"],
-    trim: true,
     minlength: 3,
+    maxlength: 30,
+    required: [true, "Please add a name"],
   },
   email: {
     type: String,
@@ -17,13 +17,51 @@ const userSchema = new mongoose.Schema({
     type: String,
     minlength: 8,
   },
-  isVerified: {
+  family: {
+    type: Array,
+    default: [],
+  },
+  friends: {
+    type: Array,
+    default: [],
+  },
+  isEmailVerified: {
+    type: Boolean,
+    default: false,
+  },
+  isAccountVerified: {
     type: Boolean,
     default: false,
   },
   amtCode: {
     type: String,
     default: "",
+  },
+  identity: {
+    surname: {
+      type: String,
+      default: "",
+    },
+    firstName: {
+      type: String,
+      default: "",
+    },
+    nationality: {
+      type: String,
+      default: "",
+    },
+    dateOfBirth: {
+      type: String,
+      default: "",
+    },
+    placeOfBirth: {
+      type: String,
+      default: "",
+    },
+    imageUrl: {
+      type: String,
+      default: "",
+    },
   },
   taxId: {
     type: String,
@@ -63,8 +101,20 @@ const userSchema = new mongoose.Schema({
   verifyTokenExpiry: {
     type: Date,
   },
+  signature: {
+    type: String,
+    default: "",
+  },
+  notifications: {
+    type: Array,
+    default: [],
+  },
+  messages: {
+    type: Array,
+    default: [],
+  }
 });
 
-const User = mongoose.models.UserTest || mongoose.model("UserTest", userSchema);
+const User = mongoose.models.UserOnly || mongoose.model("UserOnly", userSchema);
 
 export default User;
