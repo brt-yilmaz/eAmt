@@ -6,7 +6,7 @@ import * as z from "zod"
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-
+import SignaturePad from "../signature/signature"
 import {
   Form,
   FormControl,
@@ -16,14 +16,14 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+      import {
+        Card,
+        CardContent,
+        CardDescription,
+        CardFooter,
+        CardHeader,
+        CardTitle,
+      } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
 import { signup } from "@/services/signup"
@@ -33,19 +33,24 @@ import { useTranslations } from "next-intl"
 import { Link } from "@/navigation"
 import { Router } from "lucide-react"
 import FormCard from "../FormCard"
+import { identity } from "@/services/identity"
 
 const formSchema = z.object({
-  surname: z.string(),
-  nameOfBirth: z.string(),
-  firstName: z.string(),
-  nationality: z.string(),
-  dateOfBirth: z.date(),
-  placeOfBirth: z.string(),
-  dateOfExpiry: z.date(),
+  surname: z.string().min(3, { message: "Name must be at least 3 characters long" }),
+  nameOfBirth: z.string().min(3, { message: "Name must be at least 3 characters long" }),
+  firstName: z.string().min(3, { message: "Name must be at least 3 characters long" }),
+  nationality: z.string().min(3, { message: "Nationality must be at least 3 characters long" }),
+  dateOfBirth: z
+    .string()
+    .refine((data) => /^(0[1-9]|[12]\d|3[01])\.(0[1-9]|1[0-2])\.\d{4}$/.test(data), {
+        message: "Invalid date format. Use DD.MM.YYYY format.",
+    }),
+
+  placeOfBirth: z.string().min(3, { message: "Place of Birth must be at least 3 characters long" }),
 })
 
-export default function IdentityForm() {
-  const {toast} = useToast()
+export default function AusweisForm() {
+  const { toast } = useToast()
   const tf = useTranslations('IdentityForm')
 
   // 1. Define your form.
@@ -58,134 +63,160 @@ export default function IdentityForm() {
       nationality: "",
       dateOfBirth: "",
       placeOfBirth: "",
-      dateOfExpiry: "",
     },
   })
   // 2. Define a submit handler.
   async function onSubmit(values) {
-   const response = await signup(values)
-   const data = await response.json()
+    const response = await identity(values)
+    const data = await response.json()
 
-   if(response.status === 200) {
-    form.reset()
+    if (response.status === 200) {
+      form.reset()
 
-    toast({
-      title: tf('toast.success.title'),
-      description: tf('toast.success.content'),
-      duration: 3000,
-      action: (
-        <ToastAction className="bg-muted" altText={tf('toast.success.action')}>
-          {tf('toast.success.action')}
-        </ToastAction>
-      ),
-    })
-   
-   } else {
-   
-     toast({
-       title: 'Error',
-       description: tf(`failed`),
-       variant: 'destructive',
-       duration: 3000,
-    })
-   }
+      toast({
+        title: tf('toast.success.title'),
+        description: tf('toast.success.content'),
+        duration: 3000,
+        action: (
+          <ToastAction className="bg-muted" altText={tf('toast.success.action')}>
+            {tf('toast.success.action')}
+          </ToastAction>
+        ),
+      })
+
+    } else {
+
+      toast({
+        title: 'Error',
+        description: tf(`failed`),
+        variant: 'destructive',
+        duration: 3000,
+      })
+    }
 
 
 
-}
+  }
 
   return (
     <FormCard >
-       <CardHeader className="space-y-1">
+      <CardHeader className="space-y-1">
         <CardTitle className="text-2xl">{tf('CardTitle')}</CardTitle>
         <CardDescription>
           {tf('CardDescription')}
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex flex-col ">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6   ">
 
-        <FormField
-          control={form.control}
-          name="surname"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel> { tf('surnameLabel') } </FormLabel>
-              <FormControl>
-                <Input placeholder={`${tf('surnameLabelPlaceholder')}`} {...field} autoFocus />
-              </FormControl>
+            <FormField
+              control={form.control}
               
-              <FormMessage />
-            </FormItem>
-            
-          )}
-        />
+              name="surname"
+              render={({ field }) => (
+                <FormItem >
+                  <FormLabel> {tf('surnameLabel')} </FormLabel>
+                  <FormControl>
+                    <Input placeholder={`${tf('surnameLabelPlaceholder')}`} {...field} autoFocus />
+                  </FormControl>
 
-        <FormField
-          control={form.control}
-          name="nameOfBirth"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel> { tf('nameOfBirthLabel') } </FormLabel>
-              <FormControl>
-                <Input placeholder={`${tf('nameOfBirthLabelPlaceholder')}`} {...field} autoFocus />
-              </FormControl>
-              
-              <FormMessage />
-            </FormItem>
-            
-          )}
-        />
+                  <FormMessage />
+                </FormItem>
 
-        <FormField
-          control={form.control}
-          name="firstName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel> { tf('firstNameLabel') } </FormLabel>
-              <FormControl>
-                <Input placeholder={`${tf('firstNameLabelPlaceholder')}`} {...field} autoFocus />
-              </FormControl>
-              
-              <FormMessage />
-            </FormItem>
-            
-          )}
-        />
+              )}
+            />
 
-        <FormField
-          control={form.control}
-          name="nationality"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel> { tf('nationalityLabel') } </FormLabel>
-              <FormControl>
-                <Input placeholder={`${tf('nationalityLabelPlaceholder')}`} {...field} autoFocus />
-              </FormControl>
-              
-              <FormMessage />
-            </FormItem>
-            
-          )}
-        />
+            <FormField
+              control={form.control}
+              name="nameOfBirth"
+              render={({ field }) => (
+                <FormItem >
+                  <FormLabel> {tf('nameOfBirthLabel')} </FormLabel>
+                  <FormControl>
+                    <Input placeholder={`${tf('nameOfBirthLabelPlaceholder')}`} {...field} autoFocus />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="firstName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel> {tf('firstNameLabel')} </FormLabel>
+                  <FormControl>
+                    <Input placeholder={`${tf('firstNameLabelPlaceholder')}`} {...field} autoFocus />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="nationality"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel> {tf('nationalityLabel')} </FormLabel>
+                  <FormControl>
+                    <Input placeholder={`${tf('nationalityLabelPlaceholder')}`} {...field} autoFocus />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="dateOfBirth"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel> {tf('dateOfBirthLabel')} </FormLabel>
+                  <FormControl>
+                    <Input placeholder={`${tf('dateOfBirthLabelPlaceholder')}`} {...field} autoFocus />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="placeOfBirth"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel> {tf('placeOfBirthLabel')} </FormLabel>
+                  <FormControl>
+                    <Input placeholder={`${tf('placeOfBirthLabelPlaceholder')}`} {...field} autoFocus />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+
+              )}
+            />
 
 
-        
-        
-       
-       
-        <Button type="submit" disabled={(!form.formState.isValid && Object.keys(form.formState.errors).length !== 0) || form.formState.isSubmitting  } className="w-full">
-        {form.formState.isSubmitting && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-            )}
-          { tf('submit') }
-          </Button>
-      </form>
-    </Form>
-    <Label className={"text-muted-foreground "}>{tf('alreadyHaveAccount')} <Link className={"underline hover:text-primary ml-1 animate-pulse "} href="/dashboard/login">{tf('loginText')}</Link>  </Label>
-    <Label className={"text-muted-foreground"}>{tf('needToVerify')} <Link className={"underline hover:text-primary ml-1"} href="/dashboard/verifyAccount">{tf('verify')}</Link>  </Label>
-    </CardContent>
+            <Button type="submit" disabled={(!form.formState.isValid && Object.keys(form.formState.errors).length !== 0) || form.formState.isSubmitting} className="w-full">
+              {form.formState.isSubmitting && (
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              )}
+              {tf('submit')}
+            </Button>
+          </form>
+        </Form>
+      </CardContent>
     </FormCard>
   )
 

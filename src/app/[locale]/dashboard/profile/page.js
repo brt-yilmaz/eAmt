@@ -22,16 +22,15 @@ import { RecentSales } from "@/components/profile/recent-sales";
 import { Search } from "@/components/profile/search";
 import FamilyMemberSwitcher from "@/components/profile/FamilyMemberSwitcher";
 import { UserNav } from "@/components/profile/user-nav";
-import SignaturePad from "@/components/signature/signature";
 
 import { useUser } from "@/services/useUser";
+import AusweisForm from "@/components/personalausweis/AusweisForm";
 
 function ProfilePage() {
   const { user } = useUser();
 
   return (
-    <SignaturePad />
-
+    <AusweisForm />
   )
 
   {/* 

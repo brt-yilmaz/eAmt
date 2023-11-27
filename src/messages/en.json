@@ -269,9 +269,9 @@
       }
     }
   },
-  "identityForm": {
+  "IdentityForm": {
     "CardTitle": "PERSONALAUSWEIS",
-    "CardDescription": "BUNDESREPUBLIC DEUTSCHLAND",
+    "CardDescription": "Appy for a digital identity.",
     "surnameLabel": "Name",
     "surnameLabelPlaceholder": "MUSTERMANN",
     "nameOfBirthLabel": "Geburtsname",
@@ -281,12 +281,12 @@
     "nationalityLabel": "Nationalität",
     "nationalityLabelPlaceholder": "DEUTSCHLAND",
     "dateOfBirthLabel": "Geburtsdatum",
-    "dateOfBirthLabelPlaceholder": "01.01.1900",
-    "dateOfExpiryLabel": "Ausstellungsdatum",
+    "dateOfBirthLabelPlaceholder": "DD.MM.YYYY",
+    "dateOfExpiryLabel": "Gültig bis",
     "dateOfExpiryLabelPlaceholder": "01.01.2025",
     "placeOfBirthLabel": "Geburtsort",
     "placeOfBirthLabelPlaceholder": "Musterstadt",
-    "submit": "Submit",
+    "submit": "Apply",
     "placeOfBirth": "Geburtsort",
     "placeOfBirthPlaceholder": "Musterstadt",
     "failed": "Application failed. Please try again.",
@@ -298,7 +298,7 @@
       },
       "error": {
         "title": "Error",
-        "content": "Failed to create account. Please try again."
+        "content": "Failed to create application. Please try again."
       }
     }
   }

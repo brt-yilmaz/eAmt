@@ -54,6 +54,7 @@ export default function VerifyEmailPage() {
 
       } catch (err) {
         const code = err.response.data.errorCode;
+        console.log('inside verify Email catch block', err.response.data)
         toast({
           title: code === 'AA103' ? t('tokenExpired') : code === 'AA104' ? t('emailAlreadyVerified') : t('emailVerificationFailed'),
           description: code === 'AA103' ? t('tokenExpiredDesc') : code === 'AA104' ? t('emailAlreadyVerifiedDesc') : t('emailVerificationFailedDesc'),

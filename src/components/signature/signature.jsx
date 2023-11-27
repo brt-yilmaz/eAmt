@@ -74,7 +74,9 @@ function SignaturePad(){
 
             <div className={"flex gap-3"}>
             <Button variant="outline"   onClick={handleClear}>Clear</Button>
-            <Button variant="outline"  onClick={handleSubmit}>Save</Button>
+            <Button variant="outline"  onClick={handleSubmit}> { isSubmitting && (
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              )}Save</Button>
             <Button variant="outline" onClick={handleGenerate} >{showSignature ? "Hide" : "Show "} Signature</Button>
             </div>
 
