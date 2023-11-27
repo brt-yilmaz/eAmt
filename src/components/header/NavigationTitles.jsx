@@ -113,7 +113,7 @@ export function NavigationTitles( {type = "Root"} ) {
                 <ListItem
                   key={component.title}
                   title={t(`documentsHover.items.${component.title}.title`)}
-                  href={`/dashboard/profile/documents/${t(`documentsHover.items.${component.title}.path`)}`}
+                  href={`/dashboard/profile/documents/identity`}
                 >
                   {t(`documentsHover.items.${component.title}.content`)}
                 </ListItem>
