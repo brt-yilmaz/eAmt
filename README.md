@@ -34,6 +34,3 @@ E-AMT is a collaborative effort, and a team of five dedicated individuals is wor
 
 - [Berat Yilmaz](https://github.com/brt-yilmaz)
 - [Oleh Sokolov](https://github.com/sokolov574)
-- [Team Member 3](link-to-profile)
-- [Team Member 4](link-to-profile)
-- [Team Member 5](link-to-profile)
