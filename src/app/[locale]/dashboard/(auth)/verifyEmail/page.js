@@ -11,6 +11,7 @@ export default function VerifyEmailPage() {
   const t = useTranslations('VerifyEmailPage');
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
+  console.log(token)
   const { toast } = useToast();
   const [progress, setProgress] = useState(13);
   const router = useRouter();
@@ -68,7 +69,7 @@ export default function VerifyEmailPage() {
 
     verifyEmail();
 
-  }, [token]);
+  }, []);
 
   return (
     <Progress value={progress} className="w-[30%]" />
