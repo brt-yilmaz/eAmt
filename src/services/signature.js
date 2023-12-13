@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
 
-export async function verifyAccount(data) {
-
+export async function signature(signatureImage) {
   try {
-    const response = await fetch('/api/users/verifyAccount', {
-      method: 'POST',
-      body: JSON.stringify(data),
+    const response = await fetch(`/api/users/signature`, {
+      method: "POST",
+      body: JSON.stringify({ signatureImage }),
     });
 
     const responseData = await response.json();
@@ -14,7 +13,7 @@ export async function verifyAccount(data) {
       return NextResponse.json(
         {
           error: responseData.message,
-          errorCode: responseData.errorCode || 'AV103'
+          errorCode: responseData.errorCode || 'S101'
         },
         {
           status: 500,
@@ -22,18 +21,19 @@ export async function verifyAccount(data) {
       );
     }
 
-
     return NextResponse.json(
-      responseData
+      responseData,
     );
-
-
 
   } catch (error) {
     return NextResponse.json(
       {
         error: error.message,
-        errorCode: 'AS103'
-      })
+      },
+      {
+        status: 500,
+      }
+    );
   }
+
 }

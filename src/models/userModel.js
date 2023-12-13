@@ -25,7 +25,11 @@ const userSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
-  isVerified: {
+  isEmailVerified: {
+    type: Boolean,
+    default: false,
+  },
+  isAccountVerified: {
     type: Boolean,
     default: false,
   },
@@ -33,9 +37,31 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
-  documents: {
-    type: Array,
-    default: [],
+  identity: {
+    surname: {
+      type: String,
+      default: "",
+    },
+    firstName: {
+      type: String,
+      default: "",
+    },
+    nationality: {
+      type: String,
+      default: "",
+    },
+    dateOfBirth: {
+      type: String,
+      default: "",
+    },
+    placeOfBirth: {
+      type: String,
+      default: "",
+    },
+    imageUrl: {
+      type: String,
+      default: "",
+    },
   },
   taxId: {
     type: String,
@@ -75,8 +101,20 @@ const userSchema = new mongoose.Schema({
   verifyTokenExpiry: {
     type: Date,
   },
+  signature: {
+    type: String,
+    default: "",
+  },
+  notifications: {
+    type: Array,
+    default: [],
+  },
+  messages: {
+    type: Array,
+    default: [],
+  }
 });
 
-const User = mongoose.models.UserWithOnlyName || mongoose.model("UserWithOnlyName", userSchema);
+const User = mongoose.models.UserOnly || mongoose.model("UserOnly", userSchema);
 
 export default User;

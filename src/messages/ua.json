@@ -10,11 +10,11 @@
     "signIn": "Увійти",
     "menu": "Меню",
     "logout": {
-      "title": "Abmelden",
-      "content": "Möchten Sie sich wirklich abmelden?",
-      "subContent": "Nach dem Abmelden können Sie nicht mehr auf alle Ihre Daten zugreifen.",
-      "confirm": "Fortfahren",
-      "cancel": "Abbrechen"
+      "title": "Вихід",
+      "content": "Ви впевнені, що хочете вийти?",
+      "subContent": "Після виходу ви не зможете переглядати всі ваші дані.",
+      "confirm": "Продовжити",
+      "cancel": "Відмінити"
     },
     "aboutHover": {
       "slogan": "Ваші документи, ваш світ: Легко, Швидко, Онлайн!",
@@ -188,6 +188,57 @@
       "AS107": "Електронна адреса вже існує.",
       "AS108": "Будь ласка, вкажіть всі обов'язкові поля.",
       "AS109": "Не відправлено електронного листа для підтвердження."
+    }
+  },
+  "verifyAccountPage": {
+    "CardTitle": "Верифікуйте свій обліковий запис",
+    "emailLabel": "Електронна пошта",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "amtCodeLabel": "AMT-код",
+    "amtCodeLabelPlaceholder": "2z3jr4@Ror",
+    "verifyButton": "Верифікувати обліковий запис",
+    "toast": {
+      "success": {
+        "title": "Успішно",
+        "content": "Ваш обліковий запис був верифікований. Вас перенаправлять на сторінку створення пароля.",
+        "action": "Зрозуміло"
+      },
+      "error": {
+        "title": "Помилка",
+        "content": "Не вдалося верифікувати обліковий запис. Будь ласка, спробуйте знову.",
+        "contentAV102": "Обліковий запис вже був верифікований."
+      }
+    }
+  },
+  "createPasswordPage": {
+    "CardTitle": "Створити пароль",
+    "emailLabel": "Електронна пошта",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Пароль",
+    "passwordLabelPlaceholder": "Пароль",
+    "confirmPasswordLabel": "Підтвердіть пароль",
+    "confirmPasswordLabelPlaceholder": "Підтвердіть пароль",
+    "createPasswordButton": "Створити пароль",
+    "alreadyHaveAccount": "Вже є обліковий запис?",
+    "needToVerify": "Якщо вам потрібно перевірити свій обліковий запис ",
+    "verify": "Перевірити",
+    "loginText": "Увійти",
+    "toast": {
+      "success": {
+        "title": "Успішно",
+        "content": "Пароль створено. Вас перенаправлять на сторінку входу.",
+        "action": "Зрозуміло"
+      },
+      "error": {
+        "title": "Помилка",
+        "content": "Не вдалося створити пароль. Будь ласка, спробуйте знову.",
+        "contentACP101": "Обліковий запис вже був верифікований.",
+        "contentACP200": "Пароль не співпадає.",
+        "contentACP109": "Пароль повинен містити щонайменше 8 символів.",
+        "contentACP107": "Обліковий запис не верифікований.",
+        "contentACP201": "Не вдалося створити пароль. Будь ласка, спробуйте знову.",
+        "contentACP106": "Електронна пошта не верифікована."
+      }
     }
   }
 }

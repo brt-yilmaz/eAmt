@@ -10,6 +10,7 @@ import {
 import { cn } from "@/lib/utils"
 
 import { Button } from "../ui/button" 
+import { useUser } from "@/services/useUser"
 import {
   Command,
   CommandEmpty,
@@ -43,42 +44,50 @@ import {
   SelectValue,
 } from "../ui/select"
 import AvatarUser from "../header/Avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
-const groups = [
-  {
-    label: "personalAccount",
-    teams: [
-      {
-        label: "Alicia Koch",
-        value: "personal",
-      },
-    ],
-  },
-  {
-    label: "Teams",
-    teams: [
-      {
-        label: "Acme Inc.",
-        value: "acme-inc",
-      },
-      {
-        label: "Monsters Inc.",
-        value: "monsters",
-      },
-    ],
-  },
-]
+
 
 
 
 
 export default function FamilyMemberSwitcher({ className }) {
+  
+  const {user} = useUser()
+  
+  const groups = [
+    {
+      label: "personalAccount",
+      teams: [
+        {
+          label: user?.name || "Berat Yilmaz",
+          value: "personal",
+          image: 'https://res.cloudinary.com/de85rx4u1/image/upload/v1700647313/y7ik9dp8vqezdwwcgu0q.png'
+        },
+      ],
+    },
+    {
+      label: "Family",
+      teams: [
+        {
+          label: "Fatih Yilmaz",
+          value: "Spiderman",
+          image: 'https://res.cloudinary.com/de85rx4u1/image/upload/v1701056912/bzrej2w9r9tstrrkhjf5.jpg'
+        },
+        {
+          label: "Salih Yilmaz",
+          value: "Captain",
+          image: 'https://res.cloudinary.com/de85rx4u1/image/upload/v1700644134/uai2ykugexgig1l9bw1a.avif'
+        },
+      ],
+    },
+  ]
+  
   const [open, setOpen] = React.useState(false)
   const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false)
   const [selectedTeam, setSelectedTeam] = React.useState(
     groups[0].teams[0]
   )
-
   return (
     <Dialog open={showNewTeamDialog} onOpenChange={setShowNewTeamDialog}>
       <Popover open={open} onOpenChange={setOpen}>
@@ -109,9 +118,12 @@ export default function FamilyMemberSwitcher({ className }) {
                         setSelectedTeam(team)
                         setOpen(false)
                       }}
-                      className="text-sm"
+                      className="text-sm "
                     >
-                      <AvatarUser  className="mr-2 h-7 w-7" />
+                      <Avatar>
+              <AvatarImage className="mr-3" src={team.image} alt="" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
                       {team.label}
                       <CheckIcon
                         className={cn(

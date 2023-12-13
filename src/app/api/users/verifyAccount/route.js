@@ -1,7 +1,6 @@
-import { connectDB, disconnectDB } from "@/dbConfig/dbConfig";
+import { connectDB } from "@/dbConfig/dbConfig";
+import { NextResponse } from "next/server";
 import User from "@/models/userModel";
-import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 
 connectDB();
 
@@ -10,46 +9,55 @@ export async function POST(req) {
     const reqBody = await req.json();
     const { amtCode, email } = reqBody;
 
-    // Check if user already exists
-    const currentUser = await User.findOne({ email });
-
-    if (!currentUser || currentUser.amtCode !== amtCode) {
+    if (!email || !amtCode) {
       return NextResponse.json(
         {
-          error: "Email or Code does not exist",
-          errorCode: 'AV101',
+          error: "Email or Code is required",
+          errorCode: 'AV104', // missing email or amtCode
         },
         { status: 400 }
       );
     }
 
-    if (currentUser.isVerified) {
+    // Check if user already exists
+    const currentUser = await User.findOne({ email });
+
+    if (!currentUser.isEmailVerified) {
       return NextResponse.json(
         {
-          error: `${email} is already verified. Please login`,
+          error: `${email} is not verified`,
+          errorCode: 'AV105',
+        },
+        { status: 400 }
+      );
+    }
+
+    if (!currentUser || currentUser.amtCode !== amtCode) {
+      return NextResponse.json(
+        {
+          error: "Email or Code does not exist",
+          errorCode: 'AV101', // invalid email or amtCode
+        },
+        { status: 400 }
+      );
+    }
+
+    if (currentUser.isAccountVerified) {
+      return NextResponse.json(
+        {
+          error: `This account is already verified`,
           errorCode: 'AV102',
         },
         { status: 400 }
       );
     }
 
-    if (currentUser.verifyTokenExpiry < Date.now()) {
-      return NextResponse.json(
-        {
-          error: "Token expired, please signup again",
-          errorCode: 'AV103',
-        },
-        { status: 400 }
-      );
-    }
+    currentUser.isAccountVerified = true;
 
-    currentUser.isVerified = true;
-    currentUser.verifyToken = undefined;
-    currentUser.verifyTokenExpiry = undefined;
     const savedUser = await currentUser.save();
 
     return NextResponse.json({
-      message: "User verified successfully",
+      message: "User's Account verified successfully",
       success: true,
       userEmail: savedUser.email,
     });
@@ -57,10 +65,9 @@ export async function POST(req) {
     return NextResponse.json(
       {
         error: error.message,
+        errorCode: 'AV103',
       },
       { status: 500 }
     );
-  } finally {
-    await disconnectDB();
   }
 }

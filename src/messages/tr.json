@@ -189,5 +189,56 @@
       "AS108": "Lütfen tüm gerekli alanları sağlayın.",
       "AS109": "Doğrulama e-postası gönderilemedi."
     }
+  },
+  "verifyAccountPage": {
+    "CardTitle": "Hesabınızı Doğrulayın",
+    "emailLabel": "E-posta",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "amtCodeLabel": "AMT Kodu",
+    "amtCodeLabelPlaceholder": "2z3jr4@Ror",
+    "verifyButton": "Hesabı Doğrula",
+    "toast": {
+      "success": {
+        "title": "Başarılı",
+        "content": "Hesabınız doğrulandı. Şifre oluşturma sayfasına yönlendiriliyorsunuz.",
+        "action": "Tamam"
+      },
+      "error": {
+        "title": "Hata",
+        "content": "Hesap doğrulama başarısız. Lütfen tekrar deneyin.",
+        "contentAV102": "Hesap zaten doğrulanmış."
+      }
+    }
+  },
+  "createPasswordPage": {
+    "CardTitle": "Şifre Oluştur",
+    "emailLabel": "E-posta",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Şifre",
+    "passwordLabelPlaceholder": "Şifre",
+    "confirmPasswordLabel": "Şifreyi Onayla",
+    "confirmPasswordLabelPlaceholder": "Şifreyi Onayla",
+    "createPasswordButton": "Şifre Oluştur",
+    "alreadyHaveAccount": "Zaten bir hesabınız mı var?",
+    "needToVerify": "Hesabınızı doğrulamak için ",
+    "verify": "Doğrula",
+    "loginText": "Giriş",
+    "toast": {
+      "success": {
+        "title": "Başarılı",
+        "content": "Şifre oluşturuldu. Giriş sayfasına yönlendiriliyorsunuz.",
+        "action": "Tamam"
+      },
+      "error": {
+        "title": "Hata",
+        "content": "Şifre oluşturma başarısız. Lütfen tekrar deneyin.",
+        "contentACP101": "Hesap zaten doğrulanmış.",
+        "contentACP200": "Şifre eşleşmiyor.",
+        "contentACP109": "Şifre en az 8 karakter uzunluğunda olmalıdır.",
+        "contentACP107": "Hesap doğrulanmamış.",
+        "contentACP201": "Şifre oluşturma başarısız. Lütfen tekrar deneyin.",
+        "contentACP106": "E-posta doğrulanmamış."
+      }
+    }
   }
 }

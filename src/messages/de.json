@@ -188,5 +188,117 @@
       "AS108": "Bitte geben Sie alle erforderlichen Felder an.",
       "AS109": "Verifizierungs-E-Mail nicht gesendet."
     }
+  },
+  "verifyAccountPage": {
+    "CardTitle": "Ihr Konto Überprüfen",
+    "emailLabel": "E-Mail",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "amtCodeLabel": "AMT-Code",
+    "amtCodeLabelPlaceholder": "2z3jr4@Ror",
+    "verifyButton": "Konto Überprüfen",
+    "toast": {
+      "success": {
+        "title": "Erfolgreich",
+        "content": "Ihr Konto wurde erfolgreich überprüft. Sie werden zur Passworterstellung weitergeleitet.",
+        "action": "Verstanden"
+      },
+      "error": {
+        "title": "Fehler",
+        "content": "Überprüfung des Kontos fehlgeschlagen. Bitte versuchen Sie es erneut.",
+        "contentAV102": "Konto wurde bereits überprüft."
+      }
+    }
+  },
+  "createPasswordPage": {
+    "CardTitle": "Passwort Erstellen",
+    "emailLabel": "E-Mail",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Passwort",
+    "passwordLabelPlaceholder": "Passwort",
+    "confirmPasswordLabel": "Passwort Bestätigen",
+    "confirmPasswordLabelPlaceholder": "Passwort Bestätigen",
+    "createPasswordButton": "Passwort Erstellen",
+    "alreadyHaveAccount": "Haben Sie bereits ein Konto?",
+    "needToVerify": "Wenn Sie Ihr Konto überprüfen müssen ",
+    "verify": "Überprüfen",
+    "loginText": "Anmelden",
+    "toast": {
+      "success": {
+        "title": "Erfolgreich",
+        "content": "Passwort wurde erstellt. Sie werden zur Anmeldeseite weitergeleitet.",
+        "action": "Verstanden"
+      },
+      "error": {
+        "title": "Fehler",
+        "content": "Fehler beim Erstellen des Passworts. Bitte versuchen Sie es erneut.",
+        "contentACP101": "Konto wurde bereits überprüft.",
+        "contentACP200": "Passwort stimmt nicht überein.",
+        "contentACP109": "Passwort muss mindestens 8 Zeichen lang sein.",
+        "contentACP107": "Konto ist nicht überprüft.",
+        "contentACP201": "Fehler beim Erstellen des Passworts. Bitte versuchen Sie es erneut.",
+        "contentACP106": "E-Mail ist nicht überprüft."
+      }
+    }
+  },
+  "LoginPage": {
+    "CardTitle": "Anmelden",
+    "emailLabel": "E-Mail",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Passwort",
+    "passwordLabelPlaceholder": "Passwort",
+    "loginButton": "Anmelden",
+    "forgotPassword": "Passwort vergessen?",
+    "invalidCredentials": "E-Mail oder Passwort ist falsch.",
+    "signInButton": "Anmelden",
+    "dontHaveAccount": "Sie haben noch kein Konto?",
+    "needToVerify": "Wenn Sie Ihr Konto verifizieren müssen ",
+    "verify": "Verifizieren",
+    "signUpText": "Registrieren",
+    "loginText": "Anmelden",
+    "accountLocked": "Ihr Konto ist gesperrt. Bitte versuchen Sie es nach einer Minute erneut.",
+    "toast": {
+      "success": {
+        "title": "Erfolgreich",
+        "content": "Sie sind jetzt angemeldet. Sie werden zur Profilseite weitergeleitet.",
+        "action": "Verstanden"
+      },
+      "error": {
+        "title": "Fehler",
+        "content": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut."
+      }
+    }
+  },
+  "IdentityForm": {
+    "CardTitle": "AUSWEISKARTE",
+    "CardDescription": "Beantragen Sie eine digitale Identität.",
+    "surnameLabel": "Nachname",
+    "surnameLabelPlaceholder": "MUSTERMANN",
+    "nameOfBirthLabel": "Geburtsname",
+    "nameOfBirthLabelPlaceholder": "Gabler",
+    "firstNameLabel": "Vorname",
+    "firstNameLabelPlaceholder": "Erika",
+    "nationalityLabel": "Nationalität",
+    "nationalityLabelPlaceholder": "DEUTSCHLAND",
+    "dateOfBirthLabel": "Geburtsdatum",
+    "dateOfBirthLabelPlaceholder": "TT.MM.JJJJ",
+    "dateOfExpiryLabel": "Gültig bis",
+    "dateOfExpiryLabelPlaceholder": "01.01.2025",
+    "placeOfBirthLabel": "Geburtsort",
+    "placeOfBirthLabelPlaceholder": "Musterstadt",
+    "submit": "Beantragen",
+    "placeOfBirth": "Geburtsort",
+    "placeOfBirthPlaceholder": "Musterstadt",
+    "failed": "Antrag fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "toast": {
+      "success": {
+        "title": "Erfolgreich",
+        "content": "Ihr Antrag wird bearbeitet. Überprüfen Sie Ihre Benachrichtigungen.",
+        "action": "Verstanden"
+      },
+      "error": {
+        "title": "Fehler",
+        "content": "Antrag konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
+      }
+    }
   }
 }

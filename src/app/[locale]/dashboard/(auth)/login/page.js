@@ -1,48 +1,12 @@
-/* import LanguageSwitcher from "@/components/header/LanguageSwitcher";
-import ModeToggle from "@/components/header/ModeToggle";
-import NavBar from "@/components/header/NavBar";
-import LoginPage from "@/components/login/Login";
-function Login() {
+
+import LoginForm from "@/components/login/LoginBerat";
+
+
+
+export default function LoginPage() {
   return (
-    <>
-      <header
-        className={
-          "flex items-center justify-between px-10  py-[min(3vh,2rem)] sm:px-[min(3vh,2rem)]"
-        }
-      >
-        <NavBar>
-          <ModeToggle />
-          <LanguageSwitcher />
-        </NavBar>
-      </header>
-      <LoginPage />
-    </>
-  );
-}
-export default Login; */
-
-
-import ModeToggle from "@/components/header/ModeToggle";
-import LoginPage from "@/components/login/Login";
-
-
-
-const page = () => {
-  return (
-    <>
-    <header
-      className={
-        "flex items-center justify-between px-10  py-[min(3vh,2rem)] sm:px-[min(3vh,2rem)]"
-      }
-    >
-      <NavBar>
-        <ModeToggle />
-        <LanguageSwitcher />
-      </NavBar>
-    </header>
-    <LoginPage />
-  </>
+    <div>
+      <LoginForm />
+    </div>
   )
 }
-
-export default LoginPage

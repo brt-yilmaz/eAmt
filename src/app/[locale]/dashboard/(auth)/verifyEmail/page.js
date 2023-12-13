@@ -11,6 +11,7 @@ export default function VerifyEmailPage() {
   const t = useTranslations('VerifyEmailPage');
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
+  console.log(token)
   const { toast } = useToast();
   const [progress, setProgress] = useState(13);
   const router = useRouter();
@@ -36,10 +37,11 @@ export default function VerifyEmailPage() {
         setProgress(60);
 
         if (res.status === 200) {
+          console.log(res.data)
           // Third setTimeout
           await new Promise((resolve) => setTimeout(resolve, 500));
           setProgress(100);
-          router.replace('/dashboard/verifyAccount');
+          router.replace(`/dashboard/verifyAccount?email=${res.data.userEmail}`);
 
           toast({
             title: t('emailVerified'),
@@ -53,6 +55,7 @@ export default function VerifyEmailPage() {
 
       } catch (err) {
         const code = err.response.data.errorCode;
+        console.log('inside verify Email catch block', err.response.data)
         toast({
           title: code === 'AA103' ? t('tokenExpired') : code === 'AA104' ? t('emailAlreadyVerified') : t('emailVerificationFailed'),
           description: code === 'AA103' ? t('tokenExpiredDesc') : code === 'AA104' ? t('emailAlreadyVerifiedDesc') : t('emailVerificationFailedDesc'),
@@ -66,11 +69,9 @@ export default function VerifyEmailPage() {
 
     verifyEmail();
 
-  }, [token]);
+  }, []);
 
   return (
-    <div className="flex justify-center items-center min-h-[67vh] ">
-      <Progress value={progress} className="w-[35%]" />
-    </div>
+    <Progress value={progress} className="w-[30%]" />
   );
 }

@@ -189,5 +189,117 @@
       "AS108": "Please provide all required fields.",
       "AS109": "Verification email not sent."
     }
+  },
+  "verifyAccountPage": {
+    "CardTitle": "Verify Your Account",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "amtCodeLabel": "AMT Code",
+    "amtCodeLabelPlaceholder": "2z3jr4@Ror",
+    "verifyButton": "Verify Account",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Your account has been verified. You are redirected to the password create page.",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to verify account. Please try again.",
+        "contentAV102": "Account has already been verified."
+      }
+    }
+  },
+  "createPasswordPage": {
+    "CardTitle": "Create Password",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Password",
+    "passwordLabelPlaceholder": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordLabelPlaceholder": "Confirm Password",
+    "createPasswordButton": "Create Password",
+    "alreadyHaveAccount": "Already have an account?",
+    "needToVerify": "If you need to verify your account ",
+    "verify": "Verify",
+    "loginText": "Login",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Password created. You are redirected to the login page.",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to create password. Please try again.",
+        "contentACP101": "Account has already been verified.",
+        "contentACP200": "Password does not match.",
+        "contentACP109": "Password must be at least 8 characters long.",
+        "contentACP107": "Account is not verified.",
+        "contentACP201": "Failed to create password. Please try again.",
+        "contentACP106": "Email is not verified."
+      }
+    }
+  },
+  "LoginPage": {
+    "CardTitle": "Sign In",
+    "emailLabel": "Email",
+    "emailLabelPlaceholder": "john.doe@example.com",
+    "passwordLabel": "Password",
+    "passwordLabelPlaceholder": "Password",
+    "loginButton": "Login",
+    "forgotPassword": "Forgot Password?",
+    "invalidCredentials": "Email or password is incorrect.",
+    "signInButton": "Sign In",
+    "dontHaveAccount": "Don't have an account?",
+    "needToVerify": "If you need to verify your account ",
+    "verify": "Verify",
+    "signUpText": "Sign Up",
+    "loginText": "Login",
+    "accountLocked": "Your account is locked. Please try again after one minute.",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "You are now logged in. You are redirected to the profile page.",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to log in. Please try again."
+      }
+    }
+  },
+  "IdentityForm": {
+    "CardTitle": "IDENTITY CARD",
+    "CardDescription": "Appy for a digital identity.",
+    "surnameLabel": "Surname",
+    "surnameLabelPlaceholder": "MUSTERMANN",
+    "nameOfBirthLabel": "Geburtsname",
+    "nameOfBirthLabelPlaceholder": "Gabler",
+    "firstNameLabel": "First Name",
+    "firstNameLabelPlaceholder": "Erika",
+    "nationalityLabel": "Nationality",
+    "nationalityLabelPlaceholder": "DEUTSCHLAND",
+    "dateOfBirthLabel": "Date of Birth",
+    "dateOfBirthLabelPlaceholder": "DD.MM.YYYY",
+    "dateOfExpiryLabel": "Gültig bis",
+    "dateOfExpiryLabelPlaceholder": "01.01.2025",
+    "placeOfBirthLabel": "Place of Birth",
+    "placeOfBirthLabelPlaceholder": "Musterstadt",
+    "submit": "Apply",
+    "placeOfBirth": "Geburtsort",
+    "placeOfBirthPlaceholder": "Musterstadt",
+    "failed": "Application failed. Please try again.",
+    "toast": {
+      "success": {
+        "title": "Successful",
+        "content": "Your application is being processed. Check your notifications. ",
+        "action": "Got it"
+      },
+      "error": {
+        "title": "Error",
+        "content": "Failed to create application. Please try again."
+      }
+    }
   }
 }
