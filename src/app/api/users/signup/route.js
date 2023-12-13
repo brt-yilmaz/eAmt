@@ -19,7 +19,7 @@ export async function POST(req) {
     if (!name || !email || !taxId || !zipCode) {
       return NextResponse.json(
         {
-          errorCode: 'AS108' // missing fields
+          errorCode: "AS108", // missing fields
         },
         { status: 400 }
       );
@@ -28,27 +28,25 @@ export async function POST(req) {
     if (!isValidEmail(email)) {
       return NextResponse.json(
         {
-          errorCode: 'AS102' // invalid email
+          errorCode: "AS102", // invalid email
         },
         { status: 400 }
       );
     }
-
 
     if (taxId.length !== 10) {
       return NextResponse.json(
         {
-          errorCode: 'AS103' // invalid taxId
+          errorCode: "AS103", // invalid taxId
         },
         { status: 400 }
       );
     }
 
-
     if (zipCode.length !== 5) {
       return NextResponse.json(
         {
-          errorCode: 'AS104' // invalid zipCode
+          errorCode: "AS104", // invalid zipCode
         },
         { status: 400 }
       );
@@ -69,8 +67,7 @@ export async function POST(req) {
         if (!validToken) {
           return NextResponse.json(
             {
-              errorCode: 'AS106' // invalid verifyToken
-
+              errorCode: "AS106", // invalid verifyToken
             },
             { status: 400 }
           );
@@ -87,7 +84,7 @@ export async function POST(req) {
       } else {
         return NextResponse.json(
           {
-            errorCode: 'AS107' // user already exists
+            errorCode: "AS107", // user already exists
           },
           { status: 400 }
         );
@@ -114,9 +111,11 @@ export async function POST(req) {
         locale,
       });
     } catch (error) {
+      console.log(error);
       return NextResponse.json(
         {
-          errorCode: 'AS109' // verification email not sent
+          error: error,
+          errorCode: "AS109", // verification email not sent
         },
         { status: 500 }
       );
@@ -134,7 +133,7 @@ export async function POST(req) {
     } catch (error) {
       return NextResponse.json(
         {
-          errorCode: 'AS110' // Email not sent
+          errorCode: "AS110", // Email not sent
         },
         { status: 500 }
       );
