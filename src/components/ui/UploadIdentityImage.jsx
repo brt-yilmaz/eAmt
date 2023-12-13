@@ -28,7 +28,8 @@ function UploadImageButton() {
     
   >
     {({ open }) => {
-      function handleOnClick() {
+      function handleOnClick(e) {
+        e.preventDefault();
         open();
       }
       return (
